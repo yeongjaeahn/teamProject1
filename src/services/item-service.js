@@ -8,7 +8,7 @@ class ItemService {
   // 아이템 추가
   async addItem(itemInfo) {
     // 객체 destructing
-    const { name, shortName, price, image, thumbnail, category } = itemInfo;
+    const { name, shortName, price, category, image, thumbnail } = itemInfo;
 
     // db에 저장
     const createdNewItem = await this.itemModel.create(itemInfo);
