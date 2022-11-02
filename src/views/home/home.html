@@ -24,55 +24,139 @@
     ></script>
     <!-- 커스텀 css, js -->
     <link rel="stylesheet" href="home.css" />
+
     <script src="home.js" type="module" defer></script>
+    <script src="js/jquery-3.6.0.js"></script>
   </head>
   <body>
-    <!-- 헤더 -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container mt-3">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="/elice-rabbit.png" width="30" height="30" />
-            <span class="has-text-link">쇼핑-n팀</span>
-          </a>
-
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
-          <ul id="navbar">
-            <li><a href="/login">로그인</a></li>
-            <li><a href="/register">회원가입</a></li>
-            <li>
-              <a href="#cart" aria-current="page">
-                <span class="icon">
-                  <i class="fas fa-cart-shopping"></i>
-                </span>
-                <span>카트</span>
-              </a>
-            </li>
+    <header>
+      <div class="header-wrap">
+        <div class="logo"><a href="#">logo</a></div>
+        <div class="menu">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">Log in</a></li>
+            <li><a href="#">Cart</a></li>
           </ul>
         </div>
       </div>
-    </nav>
-
-    <div class="div-container">
-      <div class="landing" id="landingDiv">
-        <h1>랜딩 페이지</h1>
-      </div>
-      <div class="greeting" id="greetingDiv">
-        <h1>안녕하세요!</h1>
-      </div>
+    </header>
+    <div class="container">
+      <section class="section1">
+        <div class="section1-wrap">
+          <h2>NEW COLLECTION</h2>
+          <p>9 / 43 상품을 만나보세요</p>
+          <div><a href="#">Shop Now</a></div>
+        </div>
+      </section>
+      <section class="section2">
+        <h2>New Item</h2>
+        <div class="item-list">
+          <div class="product">
+            <div class="sumnail">
+              <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+            </div>
+            <div class="product-info">
+              <p class="name">아브라카다브라</p>
+              <p class="price">8000 원</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="sumnail">
+              <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+            </div>
+            <div class="product-info">
+              <p class="name">아브라카다브라</p>
+              <p class="price">8000 원</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="sumnail">
+              <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+            </div>
+            <div class="product-info">
+              <p class="name">아브라카다브라</p>
+              <p class="price">8000 원</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="sumnail">
+              <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+            </div>
+            <div class="product-info">
+              <p class="name">아브라카다브라</p>
+              <p class="price">8000 원</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="sumnail">
+              <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+            </div>
+            <div class="product-info">
+              <p class="name">아브라카다브라</p>
+              <p class="price">8000 원</p>
+            </div>
+          </div>
+          <div class="product">
+            <div class="sumnail">
+              <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+            </div>
+            <div class="product-info">
+              <p class="name">아브라카다브라</p>
+              <p class="price">8000 원</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+    <section class="section3">
+      <div class="des">
+        <h2>착한 아이템 ? 차후 디자인 예정</h2>
+        <p>여기에 디스크립션을 남겨주세요</p>
+      </div>
+    </section>
+    <!-- <section class="section4">
+      <h2>harry poter series</h2>
+    </section> -->
+    <section class="section4-banner">
+      <div class="des">
+        <h2>나쁜 아이템 ? 차후 디자인 예정</h2>
+        <p>여기에 디스크립션을 남겨주세요</p>
+      </div>
+    </section>
+    <section class="section5">
+      <div class="section5-title">
+        <h2>NEWS</h2>
+      </div>
+      <div class="news-wrap">
+        <div class="news1 news">
+          <h3>이름넣기</h3>
+          <p>디스크립션 넣기</p>
+        </div>
+        <div class="news2 news">
+          <h3>이름넣기</h3>
+          <p>디스크립션 넣기</p>
+        </div>
+        <div class="news3 news">
+          <h3>이름넣기</h3>
+          <p>디스크립션 넣기</p>
+        </div>
+      </div>
+    </section>
+    <section class="section6">
+      <div class="section6-banner">
+        <div class="info-wrap">
+          <div class="text">
+            <h2>무엇가 할것</h2>
+            <p>des</p>
+          </div>
+          <div class="go-btn"><a href="#">자세히보러가기</a></div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div>여기는 푸터입니다</div>
+    </footer>
   </body>
 </html>
