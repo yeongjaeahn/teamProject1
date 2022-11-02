@@ -19,18 +19,18 @@ itemRouter.post("/register-item", async (req, res, next) => {
     const name = req.body.name;
     const shortName = req.body.shortName;
     const price = req.body.price;
+    const category = req.body.category;
     const image = req.body.image;
     const thumbnail = req.body.thumbnail;
-    const category = req.body.category;
 
     // 위 데이터를 유저 db에 추가하기
     const newItem = await itemService.addItem({
       name,
       shortName,
       price,
+      category,
       image,
       thumbnail,
-      category,
     });
 
     // 추가된 유저의 db 데이터를 프론트에 다시 보내줌

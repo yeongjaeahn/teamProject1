@@ -1,8 +1,10 @@
+// import { upload } from "../../utils/multer";
 import * as Api from "/api.js";
 
 const nameInput = document.querySelector("#nameInput");
 const shortNameInput = document.querySelector("#shortNameInput");
 const priceInput = document.querySelector("#priceInput");
+const categoryInput = document.querySelector("#categoryInput");
 const imageEl = document.querySelector("#imageInput");
 const thumbnailEl = document.querySelector("#thumbnailInput");
 const submitButton = document.querySelector("#submitButton");
@@ -23,12 +25,28 @@ async function handleSubmit(e) {
   const name = nameInput.value;
   const shortName = shortNameInput.value;
   const price = priceInput.value;
-  const image = imageEl.value;
+  const category = categoryInput.value;
+  const image = imageEl.files;
   const thumbnail = thumbnailEl.value;
 
-  // 여기서부터 작업 시작해야함.
-  console.log(image);
-  console.log(thumbnail);
+  try {
+    // await Api.post(
+    //   "/api/register-item",
+    //   upload.single("image"),
+    //   async (res, req) => {
+    //     const imgFile = req.file;
+    //     console.log(imgFile);
+    //   }
+    // );
+    const data = { name, shortName, price, category, image, thumbnail };
 
-  console.log(name + " " + shortName + " " + price + " " + thumbnail); //  console
+    await Api.post("/api/register-item", data);
+
+    alert(`정상적으로 물품이 등록되었습니다.`);
+
+    window.location = "/api/itemlist";
+  } catch (err) {
+    console.log(err.stack);
+    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+  }
 }

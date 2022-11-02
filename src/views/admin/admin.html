@@ -74,6 +74,7 @@
     <!-- 아이템등록 폼(Form) -->
     <div class="register-user-form-container">
       <form
+        action="/api/register-item"
         class="box register-user-form-box"
         id="registerUserForm"
         enctype="multipart/form-data"
@@ -93,7 +94,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="emailInput">숏네임</label>
+          <label class="label" for="shortNameInput">숏네임</label>
           <div class="control">
             <input class="input" id="shortNameInput" type=text"
             placeholder="등록하실 물품의 숏네임을 적어주세요." autocomplete="on"
@@ -102,7 +103,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="emailInput">가격</label>
+          <label class="label" for="priceInput">가격</label>
           <div class="control">
             <input class="input" id="priceInput" type=text"
             placeholder="등록하실 물픔의 가격을 적어주세요." autocomplete="on"
@@ -111,7 +112,7 @@
         </div>
 
         <div class="field">
-          <label class="label" for="emailInput">카테고리</label>
+          <label class="label" for="categoryInput">카테고리</label>
           <div class="control">
             <input class="input" id="categoryInput" type=text"
             placeholder="등록하실 물픔의 카테고리를 적어주세요."
@@ -120,9 +121,9 @@
         </div>
 
         <div class="field">
-          <label class="label" for="passwordInput">이미지 등록하기</label>
+          <label class="label" for="imageInput">이미지 등록하기</label>
           <div class="control">
-            <input id="imageInput" type="file" accept="image/*" />
+            <input id="imageInput" name="image" type="file" accept="image/*" />
           </div>
         </div>
 
@@ -131,7 +132,12 @@
             >썸네일 등록하기</label
           >
           <div class="control">
-            <input id="thumbnailInput" type="file" accept="image/*" />
+            <input
+              id="thumbnailInput"
+              name="thumbnail"
+              type="file"
+              accept="image/*"
+            />
           </div>
         </div>
 
