@@ -21,6 +21,12 @@ class ItemService {
     const items = await this.itemModel.findAll();
     return items;
   }
+
+  // 아이템 상세페이지 받음.
+  async getItem(_id) {
+    const item = await this.itemModel.findById(_id);
+    return item;
+  }
 }
 
 const itemService = new ItemService(itemModel);
