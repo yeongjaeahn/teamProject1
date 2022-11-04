@@ -1,23 +1,155 @@
-.register-user-form-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 85vh;
+*{ 
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
 }
 
-.register-user-form-box {
-  width: 30rem;
+.container {
+width: 100vw;
+height: auto;
 }
 
-.register-user-form-box .title {
-  text-align: center;
+/* 상단부분 => header? */
+.navigation {
+font-family: 'Work Sans', sans-serif;
+font-weight: 300;
+
+width: 90vw;
+height: 150px;
+
+margin: 0 auto;
+/*   padding: 25px 20px; */
+padding: 25px max(20px, 0px);
+
+display: flex;
+align-items: center;
+
 }
 
-.register-user-form-box .button {
-  font-weight: bold;
+.logo-image {
+width: 50%;
+height: 150px;
 }
 
-.register-user-form-box .input:focus {
-  border-color: #00d1b2;
-  box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
+.logo {
+width: 50%;
+
 }
+
+
+
+.menu {
+width: 50%;
+
+display: inline-block;
+text-align: right;
+
+}
+
+#menubar {
+list-style-type: none;
+
+}
+
+#bar {
+float: left;
+margin-right: 30px;
+}
+
+
+
+/* 여기서부터는 회원가입 */
+
+.register-wrapper {
+display: block;
+margin: 0;
+padding: 0;
+}
+
+.register {    
+width: 100%;
+/* max-width: 960px;
+min-height: 300px; */
+height: auto;
+margin: 0 auto;
+padding: 60px 16px 70px;
+}
+
+.field-wrapper {
+width: 400px;
+height: 85vh;
+  
+margin: 0px auto;
+color: #222;
+text-align: left;
+}
+
+.row .header .checkbox-wrapper {
+width: 400px;
+}
+
+.header {
+font-size: 20px;
+margin-bottom: 40px;
+}
+.row {
+font-size: 14px;
+margin-bottom: 20px;
+color:#777;
+}
+
+.title {
+margin: 0 0 12px;
+}
+
+#email, #name, #password, #password-check {
+border: 1px solid #ddd;
+
+font-size: 14px;
+color: #777;
+line-height: 23px;
+width: 400px;
+height: 45px;
+padding: 10px 15px;
+}
+
+.checkbox-wrapper {
+margin:10px 0px;
+}
+
+.checkpox {
+width: 14px;
+height: 14px;
+}
+
+.check-word {
+font-size: 14px;
+color: #777;
+padding: 0 0 0 10px;
+}
+
+/* 버튼아 예뻐져라 */
+.btn-wrapper {
+width: 400px;
+margin: 20px 0 0;
+text-align: center;
+}
+
+#btn-register {
+font-size: 14px;
+width: 240px;
+height: 54px;
+background-color: #222;
+border-color: #222;
+border-radius: 3px;
+color: #fff;
+cursor: pointer;
+}
+
+#btn-register:hover {
+transition: all 0.2s;
+background-color: #fff;
+border-color: #fff;
+color: #222;
+}
+
