@@ -1,69 +1,12 @@
 *{ 
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   text-decoration: none;
 }
 
-.container {
-width: 100vw;
-height: auto;
-}
-
-/* 상단부분 => header? */
-.navigation {
-font-family: 'Work Sans', sans-serif;
-font-weight: 300;
-
-width: 90vw;
-height: 150px;
-
-margin: 0 auto;
-/*   padding: 25px 20px; */
-padding: 25px max(20px, 0px);
-
-display: flex;
-align-items: center;
-
-}
-
-.logo-image {
-width: 50%;
-height: 150px;
-}
-
-.logo {
-width: 50%;
-
-}
-
-
-
-.menu {
-width: 50%;
-
-display: inline-block;
-text-align: right;
-
-}
-
-#menubar {
-list-style-type: none;
-
-}
-
-#bar {
-float: left;
-margin-right: 30px;
-}
-
-
-
 /* 여기서부터는 회원가입 */
-
 .register-wrapper {
-display: block;
-margin: 0;
-padding: 0;
+  display: block;
 }
 
 .register {    
@@ -72,7 +15,6 @@ width: 100%;
 min-height: 300px; */
 height: auto;
 margin: 0 auto;
-padding: 60px 16px 70px;
 }
 
 .field-wrapper {
@@ -92,6 +34,7 @@ width: 400px;
 font-size: 20px;
 margin-bottom: 40px;
 }
+
 .row {
 font-size: 14px;
 margin-bottom: 20px;
@@ -102,7 +45,7 @@ color:#777;
 margin: 0 0 12px;
 }
 
-#email, #name, #password, #password-check {
+#emailinput, #nameinput, #passwordinput, #password-check-input {
 border: 1px solid #ddd;
 
 font-size: 14px;
@@ -114,6 +57,7 @@ padding: 10px 15px;
 }
 
 .checkbox-wrapper {
+  display: flex;
 margin:10px 0px;
 }
 
@@ -127,6 +71,7 @@ font-size: 14px;
 color: #777;
 padding: 0 0 0 10px;
 }
+
 
 /* 버튼아 예뻐져라 */
 .btn-wrapper {
@@ -144,12 +89,13 @@ border-color: #222;
 border-radius: 3px;
 color: #fff;
 cursor: pointer;
+transition: all 0.2s;
 }
 
 #btn-register:hover {
-transition: all 0.2s;
 background-color: #fff;
 border-color: #fff;
 color: #222;
+
 }
 

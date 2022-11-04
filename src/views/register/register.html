@@ -20,92 +20,78 @@
   </head>
 
   <body>
-    <!-- 젤 큰 박스 -->
-    <div class="container">
-      <!-- 상단부 = 로고 + 메뉴 -->
-      <div class="navigation">
-        <!-- 로고 -->
-        <div class="logo">
-          <a class="logo-image">
-            <img src="file:///Users/user/Desktop/%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%89%E1%85%B5%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%84%91%E1%85%B5%20%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8%20%E1%84%92%E1%85%A9%E1%86%B7%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5%20%E1%84%92%E1%85%AC%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%80%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8_files/image_1637556895126.png" width="400" height="100">
-          </a>
 
-        </div>
-
-        <!-- 메뉴 -->
-        <div class="menu">
-          <ul id="menubar">
-            <li id="bar"><a href="/home" style="color:  #222">HOME</a></li>
-            <li id="bar"><a href="/shop" style="color:  #222">SHOP</a></li>
-            <li id="bar"><a href="/login" style="color:  #222">Lon In</a></li>
-            <li id="bar"><a href="/cart" style="color:  #222">Cart()</a></li>
-          </ul>
-
-        </div>
-
-
-      </div>
-
-      <!-- 회원가입 부분 -->
-      <div class="register-wrapper">
-        <div class="register">
-          <div class="field-wrapper">
-            <div class="header">
-              <span class="title">회원가입</span>
-            </div>
-            <div class="row">
-              <span for="email" class="title">이메일 *</span>
-              <input id="email"/>
-            </div>            
-            <div class="row">
-              <span for="name" class="title">이름 *</span>
-              <input id="name"/>
-            </div>
-            <div class="row">
-              <span for="password "class="title">비밀번호 *</span>
-              <input id="password"/>
-            </div>
-            <div class="row">
-              <span for="password-check" class="title">비밀번호 확인 *</span>
-              <input id="password-check"/>
-            </div>
-            <div class="checkbox-wrapper">
-              <input type="checkbox">
-              <label class="check-word">모두 동의합니다.</label>
-            </div>           
-            <div class="checkbox-wrapper">
-              <input type="checkbox">
-              <label class="check-word">(필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.</label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input type="checkbox">
-              <label class="check-word">(필수) 만 14세 이상입니다.</label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input type="checkbox">
-              <label class="check-word">(필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.<br>만 19세 미만의 미성년자가 결제 시 법정대리인이 거래를 취소할 수 있습니다.
-              </label>
-            </div>
-            <div class="checkbox-wrapper">
-              <input type="checkbox">
-              <label class="check-word">(선택) 이메일 및 SMS 마케팅 정보 수신에 동의합니다.<br>회원은 언제든지 회원 정보에서 수신 거부로 변경할 수 있습니다.
-              </label>
-            </div>
-            <div class="btn-wrapper">
-              <button id="btn-register">가입하기</button>
-            </div>
-
-            </div>
-
-
-
+    <!-- 회원가입 부분 -->
+    <div class="register-wrapper">
+      <div class="register">
+        <form class="field-wrapper" id="field-wrapper-Form">
+          <div class="header">
+            <span class="title">회원가입</span>
           </div>
 
-        </div>
+          <div class="row">
+            <label for="emailinput" class="title">이메일 *</label>
+            <input id="emailinput" type="email" autocomplete="on"/>
+          </div>
+          <div class="row">
+            <label for="nameinput" class="title">이름 *</label>
+            <input id="nameinput" type="name" autocomplete="on"/>
+          </div>
+          <div class="row">
+            <label for="passwordinput" class="title">비밀번호 *</label>
+            <input id="passwordinput" type="password" placeholder="6이상 입력해주세요" autocomplete="off"/>
+          </div>
+          <div class="row">
+            <label for="password-check-input" class="title">비밀번호 확인 *</label>
+            <input id="password-check-input" type="password" autocomplete="off"/>
+          </div>
+
+          <div class="checkbox-wrapper">
+            <div class="checkbox">
+              <input type="checkbox" id="all_check_agree">
+            </div>
+            <label for="all_check_agree" class="check-word1">모두 동의합니다.</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="checkbox">
+              <input type="checkbox" >
+            </div>
+            <label class="check-word2">(필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="checkbox">
+              <input type="checkbox">
+            </div>
+            <label class="check-word3">(필수) 만 14세 이상입니다.</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="checkbox">
+              <input type="checkbox">
+            </div>
+            <label class="check-word4">(필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.<br>만 19세 미만의 미성년자가 결제 시 법정대리인이 거래를 취소할 수 있습니다.
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="checkbox">
+              <input type="checkbox">
+            </div>
+            <label class="check-word5">(선택) 이메일 및 SMS 마케팅 정보 수신에 동의합니다.<br>회원은 언제든지 회원 정보에서 수신 거부로 변경할 수 있습니다.
+            </label>
+
+          </div>
+          <div class="btn-wrapper">
+            <button id="btn-register">가입하기</button>
+          </div>
+
+
+
+        </form>
 
       </div>
-
     </div>
+
+
+
 
   </body>
 </html>
