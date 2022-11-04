@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="order.css" />
+    <title>ORDER</title>
+    <script src="order.js" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  </head>
+  <body>
+    <div class="all">
+      <header class="header">
+        <div class="name">
+          <h1>가명 : 19조와 4분의 3</h1>
+        </div>
+      </header>
+      <section class="order-body-wrap">
+        <div class="order-box">
+          <p class="card-title">주문 상품</p>
+          <div class="card-body">
+            <div class="card-item">
+              <img src="934.jpg" alt="item1" />
+              <div class="card-item-info">
+                <p id="item-name">정말 멋진 상품</p>
+                <p id="item-quantity">1개</p>
+                <p id="item-price">상품 가격</p>
+              </div>
+            </div>
+            <div class="card-item">
+              <img src="934.jpg" alt="item1" />
+              <div class="card-item-info">
+                <p id="item-name">정말 멋진 상품</p>
+                <p id="item-quantity">1개</p>
+                <p id="item-price">상품 가격</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-box">
+          <p class="card-title">배송지 정보</p>
+          <div class="row">
+            <label for="input-text-name">이름</label>
+            <input id="input-text-name" class="input-text" type="text" />
+          </div>
+          <div class="row">
+            <label for="input-text-number">연락처</label>
+            <input id="input-text-number" class="input-text" type="text" />
+          </div>
+
+          <div class="row">
+            <label>주소</label>
+            <div class="adress-row">
+              <input
+                type="text"
+                id="sample6_postcode"
+                class="input-text-adress"
+                placeholder="우편번호"
+              />
+              <input
+                type="button"
+                class="adress-btn"
+                onclick="sample6_execDaumPostcode()"
+                value="주소 찾기"
+              /><br />
+            </div>
+          </div>
+          <input
+            type="text"
+            id="sample6_address"
+            class="input-text"
+            placeholder="주소"
+          /><br />
+          <input
+            type="text"
+            id="sample6_detailAddress"
+            class="input-text"
+            placeholder="상세주소"
+          />
+        </div>
+        <div class="order-box">
+          <p class="card-title">결제 정보</p>
+          <div class="info-item">
+            <span class="item-title">상품 합계</span>
+            <span class="item-value">1000원</span>
+          </div>
+          <div class="info-item">
+            <span class="item-title">배송비</span>
+            <span class="item-value">0원</span>
+          </div>
+          <div class="info-total-item">
+            <span class="total-title">결제금액</span>
+            <span class="total-price">1000원</span>
+          </div>
+        </div>
+        <div class="order-box">
+          <p class="card-title">결제 방법</p>
+          <div class="payment-box">
+            <div class="payment-option">
+              <input type="radio" name="payment" id="pay1" />
+              <label for="pay1"> 신용 / 체크카드</label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" name="payment" id="pay2" />
+              <label for="pay2">계좌이체</label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" name="payment" id="pay3" />
+              <label for="pay3"> 가상 계좌</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="submit-button">결제하기</button>
+      </section>
+    </div>
+  </body>
+</html>
