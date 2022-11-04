@@ -8,6 +8,7 @@ const categoryInput = document.querySelector("#categoryInput");
 const imageEl = document.querySelector("#imageInput");
 const thumbnailEl = document.querySelector("#thumbnailInput");
 const submitButton = document.querySelector("#submitButton");
+const fReader = new FileReader();
 
 addAllElements();
 addAllEvents();
@@ -26,8 +27,8 @@ async function handleSubmit(e) {
   const shortName = shortNameInput.value;
   const price = priceInput.value;
   const category = categoryInput.value;
-  const image = imageEl.files;
-  const thumbnail = thumbnailEl.value;
+  let image = imageEl.files[0];
+  let thumbnail = thumbnailEl.value;
 
   try {
     // await Api.post(
@@ -38,13 +39,14 @@ async function handleSubmit(e) {
     //     console.log(imgFile);
     //   }
     // );
+    console.log(image);
     const data = { name, shortName, price, category, image, thumbnail };
 
     await Api.post("/api/register-item", data);
 
     alert(`정상적으로 물품이 등록되었습니다.`);
 
-    window.location = "/api/itemlist";
+    // window.location = "/api/itemlist";
   } catch (err) {
     console.log(err.stack);
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
