@@ -3,134 +3,97 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>쇼핑-데모</title>
-    <!-- 아이콘 -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/elice-rabbit-favicon.png"
-    />
-    <!-- bulma css 관련 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-    <!-- 폰트 어썸: 아이콘 -->
-    <script
-      defer
-      src="https://kit.fontawesome.com/9daa42bcef.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- 구글 OAuth -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- 카카오 OAuth -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <title>회원가입</title>
     <!-- 커스텀 css, js -->
     <link rel="stylesheet" href="register.css" />
     <script src="register.js" type="module" defer></script>
+
+    <!-- 폰트 -->
+    <!--   font-family: 'Noto Sans KR', sans-serif;;  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap" rel="stylesheet">
+    <!--    font-family: 'Work Sans', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap" rel="stylesheet">
   </head>
+
   <body>
-    <!-- 헤더 -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container mt-3">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="/elice-rabbit.png" width="30" height="30" />
-            <span class="has-text-link">쇼핑-데모</span>
-          </a>
 
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
-            <ul id="navbar">
-              <li><a href="/login">로그인</a></li>
-              <li>
-                <a href="/cart" aria-current="page">
-                  <span class="icon">
-                    <i class="fas fa-cart-shopping"></i>
-                  </span>
-                  <span>카트</span>
-                </a>
-              </li>
-            </ul>
+    <!-- 회원가입 부분 -->
+    <div class="register-wrapper">
+      <div class="register">
+        <form class="field-wrapper" id="field-wrapper-Form">
+          <div class="header">
+            <span class="title">회원가입</span>
           </div>
-        </div>
+
+          <div class="row">
+            <label for="emailinput" class="title">이메일 *</label>
+            <input id="emailinput" type="email" autocomplete="on"/>
+          </div>
+          <div class="row">
+            <label for="fullnameinput" class="title">이름 *</label>
+            <input id="fullnameinput" type="name" autocomplete="on"/>
+          </div>
+          <div class="row">
+            <label for="passwordinput" class="title">비밀번호 *</label>
+            <input id="passwordinput" type="password" placeholder="6이상 입력해주세요" autocomplete="off"/>
+          </div>
+          <div class="row">
+            <label for="passwordConfirminput" class="title">비밀번호 확인 *</label>
+            <input id="passwordConfirminput" type="password" autocomplete="off"/>
+          </div>
+
+
+          <!-- <div class="checkbox-wrapper">
+            <div class="terms__check__all">
+              <input type="checkbox" name="checkall" id="checkall">
+            </div>
+            <label for="checkall" class="check-word">모두 동의합니다.</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="input__check">
+              <input type="checkbox" name="agreement" id="termsOfService" >
+            </div>
+            <label for="termsOfService" class="check-word">(필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="input__check">
+              <input type="checkbox" name="agreement" id="ageOfService">
+            </div>
+            <label for="ageOfService" class="check-word">(필수) 만 14세 이상입니다.</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="input__check">
+              <input type="checkbox" name="agreement" id="privacyPolicy">
+            </div>
+            <label for="privacyPolicy" class="check-word">(필수) 이용약관과 개인정보 수집 및 이용에 동의합니다.<br>만 19세 미만의 미성년자가 결제 시 법정대리인이 거래를 취소할 수 있습니다.
+            </label>
+          </div>
+          <div class="checkbox-wrapper">
+            <div class="input__check">
+              <input type="checkbox" name="agreement" id="allowPromotions">
+            </div>
+            <label for="allowPromotions" class="check-word">(선택) 이메일 및 SMS 마케팅 정보 수신에 동의합니다.<br>회원은 언제든지 회원 정보에서 수신 거부로 변경할 수 있습니다.
+            </label>
+          </div> -->
+
+          <div class="btn-wrapper" id="submitButton">
+            <button type="submit" id="btn-register">가입하기</button>
+          </div>
+        </form>
+
+
+
+        
+
       </div>
-    </nav>
-
-    <!-- 회원가입 폼(Form) -->
-    <div class="register-user-form-container">
-      <form class="box register-user-form-box" id="registerUserForm">
-        <p class="title is-5 has-text-primary">환영합니다!</p>
-        <div class="field">
-          <label class="label" for="fullNameInput">이름</label>
-          <div class="control">
-            <input
-              class="input"
-              id="fullNameInput"
-              type="text"
-              placeholder="유재석"
-              autocomplete="on"
-            />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label" for="emailInput">이메일</label>
-          <div class="control">
-            <input
-              class="input"
-              id="emailInput"
-              type="email"
-              placeholder="abc@example.com"
-              autocomplete="on"
-            />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label" for="passwordInput">비밀번호</label>
-          <div class="control">
-            <input
-              class="input"
-              id="passwordInput"
-              type="password"
-              placeholder="********"
-              autocomplete="off"
-            />
-          </div>
-        </div>
-
-        <div class="field mb-5">
-          <label class="label" for="passwordConfirmInput">비밀번호 확인</label>
-          <div class="control">
-            <input
-              class="input"
-              id="passwordConfirmInput"
-              type="password"
-              placeholder="********"
-              autocomplete="off"
-            />
-          </div>
-        </div>
-
-        <button class="button is-primary is-fullwidth" id="submitButton">
-          회원가입하기
-        </button>
-      </form>
     </div>
+
+
+
+
   </body>
 </html>
