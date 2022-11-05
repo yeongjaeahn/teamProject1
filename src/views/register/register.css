@@ -7,24 +7,24 @@
 /* 여기서부터는 회원가입 */
 .register-wrapper {
   display: block;
+  width: 100%;
+  /* max-width: 960px;
+  min-height: 300px; */
+  height: auto;
+  margin: 0 auto;
+
 }
 
-.register {    
-width: 100%;
-/* max-width: 960px;
-min-height: 300px; */
-height: auto;
-margin: 0 auto;
-}
-
-.field-wrapper {
-width: 400px;
+.register {
+  width: 400px;
 height: 85vh;
   
 margin: 0px auto;
 color: #222;
 text-align: left;
 }
+
+
 
 .row .header .checkbox-wrapper {
 width: 400px;
@@ -45,7 +45,7 @@ color:#777;
 margin: 0 0 12px;
 }
 
-#emailinput, #nameinput, #passwordinput, #password-check-input {
+#emailinput, #fullnameinput, #passwordinput, #passwordConfirminput {
 border: 1px solid #ddd;
 
 font-size: 14px;
