@@ -19,3 +19,36 @@ $window.on("scroll", function () {
   $header.toggleClass("down", scrolled); //클래스 토글
   $header1.toggleClass("down1", scrolled);
 });
+
+// section 2 상품 목록 가져오기
+
+let itemList = document.querySelector(".item-list");
+
+insertProductElement();
+
+async function insertProductElement() {
+  const res = await fetch(`localhost:5000/itemlist`);
+  const products = await res.json();
+
+  products.forEach((product) => {
+    const title = product.title;
+    const price = product.price;
+    const image = product.img;
+
+    itemList.insertAdjacentHTML(
+      "beforeend",
+      `
+    <div class="product">
+            <div class="sumnail">
+              <img src="${image}" alt="clothes-image" />
+            </div>
+            <div class="product-info">
+              <p class="name">${title}</p>
+              <p class="price">${price} 원</p>
+            </div>
+    `
+    );
+  });
+}
+
+// sec
