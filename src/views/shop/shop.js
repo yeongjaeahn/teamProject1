@@ -1,3 +1,5 @@
+// load item list
+
 let itemList = document.querySelector(".item-list");
 
 insertProductElement();
