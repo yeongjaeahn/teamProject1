@@ -54,4 +54,10 @@ async function getData() {
 
 getData();
 
-// sec
+// section2 썸넬 클릭시 해당 상세페이지로 이동 (구현해야함)
+
+// let sumnail = document.querySelector(".sumnail");
+
+// sumnail.addEventListener("click", (e) => {
+//   window.location.href = "/item";
+// });

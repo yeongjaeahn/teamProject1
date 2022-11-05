@@ -14,6 +14,7 @@ async function getData() {
     html += `
       <div class="product">
         <div class="sumnail">
+        
           <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
         </div>
         <div class="product-info">
