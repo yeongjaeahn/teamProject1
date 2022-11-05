@@ -26,10 +26,12 @@ function addAllEvents() {
 }
 
 
-// 회원가입 진행
+// 회원가입 진행 => 이벤트에 사용할 함수
 async function handleSubmit(e) {
-  e.preventDefault();
+  
+  e.preventDefault();  // 새로고침 방지역할
 
+  //입력값 가져오기
   const email = emailInput.value;
   const fullName = fullNameInput.value;
   const password = passwordInput.value;
@@ -41,12 +43,6 @@ async function handleSubmit(e) {
   const isFullNameValid = fullName.length >= 2;
   const isPasswordValid = password.length >= 6;
   const isPasswordSame = password === passwordConfirm;
-
-
-
-
-  
-
 
 
 
@@ -62,10 +58,19 @@ async function handleSubmit(e) {
     return alert("비밀번호가 일치하지 않습니다.");
   }
 
+
+
+
+
   // 회원가입 api 요청
+  // 여기서부터 모르겠다!
+  
   try {
+    // 객체 만들기
     const data = { fullName, email, password };
 
+
+    // 보내기
     await Api.post("/api/register", data);
 
     alert(`정상적으로 회원가입되었습니다.`);
@@ -77,3 +82,6 @@ async function handleSubmit(e) {
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
   }
 }
+
+
+
