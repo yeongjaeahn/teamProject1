@@ -46,6 +46,7 @@ itemRouter.post(
   }
 );
 
+// 아이템 전체 목록
 itemRouter.get("/itemlist", async function (req, res, next) {
   try {
     // 전체 아이템 목록을 얻음
@@ -58,6 +59,7 @@ itemRouter.get("/itemlist", async function (req, res, next) {
   }
 });
 
+// 아이템 상세페이지
 itemRouter.get("/item/:_id", async function (req, res, next) {
   try {
     const item = await itemService.getItem(req.params._id);
@@ -66,5 +68,7 @@ itemRouter.get("/item/:_id", async function (req, res, next) {
     next(error);
   }
 });
+
+// 카테고리별 아이템 목록
 
 export { itemRouter };

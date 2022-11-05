@@ -1,25 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link rel="stylesheet" href="cart.css" />
-  </head>
-  <body>
-    <div class="cart-wrap">
-      <div class="wrap-cart-title">
-        <span class="cart-title">장바구니</span>
-      </div>
-      <div class="info-wrap">
-        <div class="info">
-          <span class="name">상품정보</span>
-          <span class="qty">수량</span>
-          <span class="price">가격</span>
-          <span class="dilevery-price">배송비</span>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <title>CART</title>
+</head>
+<body>
+    <div class="all">
+    <header class="header">
+        <div class="name">
+        <h1>가명 : 19조와 4분의 3</h1>
         </div>
-      </div>
+        <nav class="nav">
+        <ul>
+            <il>HOME</il>
+            <il>SHOP</il>
+            <il>Log In</il>
+            <il>Cart</il>
+        </ul>
+        </nav>
+    </header>
+    <section class="cart-wrapper">
+        <div class="cart-field">
+        <div class="cart-header-title">
+            <span>장바구니</span>
+            <span class="cart-size">(2)</span>
+        </div>
+        <div class="cart-item-field">
+            <div class="cart-item-title">
+                <div>상품정보</div>
+                <div>수량</div>
+                <div>가격</div>
+                <div>삭제</div>
+            </div>
+            <div class="cart-item-list">
+                <div class="cart-image-name">
+                    <img src="934.jpg" alt="img1">
+                    <div class="cart-item-row">상품 이름 1</div>
+                </div>
+                <div class="cart-item-row">수량</div>
+                <div class="cart-item-row">가격</div>
+                <div class="cart-item-row">삭제</div>
+            </div>
+            <div class="cart-item-list">
+                <div class="cart-image-name">
+                    <img src="934.jpg" alt="img1">
+                    <div class="cart-item-row">상품 이름 2</div>
+                </div>
+                <div class="cart-item-row">수량</div>
+                <div class="cart-item-row">가격</div>
+                <div class="cart-item-row">삭제</div>
+            </div>
+            <div class="total-box">
+                <div class="cart-info">
+                    <div class="cart-info-1">
+                        <div class="cart-div-title">상품 합계</div>
+                        <div>123,000원</div>
+                    </div>
+                    <div class="cart-info-2">
+                        <div class="cart-div-title">배송비</div>
+                        <div>0원</div>
+                    </div>
+                </div>
+                <div class="cart-total-price">
+                    <button class="order-button"><a href="../order/order.html">주문하기</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
     </div>
-  </body>
+</body>
 </html>
