@@ -36,28 +36,47 @@ async function getData() {
   for (let i = 0; i < 9; i++) {
     html += `
           <div class="product">
-            <div class="sumnail">
+            <div class="product-info"">
               <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-            </div>
-            <div class="product-info">
               <p class="name">${item[i].name}</p>
               <p class="price">${item[i].price}</p>
+              <button class="wish">찜하기<button>
             </div>
           </div>
         `;
   }
-
   // document.querySelector("#first-name").innerHTML = itemName;
   // document.querySelector(".price").innerHTML = itemPrice;
   itemList.innerHTML = html;
+
+  // section2 찜하기 버튼 클릭시  로컬스토리지에 해당 클릭아이템 저장
+
+  let wish = document.querySelectorAll(".wish");
+  for (let i = 0; i < wish.length; i++) {
+    let wish = document.querySelectorAll(".wish")[i];
+    wish.addEventListener("click", function (e) {
+      let price = e.target.previousElementSibling.innerText;
+      let name =
+        e.target.previousElementSibling.previousElementSibling.innerText;
+      let sumnail =
+        e.target.previousElementSibling.previousElementSibling
+          .previousElementSibling.src;
+      if (localStorage.getItem("name") != null) {
+        let takeName = JSON.parse(localStorage.name);
+        let takePrice = JSON.parse(localStorage.price);
+        let takeImg = JSON.parse(localStorage.img);
+        takeName.push(name);
+        takePrice.push(price);
+        takeImg.push(sumnail);
+        localStorage.setItem("name", JSON.stringify(takeName));
+        localStorage.setItem("price", JSON.stringify(takePrice));
+        localStorage.setItem("img", JSON.stringify(takeImg));
+      } else {
+        localStorage.setItem("name", JSON.stringify([name]));
+        localStorage.setItem("price", JSON.stringify([price]));
+        localStorage.setItem("img", JSON.stringify([sumnail]));
+      }
+    });
+  }
 }
-
 getData();
-
-// section2 썸넬 클릭시 해당 상세페이지로 이동 (구현해야함)
-
-// let sumnail = document.querySelector(".sumnail");
-
-// sumnail.addEventListener("click", (e) => {
-//   window.location.href = "/item";
-// });
