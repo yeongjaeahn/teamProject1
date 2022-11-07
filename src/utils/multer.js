@@ -1,37 +1,19 @@
 const multer = require("multer");
-const path = require("path");
+const multerS3 = require("multer-s3");
+const aws = require("aws-sdk");
+aws.config.loadFromPath("s3.json");
 
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === "image/png" ||
-    file.mimetype === "image/jpeg" ||
-    file.mimetype === "image/gif" ||
-    file.mimetype === "image/webp" ||
-    file.mimetype === "image/svg+xml" ||
-    file.mimetype === "image/jpg"
-  ) {
-    cb(null, true);
-  } else {
-    req.fileValidationError =
-      "jpg, jpeg, png, gif, webp, svg 파일만 업로드 가능합니다.";
-    cb(null, false);
-  }
-};
-
+const s3 = new aws.S3();
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, done) => {
-      done(null, "src/uploads");
-    },
-    filename: (req, file, done) => {
-      const ext = path.extname(file.originalname);
-      // aaa.txt => aaa+&&+1293949.txt
-      const fileName = path.basename(file.originalname, ext) + Date.now() + ext;
-      done(null, fileName);
+  storage: multerS3({
+    s3: s3,
+    bucket: "azkaban-19",
+    acl: "public-read",
+    contentType: multerS3.AUTO_CONTENT_TYPE,
+    key: function (req, file, cb) {
+      cb(null, `${Date.now()}_${file.originalname}`);
     },
   }),
-  fileFilter: fileFilter,
-  limits: { fileSize: 30 * 1024 * 1024 },
 });
 
 module.exports = { upload };

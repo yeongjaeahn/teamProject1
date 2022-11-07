@@ -2,7 +2,12 @@
   margin: 0;
   padding: 0;
 }
-
+html {
+  background-image: url(img/html-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
 body {
   width: 100%;
   background-image: url(../home/img/aditya-vyas-wmXVABZ7JBk-unsplash.jpg);
@@ -32,17 +37,18 @@ header {
   padding: none;
   position: fixed;
   z-index: 100;
-  transition: all 0.7s;
+  transition: all 2s;
 }
 header a {
   color: aliceblue;
 }
+
 .down {
-  background-color: white;
-  transition: all 0.7s;
+  background-color: rgb(0, 0, 0, 0.6);
+  transition: all 1.5s;
 }
 .down1 {
-  color: black;
+  color: rgb(255, 255, 255);
   transition: all 0.7s;
 }
 
@@ -74,10 +80,13 @@ header .menu ul li {
 }
 
 /* ---------section2 ----- */
-
+.section2 {
+  color: aliceblue;
+  padding: 50px 0;
+}
 .section2 .item-list {
   display: grid;
-  grid-template-columns: repeat(3, 305px);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 400px);
   gap: 10px;
 }
@@ -128,6 +137,7 @@ header .menu ul li {
 /* ------------section5---------- */
 .section5 {
   padding: 50px 0;
+  color: aliceblue;
 }
 .section5 .section5-title {
   padding-bottom: 50px;
@@ -141,16 +151,39 @@ header .menu ul li {
   column-gap: 10px;
 }
 .section5 .news-wrap .news {
-  padding: 50px 100px;
+  width: 100%;
+  cursor: pointer;
 }
+
 .section5 .news-wrap .news1 {
-  background-color: bisque;
+  background-image: url(img/dumbledor.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .section5 .news-wrap .news2 {
-  background-color: aquamarine;
+  background-image: url(img/seriousBlack.jpeg);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .section5 .news-wrap .news3 {
-  background-color: blue;
+  background-image: url(img/dementer.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.section5 .news-wrap .news .band {
+  text-align: center;
+  margin-top: 100px;
+  padding: 40px 0;
+  opacity: 0;
+  transition: all 1.5s;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.section5 .news-wrap .news:hover .band {
+  opacity: 1;
 }
 /* ------------section6 ------- */
 .section6 {

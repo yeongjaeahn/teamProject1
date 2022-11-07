@@ -1,0 +1,30 @@
+.pdt-wrap {
+  margin: 0 auto;
+  width: 80%;
+}
+.pdt-wrap .pdt-main-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex: row wrap;
+}
+.pdt-wrap .pdt-main-container .sumnail-wrap {
+  width: 100%;
+  height: 500px;
+  background-color: aqua;
+}
+.pdt-wrap .pdt-main-container .pdt-info {
+  background-color: bisque;
+  height: 500px;
+  width: 100%;
+  padding: 0 50px;
+}
+.pdt-wrap .pdt-main-container .pdt-info .count-price-wrap {
+  padding: 50px 0;
+  border-top: 1px solid lightgray;
+}
+/* ---------pdt0section2--------- */
+.pdt-section2 {
+  width: 50%;
+  margin: 0 auto;
+}

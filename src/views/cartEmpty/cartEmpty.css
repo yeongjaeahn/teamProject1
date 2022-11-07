@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin: 40px;
+}
+
+.cart-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.cart-field {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  min-height: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 60px 36px 70px;
+}
+
+.cart-title {
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+.cart-item {
+  text-align: center;
+  padding: 100px 0;
+  line-height: 1.5em;
+  color: #777777;
+}

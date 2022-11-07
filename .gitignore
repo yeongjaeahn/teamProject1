@@ -4,4 +4,4 @@ node_modules
 yarn.lock
 package-lock.json
 .env
-#이거는 .env깃에서 클론못해옴 따로 작성해와야함.
+s3.json

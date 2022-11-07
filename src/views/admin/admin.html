@@ -89,6 +89,7 @@
               type="text"
               placeholder="등록하실 물품의 이름을 적어주세요."
               autocomplete="on"
+              name="name"
             />
           </div>
         </div>
@@ -98,7 +99,7 @@
           <div class="control">
             <input class="input" id="shortNameInput" type=text"
             placeholder="등록하실 물품의 숏네임을 적어주세요." autocomplete="on"
-            />
+            name="shortName" />
           </div>
         </div>
 
@@ -107,7 +108,7 @@
           <div class="control">
             <input class="input" id="priceInput" type=text"
             placeholder="등록하실 물픔의 가격을 적어주세요." autocomplete="on"
-            />
+            name="price" />
           </div>
         </div>
 
@@ -115,7 +116,7 @@
           <label class="label" for="categoryInput">카테고리</label>
           <div class="control">
             <input class="input" id="categoryInput" type=text"
-            placeholder="등록하실 물픔의 카테고리를 적어주세요."
+            placeholder="등록하실 물픔의 카테고리를 적어주세요." name="category"
             autocomplete="on" />
           </div>
         </div>
@@ -147,4 +148,26 @@
       </form>
     </div>
   </body>
+  <script>
+    // function uploadImage() {
+    //   const requestData = async (event) => {
+    //     let formData = new FormData();
+    //     formData.append("image", event.target.files[0]);
+    //     formData.append("name", event.target.value);
+    //     formData.append("shortName", event.target.value);
+    //     formData.append("price", event.target.value);
+    //     formData.append("category", event.target.value);
+
+    //     try {
+    //       await Api.post("/api/register-item", formData);
+    //       alert(`정상적으로 물품이 등록되었습니다.`);
+    //     } catch (error) {
+    //       console.log(error.stack);
+    //       alert(
+    //         `문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`
+    //       );
+    //     }
+    //   };
+    // }
+  </script>
 </html>
