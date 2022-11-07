@@ -1,4 +1,4 @@
-import { model } from "mongoose";
+import { model } from "mongoose"; //mongoose.model
 import { ItemSchema } from "../schemas/item-schema";
 
 const Item = model("items", ItemSchema);

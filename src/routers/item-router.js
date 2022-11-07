@@ -2,7 +2,8 @@ import is from "@sindresorhus/is";
 import { Router } from "express";
 import { itemService } from "../services/item-service";
 
-const itemRouter = Router();
+const itemRouter = Router(); 
+////이게 const router =express.router();
 
 // item 등록 api
 itemRouter.post("/register-item", async (req, res, next) => {
