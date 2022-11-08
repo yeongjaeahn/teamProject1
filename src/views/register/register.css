@@ -1,8 +1,57 @@
-*{ 
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
   text-decoration: none;
+  list-style: none;
 }
+
+a {
+  color: black;
+}
+
+.field-wrapper{
+  padding-top: 200px;
+}
+
+/* -----------header------------------------------- */
+header {
+  width: 100%;
+  padding: none;
+  position: fixed;
+  z-index: 100;
+  transition: all 2s;
+}
+header a {
+  color: black
+}
+
+.down {
+  background-color: rgb(0, 0, 0, 0.6);
+  transition: all 1.5s;
+}
+.down1 {
+  color: rgb(255, 255, 255);
+  transition: all 0.7s;
+}
+
+.header-wrap {
+  width: 1100px;
+  padding: 30px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+header .menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+header .menu ul li {
+  padding: 0 10px;
+  text-align: center;
+}
+/* ------------------ */
 
 /* 여기서부터는 회원가입 */
 .register-wrapper {
@@ -12,7 +61,6 @@
   min-height: 300px; */
   height: auto;
   margin: 0 auto;
-
 }
 
 .register {
