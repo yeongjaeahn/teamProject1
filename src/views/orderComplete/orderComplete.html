@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="cartEmpty.css" />
-    <title>EMPTY ?!</title>
+    <link rel="stylesheet" href="orderComplete.css" />
+    <title>ORDER</title>
+    <script src="order.js" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </head>
   <body>
     <div class="all">
@@ -22,13 +24,15 @@
           </div>
         </div>
       </header>
-      <section class="cart-wrapper">
-        <div class="cart-field">
-          <div class="cart-title">
-            <span>장바구니</span>
-            <span class="cart-size">(0)</span>
-          </div>
-          <div class="cart-item">마음에 드는게 없으신가요?</div>
+      <section class="order-body-wrap">
+        <div class="order-box">
+            <p>주문이 완료되었습니다!</p>
+            <div class="btn-wrapper">
+              <a href="../myPage/myPage.html"><button type="submit" class="submit-button" id="login-btn">
+                주문내역 보기
+              </button></a>
+              <a href="../home/home.html"><button class="submit-button" id="signup-btn">쇼핑 계속하기</button></a>
+            </div>
         </div>
       </section>
     </div>
