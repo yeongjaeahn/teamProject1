@@ -80,3 +80,7 @@ async function getData() {
   }
 }
 getData();
+
+//  로그인 상태변경에 따른 나비바 표현
+
+// if 문으로 로그인 여부에 따라 메뉴 li - 로그아웃 , 마이페이지 , 관리자 로그인 hidden 클래스 제거 , 로그인 은 hidden 클래스 부여

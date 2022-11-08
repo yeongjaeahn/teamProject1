@@ -45,7 +45,7 @@ color:#777;
 margin: 0 0 12px;
 }
 
-#emailinput, #fullnameinput, #passwordinput, #passwordConfirminput {
+#emailInput, #fullNameInput, #passwordInput, #passwordConfirmInput {
 border: 1px solid #ddd;
 
 font-size: 14px;
@@ -80,7 +80,7 @@ margin: 20px 0 0;
 text-align: center;
 } 
 
-#btn-register {
+.btn-register {
 font-size: 14px;
 width: 240px;
 height: 54px;
@@ -92,7 +92,7 @@ cursor: pointer;
 transition: all 0.2s;
 }
 
-#btn-register:hover {
+.btn-register:hover {
 background-color: #fff;
 border-color: #fff;
 color: #222;

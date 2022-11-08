@@ -22,10 +22,17 @@ function addAllEvents() {
   submitButton.addEventListener("click", handleSubmit);
 }
 
+<<<<<<< HEAD
 // 회원가입 진행
-async function handleSubmit(e) {
-  e.preventDefault();
+=======
 
+// 회원가입 진행 => 이벤트에 사용할 함수
+>>>>>>> a04e4759e557a4ff97e09cb2b8a5d9ed744b89f1
+async function handleSubmit(e) {
+  
+  e.preventDefault();  // 새로고침 방지역할
+
+  //입력값 가져오기
   const email = emailInput.value;
   const fullName = fullNameInput.value;
   const password = passwordInput.value;
@@ -37,6 +44,11 @@ async function handleSubmit(e) {
   const isPasswordValid = password.length >= 6;
   const isPasswordSame = password === passwordConfirm;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a04e4759e557a4ff97e09cb2b8a5d9ed744b89f1
   if (!isFullNameValid || !isPasswordValid) {
     return alert("이름은 2글자 이상, 비밀번호는 6글자 이상이어야 합니다.");
   }
@@ -49,10 +61,19 @@ async function handleSubmit(e) {
     return alert("비밀번호가 일치하지 않습니다.");
   }
 
+
+
+
+
   // 회원가입 api 요청
+  // 여기서부터 모르겠다!
+  
   try {
+    // 객체 만들기
     const data = { fullName, email, password };
 
+
+    // 보내기
     await Api.post("/api/register", data);
 
     alert(`정상적으로 회원가입되었습니다.`);
@@ -64,3 +85,6 @@ async function handleSubmit(e) {
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
   }
 }
+
+
+

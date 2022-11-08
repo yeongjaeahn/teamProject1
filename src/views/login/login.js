@@ -2,9 +2,9 @@ import * as Api from "/api.js";
 import { validateEmail } from "/useful-functions.js";
 
 // 요소(element), input 혹은 상수
-const emailInput = document.querySelector("#emailInput");
-const passwordInput = document.querySelector("#passwordInput");
-const submitButton = document.querySelector("#submitButton");
+const emailInput = document.querySelector("#login-input");
+const passwordInput = document.querySelector("#password-input");
+const submitButton = document.querySelector("#login-btn");
 
 addAllElements();
 addAllEvents();
