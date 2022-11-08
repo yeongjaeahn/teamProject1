@@ -10,7 +10,6 @@ const passwordConfirmInput = document.querySelector("#passwordConfirmInput");
 //확인 버튼
 const submitButton = document.querySelector("#submitButton");
 
-
 addAllElements();
 addAllEvents();
 
@@ -19,12 +18,9 @@ async function addAllElements() {}
 
 // 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllEvents() {
-
   //가입하기 버튼
   submitButton.addEventListener("click", handleSubmit);
-
 }
-
 
 // 회원가입 진행
 async function handleSubmit(e) {
@@ -35,20 +31,11 @@ async function handleSubmit(e) {
   const password = passwordInput.value;
   const passwordConfirm = passwordConfirmInput.value;
 
-
   // 잘 입력했는지 확인
   const isEmailValid = validateEmail(email);
   const isFullNameValid = fullName.length >= 2;
   const isPasswordValid = password.length >= 6;
   const isPasswordSame = password === passwordConfirm;
-
-
-
-
-  
-
-
-
 
   if (!isFullNameValid || !isPasswordValid) {
     return alert("이름은 2글자 이상, 비밀번호는 6글자 이상이어야 합니다.");
