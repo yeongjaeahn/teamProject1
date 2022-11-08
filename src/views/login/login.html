@@ -6,28 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="login.css" />
-<<<<<<< HEAD
-=======
+
     <script src="login.js" type="module" defer></script>
     <script src="js/jquery-3.6.0.js"></script>
     <title>연습</title>
->>>>>>> a04e4759e557a4ff97e09cb2b8a5d9ed744b89f1
   </head>
   <body>
-    <div class="all">
-      <header class="header">
-        <div class="name">
-          <h1>가명 : 19조와 4분의 3</h1>
-        </div>
-        <nav class="nav">
+    <header>
+      <div class="header-wrap">
+        <div class="logo"><a href="#">logo</a></div>
+        <div class="menu">
           <ul>
-            <il>HOME</il>
-            <il>SHOP</il>
-            <il>Log In</il>
-            <il>Cart</il>
+            <li><a href="/">HOME</a></li>
+            <li><a href="../shop/shop.html" role="button">SHOP</a></li>
+            <li>
+              <a href="../login/login.html" role="button">Log in</a>
+            </li>
+
+            <li><a href="../cart/cart.html">Cart</a></li>
+            <li><a href="#" hidden class="logOut">로그아웃</a></li>
+            <li><a href="#" hidden class="myPage">마이페이지</a></li>
+            <li><a href="#" hidden class="adminLogin">관리자 로그인</a></li>
           </ul>
-        </nav>
-      </header>
+        </div>
+      </div>
+    </header>
+    <div class="all">
       <section class="login-wrapper">
         <div class="login-field">
           <p class="login-title">로그인</p>

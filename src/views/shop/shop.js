@@ -1,3 +1,4 @@
+// ----------------------------------
 let item;
 let html = "";
 async function getData() {
@@ -16,7 +17,7 @@ async function getData() {
     <div class="product">
     
     <div class="product-info"">
-      <a data-group="all ${item[i].category}" href=#>${item[i].category}</a>
+      <div data-type=" ${item[i].category}" href=#>${item[i].category}</div>
       <a href="/item/${item[i]._id}"> <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" /></a>
       <p class="name">${item[i].name}</p>
       <p class="price">${item[i].price}</p>
@@ -29,6 +30,26 @@ async function getData() {
   }
 
   itemList.innerHTML = html;
+
+  // 탭 필터 메뉴
+  const itemTab = document.querySelector(".item-tab");
+  const items = document.querySelector(".item-list");
+  const product = document.querySelectorAll(".product");
+
+  itemTab.addEventListener("click", (e) => {
+    const filter =
+      e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter == null) {
+      return;
+    }
+    product.forEach((product) => {
+      if (filter === "*" || filter === product.dataset.type) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  });
 }
 
 getData();
