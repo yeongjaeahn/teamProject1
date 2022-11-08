@@ -102,5 +102,118 @@ Number.prototype.formatNumber = function () {
   return nstr;
 };
 
-let sumnail = localStorage.getItem("img");
-console.log(sumnail);
+// ----------------로컬 스토리지 데이터 반영
+html = "";
+
+for (let i = 0; i < 2; i++) {
+  let row = document.querySelector(".row");
+  let name = JSON.parse(localStorage.getItem("name"));
+  let price = JSON.parse(localStorage.getItem("price"));
+  let image = JSON.parse(localStorage.getItem("img"));
+  console.log(name[i]);
+  row.insertAdjacentHTML(
+    "beforeend",
+    `
+<div class="subdiv">
+  <div class="check">
+    <input
+      type="checkbox"
+      name="buy"
+      value="260"
+      checked=""
+      onclick="javascript:basket.checkItem();"
+    />&nbsp;
+  </div>
+  <div class="img"><img src="${image[i]}" width="60" /></div>
+  <div class="pname">
+    <span>${name[i]}</span>
+  </div>
+</div>
+<div class="subdiv">
+  <div class="basketprice">
+    <input
+      type="hidden"
+      name="p_price"
+      id="p_price1"
+      class="p_price"
+      value="20000"
+    />${price[i]}원
+  </div>
+  <div class="num">
+    <div class="updown">
+      <input
+        type="text"
+        name="p_num1"
+        id="p_num1"
+        size="2"
+        maxlength="4"
+        class="p_num"
+        value="2"
+        onkeyup="javascript:basket.changePNum(1);"
+      />
+      <span onclick="javascript:basket.changePNum(1);"
+        ><i class="fas fa-arrow-alt-circle-up up"></i
+      ></span>
+      <span onclick="javascript:basket.changePNum(1);"
+        ><i class="fas fa-arrow-alt-circle-down down"></i
+      ></span>
+    </div>
+  </div>
+  <div class="sum">40,000원</div>
+</div>
+<div class="subdiv">
+  <div class="basketcmd">
+    <a
+      href="javascript:void(0)"
+      class="abutton"
+      onclick="javascript:basket.delItem();"
+      >삭제</a
+    >
+  </div>
+</div>
+
+`
+  );
+}
+
+// let itemList = document.querySelector(".item-list");
+//   for (let i = 0; i < item.length; i++) {
+//     html += `
+//           <div class="product">
+//             <div class="product-info"">
+//               <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+//               <p class="name">${item[i].name}</p>
+//               <p class="price">${item[i].price}</p>
+//               <button class="wish">찜하기<button>
+//             </div>
+//           </div>
+//         `;
+//   }
+
+// let wish = document.querySelectorAll(".wish");
+//   for (let i = 0; i < wish.length; i++) {
+//     let wish = document.querySelectorAll(".wish")[i];
+//     wish.addEventListener("click", function (e) {
+//       let price = e.target.previousElementSibling.innerText;
+//       let name =
+//         e.target.previousElementSibling.previousElementSibling.innerText;
+//       let sumnail =
+//         e.target.previousElementSibling.previousElementSibling
+//           .previousElementSibling.src;
+//       if (localStorage.getItem("name") != null) {
+//         let takeName = JSON.parse(localStorage.name);
+//         let takePrice = JSON.parse(localStorage.price);
+//         let takeImg = JSON.parse(localStorage.img);
+//         takeName.push(name);
+//         takePrice.push(price);
+//         takeImg.push(sumnail);
+//         localStorage.setItem("name", JSON.stringify(takeName));
+//         localStorage.setItem("price", JSON.stringify(takePrice));
+//         localStorage.setItem("img", JSON.stringify(takeImg));
+//       } else {
+//         localStorage.setItem("name", JSON.stringify([name]));
+//         localStorage.setItem("price", JSON.stringify([price]));
+//         localStorage.setItem("img", JSON.stringify([sumnail]));
+//       }
+//     });
+//   }
