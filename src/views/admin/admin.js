@@ -1,5 +1,5 @@
-// import { upload } from "../../utils/multer";
 import * as Api from "/api.js";
+import { addImageToS3 } from "../aws-s3.js";
 
 const nameInput = document.querySelector("#nameInput");
 const shortNameInput = document.querySelector("#shortNameInput");
@@ -8,7 +8,7 @@ const categoryInput = document.querySelector("#categoryInput");
 const imageEl = document.querySelector("#imageInput");
 const thumbnailEl = document.querySelector("#thumbnailInput");
 const submitButton = document.querySelector("#submitButton");
-const fReader = new FileReader();
+// const registerItemForm = document.querySelector("#registerItemForm");
 
 addAllElements();
 addAllEvents();
@@ -25,10 +25,17 @@ async function handleSubmit(e) {
 
   const name = nameInput.value;
   const shortName = shortNameInput.value;
-  const price = priceInput.value;
+  const price = parseInt(priceInput.value);
   const category = categoryInput.value;
-  let image = imageEl.files[0];
-  let thumbnail = thumbnailEl.value;
+  const image = imageEl.files[0];
+  const thumbnail = thumbnailEl.files[0];
+
+  if (image.size > 3e6) {
+    return alert("사진은 최대 2.5MB 크기까지 업로드 가능합니다.");
+  }
+
+  // S3에 이미지가 속할 폴더 이름은 카테고리명으로 함.
+  const categoryName = category;
 
   try {
     // await Api.post(
@@ -39,14 +46,15 @@ async function handleSubmit(e) {
     //     console.log(imgFile);
     //   }
     // );
-    console.log(image);
-    const data = { name, shortName, price, category, image, thumbnail };
+    const imageKey = await addImageToS3(imageEl, categoryName);
+    const data = { name, shortName, price, category, imageKey };
 
     await Api.post("/api/register-item", data);
 
     alert(`정상적으로 물품이 등록되었습니다.`);
 
     // window.location = "/api/itemlist";
+    // registerItemForm.reset();
   } catch (err) {
     console.log(err.stack);
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
