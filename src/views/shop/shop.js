@@ -10,22 +10,21 @@ async function getData() {
   }
 
   let itemList = document.querySelector(".item-list");
+
   for (let i = 0; i < item.length; i++) {
     html += `
-      <div class="product">
-        <div class="product-info">
-        
-          <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-        
-          <p class="name">${item[i].name}</p>
-          <p class="price">${item[i].price}</p>
-        </div>
-      </div>
+    <div class="product">
+    <div class="product-info"">
+      <a data-group="all ${item[i].category}" href=#>${item[i].category}</a>
+      <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+      <p class="name">${item[i].name}</p>
+      <p class="price">${item[i].price}</p>
+      <button class="wish">찜하기<button>
+    </div>
+  </div>
     `;
   }
 
-  // document.querySelector("#first-name").innerHTML = itemName;
-  // document.querySelector(".price").innerHTML = itemPrice;
   itemList.innerHTML = html;
 }
 
