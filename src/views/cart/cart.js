@@ -18,8 +18,10 @@ let basket = {
   delAllItem: function () {
     document.querySelectorAll(".row.data").forEach(function (item) {
       item.remove();
+      localStorage.removeItem("name");
+      localStorage.removeItem("price");
+      localStorage.removeItem("img");
     });
-    //AJAX 서버 업데이트 전송
 
     //전송 처리 결과가 성공이면
     this.totalCount = 0;
@@ -76,7 +78,6 @@ let basket = {
       );
     item.parentElement.parentElement.nextElementSibling.textContent =
       (newval * price).formatNumber() + "원";
-    //AJAX 업데이트 전송
 
     //전송 처리 결과가 성공이면
     this.reCalc();
@@ -105,72 +106,75 @@ Number.prototype.formatNumber = function () {
 // ----------------로컬 스토리지 데이터 반영
 // html = "";
 
-for (let i = 0; i < 2; i++) {
-  let row = document.querySelector(".row");
+for (let i = 0; i < localStorage.length; i++) {
+  let rowWrap = document.querySelector(".row-wrap");
   let name = JSON.parse(localStorage.getItem("name"));
   let price = JSON.parse(localStorage.getItem("price"));
   let image = JSON.parse(localStorage.getItem("img"));
   console.log(name[i]);
-  row.innerHTML = `
-<div class="subdiv">
-  <div class="check">
-    <input
-      type="checkbox"
-      name="buy"
-      value="260"
-      checked=""
-      onclick="javascript:basket.checkItem();"
-    />&nbsp;
-  </div>
-  <div class="img"><img src="${image[i]}" width="60" /></div>
-  <div class="pname">
-    <span>${name[i]}</span>
-  </div>
-</div>
-<div class="subdiv">
-  <div class="basketprice">
-    <input
-      type="hidden"
-      name="p_price"
-      id="p_price1"
-      class="p_price"
-      value="20000"
-    />${price[i]}원
-  </div>
-  <div class="num">
-    <div class="updown">
+  rowWrap.insertAdjacentHTML(
+    "beforeend",
+    `<div class="row data">
+  <div class="subdiv">
+    <div class="check">
       <input
-        type="text"
-        name="p_num1"
-        id="p_num1"
-        size="2"
-        maxlength="4"
-        class="p_num"
-        value="2"
-        onkeyup="javascript:basket.changePNum(1);"
-      />
-      <span onclick="javascript:basket.changePNum(1);"
-        ><i class="fas fa-arrow-alt-circle-up up"></i
-      ></span>
-      <span onclick="javascript:basket.changePNum(1);"
-        ><i class="fas fa-arrow-alt-circle-down down"></i
-      ></span>
+        type="checkbox"
+        name="buy"
+        value="260"
+        checked=""
+        onclick="javascript:basket.checkItem();"
+      />&nbsp;
+    </div>
+    <div class="img"><img src="${image[i]}" width="60px"  /></div>
+    <div class="pname">
+      <span>${name[i]}</span>
     </div>
   </div>
-  <div class="sum">40,000원</div>
-</div>
-<div class="subdiv">
-  <div class="basketcmd">
-    <a
-      href="javascript:void(0)"
-      class="abutton"
-      onclick="javascript:basket.delItem();"
-      >삭제</a
-    >
+  <div class="subdiv">
+    <div class="basketprice">
+      <input
+        type="hidden"
+        name="p_price"
+        id="p_price1"
+        class="p_price"
+        value="20000"
+      />${price[i]}원
+    </div>
+    <div class="num">
+      <div class="updown">
+        <input
+          type="text"
+          name="p_num1"
+          id="p_num1"
+          size="2"
+          maxlength="4"
+          class="p_num"
+          value="2"
+          onkeyup="javascript:basket.changePNum(1);"
+        />
+        <span onclick="javascript:basket.changePNum(1);"
+          ><i class="fas fa-arrow-alt-circle-up up"></i
+        ></span>
+        <span onclick="javascript:basket.changePNum(1);"
+          ><i class="fas fa-arrow-alt-circle-down down"></i
+        ></span>
+      </div>
+    </div>
+    <div class="sum">0 원</div>
   </div>
-</div>
-
-`;
+  <div class="subdiv">
+    <div class="basketcmd">
+      <a
+        href="javascript:void(0)"
+        class="abutton"
+        onclick="javascript:basket.delItem();"
+        >삭제</a
+      >
+    </div>
+  </div>
+  </div>
+  `
+  );
 }
 
 // let itemList = document.querySelector(".item-list");
