@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 import { model } from "mongoose";
 import { UserSchema } from "../schemas/user-schema";
 
@@ -31,6 +32,12 @@ export class UserModel {
 
     const updatedUser = await User.findOneAndUpdate(filter, update, option);
     return updatedUser;
+  }
+
+  async delete({ email }) {
+    console.log({ email });
+    await User.deleteOne({ email });
+    return;
   }
 }
 

@@ -4,6 +4,7 @@ import is from "@sindresorhus/is";
 import { loginRequired } from "../middlewares";
 import { userService } from "../services";
 import { userModel } from "../db";
+const mongoose = require("mongoose");
 
 const userRouter = Router();
 
@@ -90,6 +91,15 @@ userRouter.patch("/users/:_Id", async function (req, res, next) {
     next(new Error("User Not Founded"));
     return;
   }
+  res.status(200).json(user);
+});
+
+//회원탈퇴 api
+userRouter.delete("/users/:_Id", async function (req, res, next) {
+  const userEmail = req.params._Id;
+  console.log(userEmail);
+  await userModel.delete({ email: userEmail });
+  res.send({ 탈퇴이메일: userEmail });
 });
 
 // // 사용자 정보 수정

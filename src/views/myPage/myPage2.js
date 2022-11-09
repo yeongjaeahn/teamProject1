@@ -20,6 +20,7 @@ async function addAllElements() {}
 // 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
 function addAllEvents() {
   saveButton.addEventListener("click", save);
+  quitButton.addEventListener("click", quit);
 }
 
 const Id = window.location.pathname;
@@ -28,6 +29,8 @@ const _Id = Id.slice(11, Id.length - 1);
 console.log(_Id);
 
 emailInput.value = _Id;
+
+//회원정보 수정하기
 
 async function save(e) {
   e.preventDefault();
@@ -44,9 +47,32 @@ async function save(e) {
     const data = { email, name, phoneNumber, address };
     const result = await Api.patch(`/api/users/${_Id}`, data);
     console.log(result);
+    // if (result.result == "error") {
+    //   alert(
+    //     "문제가 발생하였습니다. 확인 후 다시 시도해 주세요: User Not Founded"
+    //   );
+    //   return;
+    // }
     alert("정상적으로 수정되었습니다.");
   } catch (err) {
-    // console.error(err.stack);
+    console.error(err.stack);
+    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+  }
+}
+
+//회원탈퇴하기
+async function quit(e) {
+  e.preventDefault();
+  const email = emailInput.value;
+
+  try {
+    const data = { email };
+    console.log(data);
+    const result = await Api.delete(`/api/users/${_Id}`, data);
+    console.log(result);
+    alert("탈퇴하였습니다.");
+  } catch (err) {
+    console.error(err.stack);
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
   }
 }

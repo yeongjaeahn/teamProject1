@@ -80,22 +80,20 @@ async function patch(url, data) {
 
   //   throw new Error(reason);
   // }
-
+  console.log(res);
   const result = await res.json();
-
   return result;
 }
 
 // 아래 함수명에 관해, delete 단어는 자바스크립트의 reserved 단어이기에,
 // 여기서는 우선 delete 대신 del로 쓰고 아래 export 시에 delete로 alias 함.
-async function del(endpoint, params = "", data = {}) {
-  const apiUrl = `${endpoint}/${params}`;
+async function del(url = "", data = {}) {
   const bodyData = JSON.stringify(data);
 
-  console.log(`DELETE 요청 ${apiUrl}`);
+  console.log(`DELETE 요청 ${url}`);
   console.log(`DELETE 요청 데이터: ${bodyData}`);
 
-  const res = await fetch(apiUrl, {
+  const res = await fetch(url, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -112,8 +110,9 @@ async function del(endpoint, params = "", data = {}) {
     throw new Error(reason);
   }
 
+  console.log(res);
   const result = await res.json();
-
+  //res.json(); 하면 서버에서 res메서드를 이용해 보내온 객체데이터만 json으로 만들어서 반환함.
   return result;
 }
 
