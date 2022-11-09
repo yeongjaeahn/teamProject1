@@ -24,8 +24,9 @@ export class UserModel {
     return users;
   }
 
-  async update({ userId, update }) {
-    const filter = { _id: userId };
+  async update({ userEmail, update }) {
+    console.log(userEmail, update);
+    const filter = { email: userEmail };
     const option = { returnOriginal: false };
 
     const updatedUser = await User.findOneAndUpdate(filter, update, option);
