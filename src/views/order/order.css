@@ -4,6 +4,7 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -11,33 +12,47 @@ a {
 }
 
 /* -----------header------------------------------- */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo p {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   width: 100%;
-  padding: none;
-  position: fixed;
-  z-index: 100;
-  transition: all 2s;
+  font-weight: bold;
 }
+
 header a {
   color: black
 }
 
-.down {
-  background-color: rgb(0, 0, 0, 0.6);
-  transition: all 1.5s;
-}
-.down1 {
-  color: rgb(255, 255, 255);
-  transition: all 0.7s;
+header h2 {
+  margin: 0 auto;
 }
 
 .header-wrap {
-  width: 1100px;
+  width: auto;
+  max-width: 1000px;
   padding: 30px 0;
-  margin-bottom: 50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -48,6 +63,17 @@ header .menu ul {
 header .menu ul li {
   padding: 0 10px;
   text-align: center;
+}
+
+.shop-section1 {
+  width: 100%;
+  background-color: rgb(238, 237, 237);
+  padding: 10px 0;
+}
+
+.shop-section1 h2 {
+  width: 1000px;
+  margin: 0 auto;
 }
 /* ------------------ */
 
@@ -67,22 +93,23 @@ a:visited {
 
 section {
   width: 550px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   padding: 24px 16px;
-  margin-top: 100px;
   margin-bottom: 16px;
 }
+
+
+
 /* 테두리 css 입힌 곳 */
 .order-box {
-  border-bottom: solid 16px #e5e5e5;
+  /* border-bottom: solid 16px #e5e5e5; */
   width: 100%;
   margin-bottom: 2rem;
   padding: 0.5rem;
   background-color: #fff;
   border-radius: 0.75rem;
-  box-shadow: 0 0.1rem 0.15rem rgb(40 36 89 / 20%),
-    0 0.25rem 0.4rem rgb(40 36 89 / 15%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .adress-btn {
