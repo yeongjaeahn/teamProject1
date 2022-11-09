@@ -1,3 +1,11 @@
+import { createNavbar } from "../navbar.js";
+
+addAllElements();
+
+async function addAllElements() {
+  createNavbar();
+}
+
 // navibar 스크롤시 색상변경
 
 window.addEventListener("scroll", function () {
