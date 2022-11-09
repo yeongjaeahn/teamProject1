@@ -66,3 +66,16 @@ export const blockLogin = () => {
     window.location.replace("/");
   }
 };
+
+export const getUrlParams = () => {
+  const pathname = window.location.pathname;
+  const urlParams = new URLSearchParams(pathname);
+
+  const result = {};
+
+  for (const [key, value] of urlParams) {
+    result[key] = value;
+  }
+
+  return result;
+};
