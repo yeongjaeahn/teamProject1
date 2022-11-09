@@ -42,7 +42,9 @@ header {
 header a {
   color: aliceblue;
 }
-
+header .logo {
+  width: 5%;
+}
 .down {
   background-color: rgb(0, 0, 0, 0.6);
   transition: all 1.5s;
@@ -84,6 +86,7 @@ header .menu ul li {
   color: aliceblue;
   padding: 50px 0;
 }
+
 .section2 .item-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
