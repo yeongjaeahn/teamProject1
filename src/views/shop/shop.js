@@ -14,14 +14,16 @@ async function getData() {
   for (let i = 0; i < item.length; i++) {
     html += `
     <div class="product">
-    <div class="product-info">
-      <div><${item[i].category}/div>
-      <a href="/item/${item[i]._id}"> <img src="${item[i].image}" alt="" /></a>
-      <p class="name">${item[i].name}</p>
-      <p class="price">${item[i].price}</p>
-      <button class="wish">찜하기<button>
+      <div class="product-info">
+        <div>${item[i].category}</div>
+          <a href="/item/${item[i]._id}">
+            <img src="${item[i].image}" alt="" />
+          </a>
+          <p class="name">${item[i].name}</p>
+          <p class="price">${item[i].price}</p>
+        <button class="wish">찜하기</button>
+      </div>
     </div>
-  </div>
     `;
   }
 
