@@ -1,62 +1,99 @@
-import * as Api from "/api.js";
-import { addImageToS3 } from "../aws-s3.js";
+(function ($) {
+  var $window = $(window),
+    $body = $("body"),
+    $nav = $("#nav");
 
-const nameInput = document.querySelector("#nameInput");
-const shortNameInput = document.querySelector("#shortNameInput");
-const priceInput = document.querySelector("#priceInput");
-const categoryInput = document.querySelector("#categoryInput");
-const imageEl = document.querySelector("#imageInput");
-const thumbnailEl = document.querySelector("#thumbnailInput");
-const submitButton = document.querySelector("#submitButton");
-// const registerItemForm = document.querySelector("#registerItemForm");
+  // Breakpoints.
+  breakpoints({
+    wide: ["961px", "1880px"],
+    normal: ["961px", "1620px"],
+    narrow: ["961px", "1320px"],
+    narrower: ["737px", "960px"],
+    mobile: [null, "736px"],
+  });
 
-addAllElements();
-addAllEvents();
+  // Play initial animations on page load.
+  $window.on("load", function () {
+    window.setTimeout(function () {
+      $body.removeClass("is-preload");
+    }, 100);
+  });
 
-// html에 요소를 추가하는 함수들을 묶어주어서 코드를 깔끔하게 하는 역할임.
-async function addAllElements() {}
+  // Nav.
+  var $nav_a = $nav.find("a");
 
-function addAllEvents() {
-  submitButton.addEventListener("click", handleSubmit);
-}
+  $nav_a
+    .addClass("scrolly")
+    .on("click", function (e) {
+      var $this = $(this);
 
-async function handleSubmit(e) {
-  e.preventDefault();
+      // External link? Bail.
+      if ($this.attr("href").charAt(0) != "#") return;
 
-  const name = nameInput.value;
-  const shortName = shortNameInput.value;
-  const price = parseInt(priceInput.value);
-  const category = categoryInput.value;
-  const image = imageEl.files[0];
-  const thumbnail = thumbnailEl.files[0];
+      // Prevent default.
+      e.preventDefault();
 
-  if (image.size > 3e6) {
-    return alert("사진은 최대 2.5MB 크기까지 업로드 가능합니다.");
-  }
+      // Deactivate all links.
+      $nav_a.removeClass("active");
 
-  // S3에 이미지가 속할 폴더 이름은 카테고리명으로 함.
-  const categoryName = category;
+      // Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
+      $this.addClass("active").addClass("active-locked");
+    })
+    .each(function () {
+      var $this = $(this),
+        id = $this.attr("href"),
+        $section = $(id);
 
-  try {
-    // await Api.post(
-    //   "/api/register-item",
-    //   upload.single("image"),
-    //   async (res, req) => {
-    //     const imgFile = req.file;
-    //     console.log(imgFile);
-    //   }
-    // );
-    const imageKey = await addImageToS3(imageEl, categoryName);
-    const data = { name, shortName, price, category, imageKey };
+      // No section for this link? Bail.
+      if ($section.length < 1) return;
 
-    await Api.post("/api/register-item", data);
+      // Scrollex.
+      $section.scrollex({
+        mode: "middle",
+        top: "-10vh",
+        bottom: "-10vh",
+        initialize: function () {
+          // Deactivate section.
+          $section.addClass("inactive");
+        },
+        enter: function () {
+          // Activate section.
+          $section.removeClass("inactive");
 
-    alert(`정상적으로 물품이 등록되었습니다.`);
+          // No locked links? Deactivate all links and activate this section's one.
+          if ($nav_a.filter(".active-locked").length == 0) {
+            $nav_a.removeClass("active");
+            $this.addClass("active");
+          }
 
-    // window.location = "/api/itemlist";
-    // registerItemForm.reset();
-  } catch (err) {
-    console.log(err.stack);
-    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
-  }
-}
+          // Otherwise, if this section's link is the one that's locked, unlock it.
+          else if ($this.hasClass("active-locked"))
+            $this.removeClass("active-locked");
+        },
+      });
+    });
+
+  // Scrolly.
+  $(".scrolly").scrolly();
+
+  // Header (narrower + mobile).
+
+  // Toggle.
+  $(
+    '<div id="headerToggle">' +
+      '<a href="#header" class="toggle"></a>' +
+      "</div>"
+  ).appendTo($body);
+
+  // Header.
+  $("#header").panel({
+    delay: 500,
+    hideOnClick: true,
+    hideOnSwipe: true,
+    resetScroll: true,
+    resetForms: true,
+    side: "left",
+    target: $body,
+    visibleClass: "header-visible",
+  });
+})(jQuery);

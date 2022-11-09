@@ -126,6 +126,36 @@ class UserService {
 
     return user;
   }
+
+  async setRole(userId, role) {
+    const updatedUser = await this.userModel.update({
+      userId,
+      update: { role },
+    });
+
+    return updatedUser;
+  }
+
+  async getUserData(userId) {
+    const user = await this.userModel.findById(userId);
+
+    // db에서 찾지 못한 경우, 에러 메시지 반환
+    if (!user) {
+      throw new Error("가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
+    }
+
+    return user;
+  }
+
+  async deleteUserData(userId) {
+    const { deletedCount } = await this.userModel.deleteById({ userId });
+
+    if (deletedCount === 0) {
+      throw new Error(`${userId} 사용자 데이터의 삭제에 실패했습니다.`);
+    }
+
+    return { result: "success" };
+  }
 }
 
 const userService = new UserService(userModel);

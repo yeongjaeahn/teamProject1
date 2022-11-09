@@ -16,7 +16,7 @@ async function getData() {
     <div class="product">
     <div class="product-info"">
       <a data-group="all ${item[i].category}" href=#>${item[i].category}</a>
-      <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
+      <img src="${item[i].image}" alt="" />
       <p class="name">${item[i].name}</p>
       <p class="price">${item[i].price}</p>
       <button class="wish">찜하기<button>
