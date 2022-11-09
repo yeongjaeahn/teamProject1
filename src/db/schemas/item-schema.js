@@ -19,12 +19,11 @@ const ItemSchema = new Schema(
       required: true,
     },
     image: {
-      data: Buffer,
-      contentType: String,
+      type: String,
+      required: true,
     },
     thumbnail: {
-      data: Buffer,
-      contentType: String,
+      type: String,
     },
   },
   {
