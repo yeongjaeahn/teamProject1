@@ -10,27 +10,67 @@
 
     <!-- 폰트 -->
     <!--   font-family: 'Noto Sans KR', sans-serif;;  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
     <!--    font-family: 'Work Sans', sans-serif; -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-
     <!-- 회원가입 부분 -->
+
     <div class="register-wrapper">
       <div class="register">
-        <form class="field-wrapper" id="field-wrapper-Form">
+        <form
+          class="field-wrapper"
+          id="field-wrapper-Form"
+          action="/api/register"
+          method="POST"
+        >
           <div class="header">
             <span class="title">회원가입</span>
           </div>
 
           <div class="row">
             <label for="emailInput" class="title">이메일 *</label>
+<<<<<<< HEAD
+            <input id="emailInput" type="email" autocomplete="on" />
+          </div>
+          <div class="row">
+            <label for="fullNameInput" class="title">이름 *</label>
+            <input id="fullNameInput" type="text" autocomplete="on" />
+          </div>
+          <div class="row">
+            <label for="passwordInput" class="title">비밀번호 *</label>
+            <input
+              id="passwordInput"
+              type="password"
+              placeholder="6이상 입력해주세요"
+              autocomplete="off"
+            />
+          </div>
+          <div class="row">
+            <label for="passwordConfirmInput" class="title"
+              >비밀번호 확인 *</label
+            >
+            <input
+              id="passwordConfirmInput"
+              type="password"
+              autocomplete="off"
+            />
+          </div>
+          <div class="btn-wrapper" id="submitButton">
+            <button type="submit" id="btn-register">가입하기</button>
+=======
             <input id="emailInput" type="email" autocomplete="on"/>
           </div>
           <div class="row">
@@ -82,18 +122,10 @@
 
           <div class="btn-wrapper" id="">
             <button type="submit" class="btn-register" id="submitButton">가입하기</button>
+>>>>>>> a04e4759e557a4ff97e09cb2b8a5d9ed744b89f1
           </div>
         </form>
-
-
-
-        
-
       </div>
     </div>
-
-
-
-
   </body>
 </html>

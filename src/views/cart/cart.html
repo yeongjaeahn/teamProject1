@@ -11,9 +11,27 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="cart.css" />
-    <script type="text/javascript" src="cart.js"></script>
   </head>
   <body>
+    <header>
+      <div class="header-wrap">
+        <div class="logo"><a href="#">logo</a></div>
+        <div class="menu">
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="../shop/shop.html" role="button">SHOP</a></li>
+            <li>
+              <a href="../login/login.html" role="button">Log in</a>
+            </li>
+
+            <li><a href="../cart/cart.html">Cart</a></li>
+            <li><a href="#" hidden class="logOut">로그아웃</a></li>
+            <li><a href="#" hidden class="myPage">마이페이지</a></li>
+            <li><a href="#" hidden class="adminLogin">관리자 로그인</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <form
       name="orderform"
       id="orderform"
@@ -41,183 +59,67 @@
           <div class="split"></div>
         </div>
 
-        <div class="row data">
-          <div class="subdiv">
-            <div class="check">
-              <input
-                type="checkbox"
-                name="buy"
-                value="260"
-                checked=""
-                onclick="javascript:basket.checkItem();"
-              />&nbsp;
-            </div>
-            <div class="img"><img src="./img/basket1.jpg" width="60" /></div>
-            <div class="pname">
-              <span> 어둠의 지팡이</span>
-            </div>
-          </div>
-          <div class="subdiv">
-            <div class="basketprice">
-              <input
-                type="hidden"
-                name="p_price"
-                id="p_price1"
-                class="p_price"
-                value="20000"
-              />20,000원
-            </div>
-            <div class="num">
-              <div class="updown">
+        <div class="row-wrap">
+          <!-- <div class="row data">
+            <div class="subdiv">
+              <div class="check">
                 <input
-                  type="text"
-                  name="p_num1"
-                  id="p_num1"
-                  size="2"
-                  maxlength="4"
-                  class="p_num"
-                  value="2"
-                  onkeyup="javascript:basket.changePNum(1);"
-                />
-                <span onclick="javascript:basket.changePNum(1);"
-                  ><i class="fas fa-arrow-alt-circle-up up"></i
-                ></span>
-                <span onclick="javascript:basket.changePNum(1);"
-                  ><i class="fas fa-arrow-alt-circle-down down"></i
-                ></span>
+                  type="checkbox"
+                  name="buy"
+                  value="261"
+                  checked=""
+                  onclick="javascript:basket.checkItem();"
+                />&nbsp;
+              </div>
+              <div class="img"><img src="./img/basket2.jpg" width="60" /></div>
+              <div class="pname">
+                <span>볼드모트 지팡이</span>
               </div>
             </div>
-            <div class="sum">40,000원</div>
-          </div>
-          <div class="subdiv">
-            <div class="basketcmd">
-              <a
-                href="javascript:void(0)"
-                class="abutton"
-                onclick="javascript:basket.delItem();"
-                >삭제</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="row data">
-          <div class="subdiv">
-            <div class="check">
-              <input
-                type="checkbox"
-                name="buy"
-                value="261"
-                checked=""
-                onclick="javascript:basket.checkItem();"
-              />&nbsp;
-            </div>
-            <div class="img"><img src="./img/basket2.jpg" width="60" /></div>
-            <div class="pname">
-              <span>볼드모트 지팡이</span>
-            </div>
-          </div>
-          <div class="subdiv">
-            <div class="basketprice">
-              <input
-                type="hidden"
-                name="p_price"
-                id="p_price2"
-                class="p_price"
-                value="19000"
-              />19,000원
-            </div>
-            <div class="num">
-              <div class="updown">
+            <div class="subdiv">
+              <div class="basketprice">
                 <input
-                  type="text"
-                  name="p_num2"
-                  id="p_num2"
-                  size="2"
-                  maxlength="4"
-                  class="p_num"
-                  value="1"
-                  onkeyup="javascript:basket.changePNum(2);"
-                />
-                <span onclick="javascript:basket.changePNum(2);"
-                  ><i class="fas fa-arrow-alt-circle-up up"></i
-                ></span>
-                <span onclick="javascript:basket.changePNum(2);"
-                  ><i class="fas fa-arrow-alt-circle-down down"></i
-                ></span>
+                  type="hidden"
+                  name="p_price"
+                  id="p_price2"
+                  class="p_price"
+                  value="19000"
+                />19,000원
+              </div>
+              <div class="num">
+                <div class="updown">
+                  <input
+                    type="text"
+                    name="p_num2"
+                    id="p_num2"
+                    size="2"
+                    maxlength="4"
+                    class="p_num"
+                    value="1"
+                    onkeyup="javascript:basket.changePNum(2);"
+                  />
+                  <span onclick="javascript:basket.changePNum(2);"
+                    ><i class="fas fa-arrow-alt-circle-up up"></i
+                  ></span>
+                  <span onclick="javascript:basket.changePNum(2);"
+                    ><i class="fas fa-arrow-alt-circle-down down"></i
+                  ></span>
+                </div>
+              </div>
+              <div class="sum">19,000원</div>
+            </div>
+            <div class="subdiv">
+              <div class="basketcmd">
+                <a
+                  href="javascript:void(0)"
+                  class="abutton"
+                  onclick="javascript:basket.delItem();"
+                  >삭제</a
+                >
               </div>
             </div>
-            <div class="sum">19,000원</div>
           </div>
-          <div class="subdiv">
-            <div class="basketcmd">
-              <a
-                href="javascript:void(0)"
-                class="abutton"
-                onclick="javascript:basket.delItem();"
-                >삭제</a
-              >
-            </div>
-          </div>
-        </div>
-        <div class="row data">
-          <div class="subdiv">
-            <div class="check">
-              <input
-                type="checkbox"
-                name="buy"
-                value="262"
-                checked=""
-                onclick="javascript:basket.checkItem();"
-              />&nbsp;
-            </div>
-            <div class="img"><img src="./img/basket3.jpg" width="60" /></div>
-            <div class="pname">
-              <span>빗자루</span>
-            </div>
-          </div>
-          <div class="subdiv">
-            <div class="basketprice">
-              <input
-                type="hidden"
-                name="p_price"
-                id="p_price3"
-                class="p_price"
-                value="15200"
-              />15,200원
-            </div>
-            <div class="num">
-              <div class="updown">
-                <input
-                  type="text"
-                  name="p_num3"
-                  id="p_num3"
-                  size="2"
-                  maxlength="4"
-                  class="p_num"
-                  value="1"
-                  onkeyup="javascript:basket.changePNum(3);"
-                />
-                <span onclick="javascript:basket.changePNum(3);"
-                  ><i class="fas fa-arrow-alt-circle-up up"></i
-                ></span>
-                <span onclick="javascript:basket.changePNum(3);"
-                  ><i class="fas fa-arrow-alt-circle-down down"></i
-                ></span>
-              </div>
-            </div>
-            <div class="sum">15,200원</div>
-          </div>
-          <div class="subdiv">
-            <div class="basketcmd">
-              <a
-                href="javascript:void(0)"
-                class="abutton"
-                onclick="javascript:basket.delItem();"
-                >삭제</a
-              >
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="right-align basketrowcmd">
@@ -249,5 +151,6 @@
         </div>
       </div>
     </form>
+    <script type="text/javascript" src="cart.js"></script>
   </body>
 </html>

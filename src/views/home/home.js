@@ -29,6 +29,7 @@ $window.on("scroll", function () {
 });
 
 // section 2 상품 목록 가져오기
+
 let item;
 let html = "";
 async function getData() {
@@ -41,7 +42,7 @@ async function getData() {
   }
 
   let itemList = document.querySelector(".item-list");
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < item.length; i++) {
     html += `
           <div class="product">
             <div class="product-info"">
@@ -87,4 +88,8 @@ async function getData() {
     });
   }
 }
+
 getData();
+//  로그인 상태변경에 따른 나비바 표현
+
+// if 문으로 로그인 여부에 따라 메뉴 li - 로그아웃 , 마이페이지 , 관리자 로그인 hidden 클래스 제거 , 로그인 은 hidden 클래스 부여

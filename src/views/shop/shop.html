@@ -8,18 +8,36 @@
     <link rel="stylesheet" href="shop.css" />
   </head>
   <body>
+    <header>
+      <div class="header-wrap">
+        <div class="logo"><a href="#">logo</a></div>
+        <div class="menu">
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="../shop/shop.html" role="button">SHOP</a></li>
+            <li>
+              <a href="../login/login.html" role="button">Log in</a>
+            </li>
+
+            <li><a href="../cart/cart.html">Cart</a></li>
+            <li><a href="#" hidden class="logOut">로그아웃</a></li>
+            <li><a href="#" hidden class="myPage">마이페이지</a></li>
+            <li><a href="#" hidden class="adminLogin">관리자 로그인</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <section class="shop-section1">
       <h2>SHOP</h2>
     </section>
     <section class="shop-section2">
-      <div class="cate">
+      <div class="cate item-tab">
         <nav>
           <ul>
-            <li class="cate-list all">ALL</li>
-            <li class="cate-list magicStick">지팡이</li>
-            <li class="cate-list magicStick">힝아리</li>
-            <li class="cate-list magicStick"></li>
-            <li></li>
+            <li class="cate-list"><a class="on" data-filter="*">ALL</a></li>
+            <li class="cate-list"><a data-filter="magicStick">지팡이</a></li>
+            <li class="cate-list"><a data-filter="magicJar">힝아리</a></li>
+            <li class="cate-list"><a data-filter="magicItem">마법용품</a></li>
           </ul>
         </nav>
       </div>
@@ -31,4 +49,5 @@
     </section>
   </body>
   <script src="shop.js"></script>
+  <script src="js/jquery-3.6.0.js"></script>
 </html>
