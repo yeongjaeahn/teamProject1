@@ -27,18 +27,20 @@ console.log(Id);
 const _Id = Id.slice(11, Id.length - 1);
 console.log(_Id);
 
+emailInput.value = _Id;
+
 async function save(e) {
   e.preventDefault();
 
   const email = emailInput.value;
   const name = nameInput.value;
   const phoneNumber = phoneNumberInput.value;
-  const postcode = postcodeInput.value;
+  const postalCode = postcodeInput.value;
   const address1 = address1Input.value;
   const address2 = address2Input.value;
 
   try {
-    const address = { postcode, address1, address2 };
+    const address = { postalCode, address1, address2 };
     const data = { email, name, phoneNumber, address };
     const result = await Api.patch(`/api/users/${_Id}`, data);
     console.log(result);
