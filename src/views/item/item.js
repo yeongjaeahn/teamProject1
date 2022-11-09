@@ -1,6 +1,7 @@
 let baketBtn = document.querySelector("#baket");
 const itemDetailName = document.querySelector(".name");
 const itemDetailPrice = document.querySelector(".price");
+const itemDetailImage = document.querySelector(".image");
 
 baketBtn.addEventListener("click", function () {
   if (confirm("카트에 담겼습니다 카트로 넘어가시겠습니까?")) {
@@ -23,11 +24,13 @@ async function getDetailData() {
 
     const itemName = item.name;
     const itemPrice = item.price;
+    const itemImage = item.image;
 
     console.log(itemName, itemPrice);
 
     itemDetailName.innerHTML = itemName;
     itemDetailPrice.innerHTML = itemPrice;
+    itemDetailImage.src = itemImage;
   } catch (err) {
     console.log(err);
   }

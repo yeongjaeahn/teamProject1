@@ -103,7 +103,7 @@ Number.prototype.formatNumber = function () {
 };
 
 // ----------------로컬 스토리지 데이터 반영
-html = "";
+// html = "";
 
 for (let i = 0; i < 2; i++) {
   let row = document.querySelector(".row");
@@ -111,9 +111,7 @@ for (let i = 0; i < 2; i++) {
   let price = JSON.parse(localStorage.getItem("price"));
   let image = JSON.parse(localStorage.getItem("img"));
   console.log(name[i]);
-  row.insertAdjacentHTML(
-    "beforeend",
-    `
+  row.innerHTML = `
 <div class="subdiv">
   <div class="check">
     <input
@@ -172,8 +170,7 @@ for (let i = 0; i < 2; i++) {
   </div>
 </div>
 
-`
-  );
+`;
 }
 
 // let itemList = document.querySelector(".item-list");
