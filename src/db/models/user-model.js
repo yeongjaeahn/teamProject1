@@ -36,8 +36,8 @@ export class UserModel {
 
   async delete({ email }) {
     console.log({ email });
-    await User.deleteOne({ email });
-    return;
+    const deletedUser = await User.findOneAndDelete({ email });
+    return deletedUser;
   }
 }
 

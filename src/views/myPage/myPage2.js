@@ -47,12 +47,6 @@ async function save(e) {
     const data = { email, name, phoneNumber, address };
     const result = await Api.patch(`/api/users/${_Id}`, data);
     console.log(result);
-    // if (result.result == "error") {
-    //   alert(
-    //     "문제가 발생하였습니다. 확인 후 다시 시도해 주세요: User Not Founded"
-    //   );
-    //   return;
-    // }
     alert("정상적으로 수정되었습니다.");
   } catch (err) {
     console.error(err.stack);
@@ -70,6 +64,7 @@ async function quit(e) {
     console.log(data);
     const result = await Api.delete(`/api/users/${_Id}`, data);
     console.log(result);
+    sessionStorage.removeItem("token");
     alert("탈퇴하였습니다.");
   } catch (err) {
     console.error(err.stack);

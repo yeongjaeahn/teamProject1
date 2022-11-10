@@ -73,13 +73,13 @@ async function patch(url, data) {
     body: bodyData,
   });
 
-  // // 응답 코드가 4XX 계열일 때 (400, 403 등)
-  // if (!res.ok) {
-  //   const errorContent = await res.json();
-  //   const { reason } = errorContent;
+  // 응답 코드가 4XX 계열일 때 (400, 403 등)
+  if (!res.ok) {
+    const errorContent = await res.json();
+    const { reason } = errorContent;
 
-  //   throw new Error(reason);
-  // }
+    throw new Error(reason);
+  }
   console.log(res);
   const result = await res.json();
   return result;

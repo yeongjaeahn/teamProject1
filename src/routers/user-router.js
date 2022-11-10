@@ -4,6 +4,7 @@ import is from "@sindresorhus/is";
 import { loginRequired } from "../middlewares";
 import { userService } from "../services";
 import { userModel } from "../db";
+
 const mongoose = require("mongoose");
 
 const userRouter = Router();
@@ -78,7 +79,7 @@ userRouter.get("/userlist", loginRequired, async function (req, res, next) {
 });
 
 //새로 작성한 라우터 유저정보 수정용
-userRouter.patch("/users/:_Id", async function (req, res, next) {
+userRouter.patch("/users/:_Id", loginRequired, async function (req, res, next) {
   const userEmail = req.params._Id;
   const { email, name, phoneNumber, address } = req.body;
   console.log(userEmail);
@@ -88,19 +89,27 @@ userRouter.patch("/users/:_Id", async function (req, res, next) {
   });
   console.log(user);
   if (!user) {
-    next(new Error("User Not Founded"));
+    next(new Error("해당 아이디의 유저가 없습니다."));
     return;
   }
-  res.status(200).json(user);
+  res.json(user);
 });
 
 //회원탈퇴 api
-userRouter.delete("/users/:_Id", async function (req, res, next) {
-  const userEmail = req.params._Id;
-  console.log(userEmail);
-  await userModel.delete({ email: userEmail });
-  res.send({ 탈퇴이메일: userEmail });
-});
+userRouter.delete(
+  "/users/:_Id",
+  loginRequired,
+  async function (req, res, next) {
+    const userEmail = req.params._Id;
+    console.log(userEmail);
+    const deletedUser = await userModel.delete({ email: userEmail });
+    if (!deletedUser) {
+      next(new Error("해당 아이디의 유저가 없습니다."));
+      return;
+    }
+    res.send({ 탈퇴이메일: userEmail });
+  }
+);
 
 // // 사용자 정보 수정
 // // (예를 들어 /api/users/abc12345 로 요청하면 req.params.userId는 'abc12345' 문자열로 됨)
