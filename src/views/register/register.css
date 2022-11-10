@@ -4,8 +4,11 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Belleza', 'Noto Sans KR', sans-serif;
+
+  
 }
+
 
 a {
   color: black;
@@ -72,6 +75,7 @@ header .menu ul li {
   padding: 0 10px;
   text-align: center;
 }
+
 /* ----------------------------------------------- */
 
 /* 여기서부터는 회원가입 */
@@ -80,47 +84,56 @@ header .menu ul li {
   width: 100%;
   /* max-width: 960px;
   min-height: 300px; */
-  height: auto;
+  height: 100vh;
   margin: 0 auto;
+
+  box-sizing: border-box;
+
 }
 
 .register {
   width: 400px;
-height: 85vh;
-  
-margin: 0px auto;
-color: #222;
-text-align: left;
+  height: 85vh;
+    
+  margin: 0px auto;
+  color: #222;
+  text-align: left;
 }
 
 .row .header .checkbox-wrapper {
-width: 400px;
+  width: 400px;
 }
 
 .header {
-font-size: 20px;
-margin-bottom: 40px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  /* font-family: 'Belleza', sans-serif; */
+  letter-spacing: 5px;
 }
 
 .row {
-font-size: 14px;
-margin-bottom: 20px;
-color:#777;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color:#777;
+  /* font-family: 'Noto Sans KR', sans-serif; */
 }
 
- .title {
-margin: 0 0 12px;
+.title {
+  margin: 0 0 12px;
+
+  line-height: 32px;
+
 }
 
 #emailInput, #fullNameInput, #passwordInput, #passwordConfirmInput {
-border: 1px solid #ddd;
+  border: 1px solid #ddd;
 
-font-size: 14px;
-color: #777;
-line-height: 23px;
-width: 400px;
-height: 45px;
-padding: 10px 15px;
+  font-size: 14px;
+  color: #777;
+  line-height: 23px;
+  width: 400px;
+  height: 45px;
+  padding: 10px 15px;
 }
 
 /* .checkbox-wrapper {
@@ -142,27 +155,40 @@ padding: 0 0 0 10px;
 
 /* 버튼아 예뻐져라 */
 .btn-wrapper {
-width: 400px;
-margin: 20px 0 0;
-text-align: center;
+  width: 400px;
+  margin: 20px 0 0;
+  text-align: center;
+  box-sizing: border-box;
 } 
 
 .btn-register {
-font-size: 14px;
-width: 240px;
-height: 54px;
-background-color: #222;
-border-color: #222;
-border-radius: 3px;
-color: #fff;
-cursor: pointer;
-transition: all 0.2s;
+  font-family: 'Belleza', sans-serif;
+  font-size: 14px;
+  width: 240px;
+  height: 54px;
+  background-color: #222;
+  border-color: #222;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .btn-register:hover {
-background-color: #fff;
-border-color: #fff;
-color: #222;
+  background-color: #fff;
+  border-color: #fff;
+  color: #222;
 
 }
+
+/* display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 12px 20px;
+    white-space: nowrap;
+    line-height: 1.25;
+    cursor: pointer; */
+
+/* ----------------------------------------------- */
+
 
