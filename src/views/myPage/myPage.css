@@ -2,7 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Noto Sans KR", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 a:link,
@@ -11,11 +13,73 @@ a:visited {
   text-decoration: none;
 }
 
-.header {
+/* -----------header------------------------------- */
+.logo {
   display: flex;
-  justify-content: center;
-  margin: 40px;
+  align-items: center;
 }
+
+.logo p {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  font-weight: bold;
+  font-family: 'Belleza'
+}
+
+header a {
+  color: black
+}
+
+header h2 {
+  margin: 0 auto;
+}
+
+.header-wrap {
+  width: auto;
+  max-width: 1000px;
+  padding: 30px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  font-family: 'Belleza'
+}
+
+header .menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+header .menu ul li {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.shop-section1 {
+  width: 100%;
+  background-color: rgb(238, 237, 237);
+  padding: 10px 0;
+}
+
+.shop-section1 h2 {
+  width: 1000px;
+  margin: 0 auto;
+}
+/* ------------------ */
 
 section {
   width: 100%;
@@ -30,15 +94,13 @@ section {
 
 /* 테두리 css 입힌 곳 */
 .order-box {
-  border-bottom: solid 16px #e5e5e5;
-  min-width: 500px;
-  height: auto;
-  margin-bottom: 2rem;
+  /* border-bottom: solid 16px #e5e5e5; */
+  width: 100%;
+  margin: 3rem 0;
   padding: 0.5rem;
   background-color: #fff;
   border-radius: 0.75rem;
-  box-shadow: 0 0.1rem 0.15rem rgb(40 36 89 / 20%),
-    0 0.25rem 0.4rem rgb(40 36 89 / 15%);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .card-item {
@@ -124,4 +186,9 @@ img {
 #quit:hover {
   color: white;
   background-color: black;
+}
+
+.card-body {
+  display: grid;
+  grid-template-columns: 100px 300px 80px;
 }
