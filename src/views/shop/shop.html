@@ -13,175 +13,46 @@
 
   </head>
   <body>
-    <div class="header-container">
-      <header>
-        <div>
-          <div class="header-wrap">
-            <a href="/">
-            <div class="logo">
-              <p>Platform</p>
-              <img src="../logo1.PNG" alt="logo">
-            </div>
-            </a>
-            <div class="menu">
-              <ul>
-                <li><a href="/">HOME</a></li>
-                <li><a href="/shop">SHOP</a></li>
-                <li><a href="/login">Log in</a></li>
-                <li><a href="/cart">Cart</a></li>
-              </ul>
-            </div>
-          </div>
+    <header>
+      <div class="header-wrap">
+        <div class="logo"><a href="#">logo</a></div>
+        <div class="menu">
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="../shop/shop.html" role="button">SHOP</a></li>
+            <li>
+              <a href="../login/login.html" role="button">Log in</a>
+            </li>
+
+            <li><a href="../cart/cart.html">Cart</a></li>
+            <li><a href="#" hidden class="logOut">로그아웃</a></li>
+            <li><a href="#" hidden class="myPage">마이페이지</a></li>
+            <li><a href="#" hidden class="adminLogin">관리자 로그인</a></li>
+          </ul>
         </div>
-      <section class="shop-section1">
-        <h2>SHOP</h2>
-      </section>
-      </header>
-    </div>
+      </div>
+    </header>
+    <section class="shop-section1">
+      <h2>SHOP</h2>
+    </section>
     <section class="shop-section2">
-      <div class="cate">
+      <div class="cate item-tab">
         <nav>
           <ul>
-            <li><a href="#">all</a></li>
-            <li><a href="#">best</a></li>
-            <li><a href="#">지팡이</a></li>
-            <li><a href="#">부엉이</a></li>
-            <li><a href="#">빗자루</a></li>
+            <li class="cate-list"><a class="on" data-filter="*">ALL</a></li>
+            <li class="cate-list"><a data-filter="magicStick">지팡이</a></li>
+            <li class="cate-list"><a data-filter="magicJar">힝아리</a></li>
+            <li class="cate-list"><a data-filter="magicItem">마법용품</a></li>
           </ul>
         </nav>
       </div>
 
-      <div class="item-list">
-        <!-- <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p id="first-name"></p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div>
-        <div class="product">
-          <div class="sumnail">
-            <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-          </div>
-          <div class="product-info">
-            <p class="name">아브라카다브라</p>
-            <p class="price">8000 원</p>
-          </div>
-        </div> -->
-      </div>
+      <div class="item-list"></div>
       <div class="more-btn">
         <a href="#">더보기</a>
       </div>
     </section>
   </body>
-  <script>
-    let item;
-    let html = "";
-    async function getData() {
-      try {
-        let response = await fetch("/api/itemlist");
-        item = await response.json();
-        console.log(item);
-      } catch (err) {
-        console.log(err);
-      }
-
-      let itemList = document.querySelector(".item-list");
-      for (let i = 0; i < item.length; i++) {
-        html += `
-          <div class="product">
-            <a href="/item/${item[i]._id}">
-              <div class="sumnail">
-                <img src="img/b6ce11f84cd989d835461e5736a5e503.jpg" alt="" />
-              </div>
-              <div class="product-info">
-                <p class="name">${item[i].name}</p>
-                <p class="price">${item[i].price}</p>
-              </div>
-            </a>
-          </div>
-        `;
-      }
-
-      // document.querySelector("#first-name").innerHTML = itemName;
-      // document.querySelector(".price").innerHTML = itemPrice;
-      itemList.innerHTML = html;
-    }
-
-    getData();
-  </script>
+  <script src="shop.js"></script>
+  <!-- <script src="js/jquery-3.6.0.js"></script> -->
 </html>

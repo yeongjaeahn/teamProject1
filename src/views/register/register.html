@@ -8,60 +8,66 @@
 
     <link rel="stylesheet" href="register.css" />
     <script src="register.js" type="module" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+    <!-- 폰트 -->
+    <!--   font-family: 'Noto Sans KR', sans-serif;;  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <!--    font-family: 'Work Sans', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&family=Work+Sans:ital,wght@0,200;0,300;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    <div class="all">
-      <div class="header-container">
-        <header>
-          <div>
-            <div class="header-wrap">
-              <a href="/">
-              <div class="logo">
-                <p>Platform</p>
-                <img src="../logo1.PNG" alt="logo">
-              </div>
-              </a>
-              <div class="menu">
-                <ul>
-                  <li><a href="/">HOME</a></li>
-                  <li><a href="/shop">SHOP</a></li>
-                  <li><a href="/login">Log in</a></li>
-                  <li><a href="/cart">Cart</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-        </header>
-      </div>
     <!-- 회원가입 부분 -->
+
     <div class="register-wrapper">
       <div class="register">
-        <form class="field-wrapper" id="field-wrapper-Form">
+        <form
+          class="field-wrapper"
+          id="field-wrapper-Form"
+          action="/api/register"
+          method="POST"
+        >
           <div class="header">
             <span class="title">회원가입</span>
           </div>
 
           <div class="row">
             <label for="emailInput" class="title">이메일 *</label>
-            <input id="emailInput" type="email" autocomplete="on"/>
+            <input id="emailInput" type="email" autocomplete="on" />
           </div>
           <div class="row">
             <label for="fullNameInput" class="title">이름 *</label>
-            <input id="fullNameInput" type="name" autocomplete="on"/>
+            <input id="fullNameInput" type="name" autocomplete="on" />
           </div>
           <div class="row">
             <label for="passwordInput" class="title">비밀번호 *</label>
-            <input id="passwordInput" type="password" placeholder="6이상 입력해주세요" autocomplete="off"/>
+            <input
+              id="passwordInput"
+              type="password"
+              placeholder="6이상 입력해주세요"
+              autocomplete="off"
+            />
           </div>
           <div class="row">
-            <label for="passwordConfirmInput" class="title">비밀번호 확인 *</label>
-            <input id="passwordConfirmInput" type="password" autocomplete="off"/>
+            <label for="passwordConfirmInput" class="title"
+              >비밀번호 확인 *</label
+            >
+            <input
+              id="passwordConfirmInput"
+              type="password"
+              autocomplete="off"
+            />
           </div>
-
 
           <!-- <div class="checkbox-wrapper">
             <div class="terms__check__all">
@@ -97,11 +103,12 @@
           </div> -->
 
           <div class="btn-wrapper" id="">
-            <button type="submit" class="btn-register" id="submitButton">가입하기</button>
+            <button type="submit" class="btn-register" id="submitButton">
+              가입하기
+            </button>
           </div>
         </form>
       </div>
     </div>
-  </div>
   </body>
 </html>
