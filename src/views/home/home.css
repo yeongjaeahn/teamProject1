@@ -1,6 +1,9 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 * {
   margin: 0;
   padding: 0;
+  font-family: "Belleza", "Noto Sans KR", sans-serif;
 }
 html {
   background-image: url(img/html-bg.jpg);
@@ -78,136 +81,317 @@ header .menu ul li {
 }
 .section1 .section1-wrap {
   text-align: center;
-  padding-top: 50%;
+  padding-top: 40%;
+}
+.section1 .section1-wrap {
+  color: white;
+}
+.section1 .section1-wrap h2 {
+  font-size: 85px;
+}
+.section1 .section1-wrap p {
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
+.section1 .section1-wrap div {
+  width: 200px;
+  height: 30px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 60px;
+  text-align: 15px;
+  transition: all 0.7s;
+}
+.section1 .section1-wrap div:hover {
+  background-color: rgb(133, 133, 133, 0.5);
+}
+.section1 .section1-wrap div a {
+  font-size: 20px;
+}
 /* ---------section2 ----- */
 .section2 {
   color: aliceblue;
-  padding: 50px 0;
+  padding: 150px 0;
 }
 
 .section2 .item-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 400px);
+  grid-template-rows: repeat(2, 450px);
   gap: 10px;
 }
 .section2 h2 {
   text-align: center;
-  padding: 30px 0;
+  padding: 0 0 70px 0;
+  font-size: 50px;
 }
 .section2 .item-list .product-info {
   text-align: center;
   padding-top: 10px;
 }
+.section2 .item-list .product-info p {
+  line-height: 30px;
+}
+
+/* -section2 찜하기 버튼  + 섹션 2 이미지 트랜스폼 */
+
+.section2 .product img {
+  transition: all 1s;
+}
+.section2 .product .product-wrap {
+  display: inline-block;
+
+  overflow: hidden;
+}
+
+.section2 .product .product-wrap:hover img {
+  transform: scale(1.1, 1.1);
+}
+.section2 .wish {
+  width: 25%;
+  background-color: rgba(240, 248, 255, 0.247);
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  transition: all 0.7s;
+}
+.section2 .wish:hover {
+  background-color: rgb(218, 218, 218);
+}
+.section2 .wish.toggle {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(0, 0, 0);
+}
 /* -----------section3------ */
 .section3 {
   width: 100%;
-  padding: 300px 0;
+  padding: 200px 0;
   background-image: url(img/harry.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
-.section3 .des {
-  text-align: center;
 
-  color: aliceblue;
+.section3,
+.des {
+  text-align: center;
+}
+
+.section3 .des h2 {
+  font-size: 85px;
+  color: white;
+}
+
+.section3 .des p {
+  margin-bottom: 20px;
+  font-size: 40px;
+  color: white;
+}
+
+.section3 .des div {
+  width: 200px;
+  height: 30px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 60px;
+  text-align: 15px;
+  transition: all 0.7s;
+}
+.section3 .des div:hover {
+  background-color: rgba(133, 133, 133, 0.5);
+}
+.section3 .des div a {
+  font-size: 20px;
 }
 /* -------------section4 ------------  */
+
 .section4 {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.921);
-  color: aliceblue;
-  text-align: center;
-}
-.section4-banner {
-  width: 100%;
-  padding: 300px 0;
+  padding: 200px 0;
   background-image: url(img/boldmote.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
-.section4-banner .des {
   text-align: center;
+}
 
-  color: aliceblue;
+.section4,
+.des {
+  text-align: center;
+}
+
+.section4 .des h2 {
+  font-size: 85px;
+  color: white;
+}
+.section4 .des p {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.section4 .des div {
+  width: 200px;
+  height: 30px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 60px;
+  text-align: 15px;
+  transition: all 0.7s;
+}
+.section4 .des div:hover {
+  background-color: rgba(133, 133, 133, 0.5);
+}
+.section4 .des div a {
+  font-size: 20px;
 }
 /* ------------section5---------- */
 .section5 {
-  padding: 50px 0;
+  padding-top: 150px;
   color: aliceblue;
 }
 .section5 .section5-title {
-  padding-bottom: 50px;
   text-align: center;
 }
+.section5 .section5-title h2 {
+  font-size: 50px;
+}
+/* ------------------ */
 
-.section5 .news-wrap {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 300px);
-  column-gap: 10px;
+/* ---------section7 */
+.section7 {
+  padding: 100px 0;
+  /* height: 300vh; */
+  color: aliceblue;
+  padding: 200px 0;
 }
-.section5 .news-wrap .news {
-  width: 100%;
-  cursor: pointer;
+.section7 .content-box {
+  height: 140vh;
 }
-
-.section5 .news-wrap .news1 {
-  background-image: url(img/dumbledor.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.section7 .content-box > div {
+  float: left;
+  margin-right: 10%;
 }
-.section5 .news-wrap .news2 {
-  background-image: url(img/seriousBlack.jpeg);
-
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.section7 .content-box > div:last-child {
+  margin-right: 0;
 }
-.section5 .news-wrap .news3 {
-  background-image: url(img/dementer.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.section5 .news-wrap .news .band {
-  text-align: center;
-  margin-top: 100px;
-  padding: 40px 0;
+.section7 .content-box .text1 {
+  width: 50%;
+  line-height: 40px;
   opacity: 0;
-  transition: all 1.5s;
-  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 4s;
+  height: 140vh;
 }
-.section5 .news-wrap .news:hover .band {
+.section7 .content-box .img-box img {
+  opacity: 0;
+  transition: all 4s;
+  border-radius: 20px;
+}
+.section7 .img-box {
+  width: 40%;
+  position: sticky;
+  top: 200px;
+}
+
+/* -------두번째 section7 -- content-box1 */
+
+.section7 .content-box1 {
+  height: 140vh;
+  margin-top: 200px;
+}
+.section7 .content-box1 > div {
+  float: left;
+  margin-right: 10%;
+}
+.section7 .content-box1 > div:last-child {
+  margin-right: 0;
+}
+.section7 .content-box1 .text2 {
+  width: 50%;
+  line-height: 40px;
+  opacity: 0;
+  transition: all 5s;
+}
+.section7 .content-box1 .img-box1 img {
+  opacity: 0;
+  transition: all 2s;
+  border-radius: 20px;
+}
+.section7 .img-box1 {
+  width: 40%;
+  position: sticky;
+  top: 200px;
+}
+/* -------두번째 section7 -- content-box1 */
+
+.section7 .content-box2 {
+  height: 160vh;
+  padding-top: 200px;
+}
+.section7 .content-box2 .img-box2 {
+  width: 100%;
+  height: 300px;
+  background: url(img/together.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 50px 0;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 2s;
+}
+.section7 .content-box2 .text3 {
+  line-height: 40px;
+  opacity: 0;
+  transition: all 2s;
+}
+.section7 .content-box2 .text4 {
+  line-height: 40px;
+  opacity: 0;
+  transition: all 2s;
+}
+/* ---------------------- */
+.tech-slideshow {
+  height: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.tech-slideshow > div {
+  height: 300px;
+  width: 6000px;
+  background: url(img/rollingbanner.png);
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  filter: grayscale(100%);
+}
+.tech-slideshow .mover-1 {
+  animation: moveSlideshow 22s linear infinite;
+}
+.tech-slideshow .mover-2 {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+
+  animation: moveSlideshow 22s linear infinite;
+}
+.tech-slideshow:hover .mover-2 {
   opacity: 1;
+  filter: grayscale(0%);
 }
-/* ------------section6 ------- */
-.section6 {
-  width: 100%;
-  padding: 50px 0;
-}
-.section6 .section6-banner {
-  width: 100%;
-  height: 500px;
-  background-color: brown;
-}
-.section6 .section6-banner .info-wrap {
-  text-align: center;
-  padding-top: 250px;
-}
-.section6 .section6-banner .info-wrap .go-btn {
-  margin-top: 30px;
-}
-.section6 .section6-banner .info-wrap .go-btn a {
-  background-color: aliceblue;
-  padding: 30px;
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-66.6666%);
+  }
 }
 /* ------footer---- */
 footer {
