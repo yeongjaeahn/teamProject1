@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Platform 19</title>
+
     <link rel="stylesheet" href="login.css" />
 
     <script src="login.js" type="module" defer></script>
@@ -13,9 +14,22 @@
   </head>
   <body>
     <div class="all">
-      <header class="header">
-        <div class="name">
-          <h1>가명 : 19조와 4분의 3</h1>
+      <header>
+        <div class="header-wrap">
+          <a href="/">
+          <div class="logo">
+            <p>Platform</p>
+            <img src="../logo1.PNG" alt="logo">
+          </div>
+        </a>
+          <div class="menu">
+            <ul>
+              <li><a href="/">HOME</a></li>
+              <li><a href="/shop">SHOP</a></li>
+              <li><a href="/login">Log in</a></li>
+              <li><a href="/cart">Cart</a></li>
+            </ul>
+          </div>
         </div>
         <nav class="nav">
           <ul id="navbar">
@@ -39,12 +53,12 @@
             <label for="login-user-pw">비밀번호</label>
             <input id="password-input" type="password" />
           </div>
-          <p class="password-find">비밀번호 찾기</p>
+          <p class="password-find"><a href="../passwordFind/passwordFind.html">비밀번호 찾기</a></p>
           <div class="btn-wrapper">
             <button type="submit" class="submit-button" id="login-btn">
               로그인하기
             </button>
-            <button class="submit-button" id="signup-btn">회원 가입하기</button>
+            <a href="/register"><button class="submit-button" id="signup-btn">회원 가입하기</button></a>
           </div>
         </div>
       </section>

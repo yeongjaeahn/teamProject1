@@ -1,7 +1,10 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   text-decoration: none;
+  list-style: none;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 a {
   color: black;
@@ -54,6 +57,7 @@ header .menu ul li {
 .login-field {
   width: 400px;
   padding-top: 50px;
+  margin-top: 150px;
 }
 
 .login-title {
