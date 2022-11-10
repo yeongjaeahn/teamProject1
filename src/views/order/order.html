@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platform 19</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="order.css" />
     <title>ORDER</title>
     <script src="order.js" type="module" defer></script>
@@ -11,11 +15,31 @@
   </head>
   <body>
     <div class="all">
-      <header class="header">
-        <div class="name">
-          <h1>가명 : 19조와 4분의 3</h1>
-        </div>
-      </header>
+      <div class="header-container">
+        <header>
+          <div>
+            <div class="header-wrap">
+              <a href="/">
+              <div class="logo">
+                <p>Platform</p>
+                <img src="../logo1.PNG" alt="logo">
+              </div>
+              </a>
+              <div class="menu">
+                <ul>
+                  <li><a href="/">HOME</a></li>
+                  <li><a href="/shop">SHOP</a></li>
+                  <li><a href="/login">Log in</a></li>
+                  <li><a href="/cart">Cart</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <section class="shop-section1">
+          <h2>ORDER</h2>
+        </section>
+        </header>
+      </div>
       <section class="order-body-wrap">
         <div class="order-box">
           <p class="card-title">주문 상품</p>
@@ -98,7 +122,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="submit-button">결제하기</button>
+        <a href="../orderComplete/orderComplete.html"><button type="submit" class="submit-button">결제하기</button></a>
       </section>
     </div>
   </body>
