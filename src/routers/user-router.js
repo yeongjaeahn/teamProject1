@@ -1,7 +1,7 @@
 import { Router } from "express";
 import is from "@sindresorhus/is";
 // 폴더에서 import하면, 자동으로 폴더의 index.js에서 가져옴
-import { loginRequired } from "../middlewares";
+import { adminOnly, loginRequired } from "../middlewares";
 import { userService } from "../services";
 
 const userRouter = Router();
@@ -52,10 +52,10 @@ userRouter.post("/login", async function (req, res, next) {
     const password = req.body.password;
 
     // 로그인 진행 (로그인 성공 시 jwt 토큰을 프론트에 보내 줌)
-    const userToken = await userService.getUserToken({ email, password });
+    const loginResult = await userService.getUserToken({ email, password });
 
     // jwt 토큰을 프론트에 보냄 (jwt 토큰은, 문자열임)
-    res.status(200).json(userToken);
+    res.status(200).json(loginResult);
   } catch (error) {
     next(error);
   }
@@ -133,5 +133,53 @@ userRouter.patch(
     }
   }
 );
+
+// admin-user-update
+userRouter.patch(
+  "/users/role/:userId",
+  adminOnly,
+  async function (req, res, next) {
+    try {
+      if (is.emptyObject(req.body)) {
+        throw new Error(
+          "headers의 Content-Type: application/json으로 설정해주세요"
+        );
+      }
+
+      const userId = req.params.userId;
+      const role = req.body.role;
+      const updatedUserInfo = await userService.setRole(userId, role);
+
+      res.status(200).json(updatedUserInfo);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+userRouter.delete(
+  "/users/:userId",
+  loginRequired,
+  async function (req, res, next) {
+    try {
+      // params로부터 id를 가져옴
+      const userId = req.params.userId;
+
+      const deleteResult = await userService.deleteUserData(userId);
+
+      res.status(200).json(deleteResult);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+userRouter.get("/admin/check", adminOnly, async function (req, res, next) {
+  try {
+    res.status(200).json({ result: "success" });
+  } catch (error) {
+    next(error);
+  }
+});
 
 export { userRouter };

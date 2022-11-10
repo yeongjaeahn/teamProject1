@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="order.css" />
     <title>ORDER</title>
-    <script src="order.js" defer></script>
+    <script src="order.js" type="module" defer></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </head>
   <body>
@@ -21,19 +21,11 @@
           <p class="card-title">주문 상품</p>
           <div class="card-body">
             <div class="card-item">
-              <img src="934.jpg" alt="item1" />
+              <img src="" alt="item1" class="item-image" />
               <div class="card-item-info">
-                <p id="item-name">정말 멋진 상품</p>
-                <p id="item-quantity">1개</p>
-                <p id="item-price">상품 가격</p>
-              </div>
-            </div>
-            <div class="card-item">
-              <img src="934.jpg" alt="item1" />
-              <div class="card-item-info">
-                <p id="item-name">정말 멋진 상품</p>
-                <p id="item-quantity">1개</p>
-                <p id="item-price">상품 가격</p>
+                <p id="item-name"></p>
+                <p id="item-quantity"></p>
+                <p id="item-price"></p>
               </div>
             </div>
           </div>
@@ -58,12 +50,7 @@
                 class="input-text-adress"
                 placeholder="우편번호"
               />
-              <input
-                type="button"
-                class="adress-btn"
-                onclick="sample6_execDaumPostcode()"
-                value="주소 찾기"
-              /><br />
+              <input type="button" class="adress-btn" value="주소 찾기" /><br />
             </div>
           </div>
           <input
@@ -83,15 +70,15 @@
           <p class="card-title">결제 정보</p>
           <div class="info-item">
             <span class="item-title">상품 합계</span>
-            <span class="item-value">1000원</span>
+            <span class="item-total-price"></span>
           </div>
           <div class="info-item">
             <span class="item-title">배송비</span>
-            <span class="item-value">0원</span>
+            <span class="item-ship-price"></span>
           </div>
           <div class="info-total-item">
             <span class="total-title">결제금액</span>
-            <span class="total-price">1000원</span>
+            <span class="order-total-price"></span>
           </div>
         </div>
         <div class="order-box">

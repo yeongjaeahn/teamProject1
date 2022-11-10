@@ -27,3 +27,55 @@ export const convertToNumber = (string) => {
 export const wait = (ms) => {
   return new Promise((r) => setTimeout(r, ms));
 };
+
+// 관리자인지 확인하는 함수
+export const checkAdmin = async () => {
+  const token = sessionStorage.getItem("token");
+
+  if (!token) {
+    const pathname = window.location.pathname;
+    const search = window.location.search;
+
+    window.location.replace(`/login?previouspage=${pathname + search}`);
+  }
+
+  const res = await fetch("/api/admin/check", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const { result } = await res.json();
+
+  if (result === "success") {
+    window.document.body.style.display = "block";
+
+    return;
+  } else {
+    alert("관리자 전용 페이지 입니다.");
+
+    window.location.replace("/");
+  }
+};
+
+export const blockLogin = () => {
+  const token = sessionStorage.getItem("token");
+
+  if (token) {
+    alert("로그인 상태에서는 접근할 수 없는 페이지입니다.");
+    window.location.replace("/");
+  }
+};
+
+export const getUrlParams = () => {
+  const pathname = window.location.pathname;
+  const urlParams = new URLSearchParams(pathname);
+
+  const result = {};
+
+  for (const [key, value] of urlParams) {
+    result[key] = value;
+  }
+
+  return result;
+};
