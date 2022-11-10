@@ -2325,6 +2325,7 @@ button:active,
 }
 
 #main > section {
+  height: 100vh;
   margin: 0;
   overflow: hidden;
   padding: 4em 0;

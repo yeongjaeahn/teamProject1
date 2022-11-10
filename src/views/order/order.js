@@ -1,3 +1,30 @@
+import { addCommas } from "/useful-functions.js";
+import { getFromDB } from "/indexed-db.js";
+import * as Api from "/api.js";
+
+const addressFinder = document.querySelector(".adress-btn");
+const itemName = document.querySelector("#item-name");
+const itemQuantity = document.querySelector("#item-quantity");
+const itemPrice = document.querySelector("#item-price");
+const itemImage = document.querySelector(".item-image");
+const itemShipPrice = document.querySelector(".item-ship-price");
+const itemTotalPrice = document.querySelector(".item-total-price");
+const orderTotalPrice = document.querySelector(".order-total-price");
+const receiverNameInput = document.querySelector("#input-text-name");
+const receiverPhoneInput = document.querySelector("#input-text-number");
+
+addAllEvents();
+addAllElements();
+
+function addAllElements() {
+  insertOrderSummary();
+  // insertUserData();
+}
+
+function addAllEvents() {
+  addressFinder.addEventListener("click", sample6_execDaumPostcode);
+}
+
 function sample6_execDaumPostcode() {
   new daum.Postcode({
     oncomplete: function (data) {
@@ -43,3 +70,67 @@ function sample6_execDaumPostcode() {
     },
   }).open();
 }
+
+async function insertOrderSummary() {
+  const { ids, selectedIds, productsTotal } = await getFromDB(
+    "order",
+    "summary"
+  );
+
+  // 구매할 아이템 없으면 다른 페이지로 이동
+  const hasItemInCart = ids.length !== 0;
+  const hasItemToCheckout = selectedIds.length !== 0;
+
+  if (!hasItemInCart) {
+    alert("구매할 제품이 없습니다. 제품을 선택해주세요");
+  }
+
+  if (!hasItemToCheckout) {
+    alert("구매할 제품이 없습니다. 장바구니에서 선택해 주세요.");
+
+    return window.location.replace("/cart");
+  }
+
+  let productsName = "";
+  for (const id of selectedIds) {
+    const { name, quantity, image } = await getFromDB("cart", id);
+    if (productsName) {
+      productsName += "\n";
+    }
+    itemImage.src = `${image}`;
+    productsName += `${name} / ${quantity}개`;
+  }
+
+  itemName.innerHTML = productsName;
+  itemTotalPrice.innerHTML = `${addCommas(productsTotal)}원`;
+
+  if (hasItemToCheckout) {
+    itemShipPrice.innerHTML = `3,000원`;
+    orderTotalPrice.innerHTML = `${addCommas(productsTotal + 3000)}원`;
+  } else {
+    itemShipPrice.innerHTML = `0원`;
+    orderTotalPrice.innerHTML = `0원`;
+  }
+
+  receiverNameInput.focus();
+}
+
+// async function insertUserData() {
+//   const userData = await Api.get("/api/user");
+//   const { name, phone, address } = userData;
+
+//   // 만약 db에 데이터 값이 있었다면, 배송지정보에 삽입
+//   if (name) {
+//     receiverNameInput.value = name;
+//   }
+
+//   if (phone) {
+//     receiverPhoneInput.value = phone;
+//   }
+
+//   if (address) {
+//     postalCode.value = address.postalCode;
+//     address1Input.value = address.address1;
+//     address2Input.value = address.address2;
+//   }
+// }
