@@ -14,9 +14,8 @@ async function getData() {
 
   for (let i = 0; i < item.length; i++) {
     html += `
-    <div class="product">
+    <div class="product" data-type="${item[i].category}">
       <div class="product-info">
-        <div>${item[i].category}</div>
           <a href="/item/${item[i]._id}">
             <img src="${item[i].image}" alt="" />
           </a>
