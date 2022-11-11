@@ -1,5 +1,5 @@
-import { addCommas } from "/useful-functions.js";
-import { getFromDB } from "/indexed-db.js";
+import { addCommas, convertToNumber } from "/useful-functions.js";
+import { getFromDB, deleteFromDB, putToDB } from "/indexed-db.js";
 import * as Api from "/api.js";
 
 const addressFinder = document.querySelector(".adress-btn");
@@ -12,17 +12,22 @@ const itemTotalPrice = document.querySelector(".item-total-price");
 const orderTotalPrice = document.querySelector(".order-total-price");
 const receiverNameInput = document.querySelector("#input-text-name");
 const receiverPhoneInput = document.querySelector("#input-text-number");
+const postalCodeInput = document.querySelector("#sample6_postcode");
+const address1Input = document.querySelector("#sample6_address");
+const address2Input = document.querySelector("#sample6_detailAddress");
+const checkoutButton = document.querySelector(".submit-button");
 
 addAllEvents();
 addAllElements();
 
 function addAllElements() {
   insertOrderSummary();
-  // insertUserData();
+  insertUserData();
 }
 
 function addAllEvents() {
   addressFinder.addEventListener("click", sample6_execDaumPostcode);
+  checkoutButton.addEventListener("click", doCheckout);
 }
 
 function sample6_execDaumPostcode() {
@@ -115,22 +120,88 @@ async function insertOrderSummary() {
   receiverNameInput.focus();
 }
 
-// async function insertUserData() {
-//   const userData = await Api.get("/api/user");
-//   const { name, phone, address } = userData;
+async function insertUserData() {
+  try {
+    const userData = await Api.get(`/api/user`);
+    console.log(userData);
+    receiverNameInput.value = userData.fullName;
+    receiverPhoneInput.value = userData.phoneNumber;
+    if (userData.address) {
+      postalCodeInput.value = userData.address.postalCode;
+      address1Input.value = userData.address.address1;
+      address2Input.value = userData.address.address2;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-//   // 만약 db에 데이터 값이 있었다면, 배송지정보에 삽입
-//   if (name) {
-//     receiverNameInput.value = name;
-//   }
+async function doCheckout() {
+  const receiverName = receiverNameInput.value;
+  const receiverPhone = receiverPhoneInput.value;
+  const postalCode = postalCodeInput.value;
+  const address1 = address1Input.value;
+  const address2 = address2Input.value;
+  const summaryTitle = itemName.innerHTML;
+  const totalPrice = convertToNumber(orderTotalPrice.innerHTML);
+  const { selectedIds } = await getFromDB("order", "summary");
 
-//   if (phone) {
-//     receiverPhoneInput.value = phone;
-//   }
+  if (!receiverName || !receiverPhone || !postalCode || !address2) {
+    return alert("배송지 정보를 모두 입력해 주세요.");
+  }
 
-//   if (address) {
-//     postalCode.value = address.postalCode;
-//     address1Input.value = address.address1;
-//     address2Input.value = address.address2;
-//   }
-// }
+  const address = {
+    postalCode,
+    address1,
+    address2,
+    receiverName,
+    receiverPhone,
+  };
+
+  try {
+    const orderData = await Api.post("/api/order", {
+      summaryTitle,
+      totalPrice,
+      address,
+    });
+
+    const orderId = orderData._id;
+
+    for (const productId of selectedIds) {
+      const { quantity, price } = await getFromDB("cart", productId);
+      const totalPrice = quantity * price;
+
+      await Api.post("/api/orderitem", {
+        orderId,
+        productId,
+        quantity,
+        totalPrice,
+      });
+
+      await deleteFromDB("cart", productId);
+      await putToDB("order", "summary", (data) => {
+        data.ids = data.ids.filter((id) => id !== productId);
+        data.selectedIds = data.selectedIds.filter((id) => id !== productId);
+        data.productsCount -= 1;
+        data.productsTotal -= totalPrice;
+      });
+    }
+
+    const data = {
+      phone: receiverPhone,
+      address: {
+        postalCode,
+        address1,
+        address2,
+      },
+    };
+
+    await Api.post("/api/user/deliveryInfo", data);
+
+    alert("결제 및 주문이 정상적으로 완료되었습니다.");
+    window.location.href = "/order/complete";
+  } catch (err) {
+    console.log(err);
+    alert(`결제 중 문제가 발생하였습니다: ${err.message}`);
+  }
+}
