@@ -4,17 +4,21 @@
   padding: 0;
   text-decoration: none;
   list-style: none;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 a {
   color: black;
 }
 
-.field-wrapper{
+.field-wrapper {
   padding-top: 200px;
 }
 
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
 /* -----------header------------------------------- */
 .logo {
   display: flex;
@@ -40,7 +44,7 @@ header {
 }
 
 header a {
-  color: black
+  color: black;
 }
 
 .down {
@@ -86,41 +90,44 @@ header .menu ul li {
 
 .register {
   width: 400px;
-height: 85vh;
-  
-margin: 0px auto;
-color: #222;
-text-align: left;
+  height: 85vh;
+
+  margin: 0px auto;
+  color: #222;
+  text-align: left;
 }
 
 .row .header .checkbox-wrapper {
-width: 400px;
+  width: 400px;
 }
 
 .header {
-font-size: 20px;
-margin-bottom: 40px;
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
 .row {
-font-size: 14px;
-margin-bottom: 20px;
-color:#777;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #777;
 }
 
- .title {
-margin: 0 0 12px;
+.title {
+  margin: 0 0 12px;
 }
 
-#emailInput, #fullNameInput, #passwordInput, #passwordConfirmInput {
-border: 1px solid #ddd;
+#emailInput,
+#fullNameInput,
+#passwordInput,
+#passwordConfirmInput {
+  border: 1px solid #ddd;
 
-font-size: 14px;
-color: #777;
-line-height: 23px;
-width: 400px;
-height: 45px;
-padding: 10px 15px;
+  font-size: 14px;
+  color: #777;
+  line-height: 23px;
+  width: 400px;
+  height: 45px;
+  padding: 10px 15px;
 }
 
 /* .checkbox-wrapper {
@@ -139,30 +146,53 @@ color: #777;
 padding: 0 0 0 10px;
 } */
 
-
 /* 버튼아 예뻐져라 */
 .btn-wrapper {
-width: 400px;
-margin: 20px 0 0;
-text-align: center;
-} 
+  width: 400px;
+  margin: 20px 0 0;
+  text-align: center;
+}
 
 .btn-register {
-font-size: 14px;
-width: 240px;
-height: 54px;
-background-color: #222;
-border-color: #222;
-border-radius: 3px;
-color: #fff;
-cursor: pointer;
-transition: all 0.2s;
+  font-size: 14px;
+  width: 240px;
+  height: 54px;
+  background-color: #222;
+  border-color: #222;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .btn-register:hover {
-background-color: #fff;
-border-color: #fff;
-color: #222;
-
+  background-color: #fff;
+  border-color: #fff;
+  color: #222;
 }
 
+/* ------------footer */
+footer {
+  background-color: rgb(14, 14, 14);
+  padding: 50px 20px;
+}
+footer .contents-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+footer .contents-wrap .contents1 {
+  width: 70%;
+  color: white;
+  line-height: 30px;
+}
+footer .contents-wrap .contents1 span {
+  margin-right: 20px;
+}
+footer .contents-wrap .contents2 {
+  width: 30%;
+}
+footer .contents-wrap .contents2 i {
+  margin-right: 15px;
+  color: white;
+}
