@@ -1,4 +1,8 @@
+import { createNavbar } from "../navbar.js";
+
 // ----------------------------------
+createNavbar();
+
 let item;
 let html = "";
 async function getData() {
