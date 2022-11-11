@@ -19,9 +19,9 @@ async function getData() {
           <a href="/item/${item[i]._id}">
             <img src="${item[i].image}" alt="" />
           </a>
-          <p class="name">${item[i].name}</p>
-          <p class="price">${item[i].price}</p>
-        <button class="wish">찜하기</button>
+          <p class="name"><div class="product-info-p">${item[i].name}</div></p>
+          <p class="price"><div class="product-info-p">${item[i].price}</div></p>
+          <div class="product-info-p"><button class="wish">찜하기</button></div>
       </div>
     </div>
     `;
@@ -37,7 +37,7 @@ async function getData() {
         e.target.previousElementSibling.previousElementSibling.innerText;
       let sumnail =
         e.target.previousElementSibling.previousElementSibling
-          .previousElementSibling.src;
+          .previousElementSibling.firstElementChild.src;
       if (localStorage.getItem("name") != null) {
         let takeName = JSON.parse(localStorage.name);
         let takePrice = JSON.parse(localStorage.price);

@@ -45,19 +45,20 @@ async function getData() {
   for (let i = 0; i < item.length; i++) {
     html += `
           <div class="product">
-          
             <div class="product-info"">
-            <a href="/item/${item[i]._id}">
-            <img src="${item[i].image}" alt="" />
-              </a>
+              <div class="product-wrap"">
+                <a href="/item/${item[i]._id}">
+                  <img src="${item[i].image}" alt="상품이미지" />
+                </a>
+              </div>
               <p class="name">${item[i].name}</p>
-              <p class="price">${item[i].price}</p>
-              
-              <button class="wish">찜하기<button>
+              <p class="price">${item[i].price}</p> 
+              <button class="wish">찜<button>
             </div>
           </div>
         `;
   }
+
   // document.querySelector("#first-name").innerHTML = itemName;
   // document.querySelector(".price").innerHTML = itemPrice;
   itemList.innerHTML = html;
@@ -68,12 +69,16 @@ async function getData() {
   for (let i = 0; i < wish.length; i++) {
     let wish = document.querySelectorAll(".wish")[i];
     wish.addEventListener("click", function (e) {
+      // 찜하기 이모션
+      wish.classList.toggle("toggle");
+      // --------
+
       let price = e.target.previousElementSibling.innerText;
       let name =
         e.target.previousElementSibling.previousElementSibling.innerText;
       let sumnail =
         e.target.previousElementSibling.previousElementSibling
-          .previousElementSibling.src;
+          .previousElementSibling.firstElementChild.firstElementChild.src;
       if (localStorage.getItem("name") != null) {
         let takeName = JSON.parse(localStorage.name);
         let takePrice = JSON.parse(localStorage.price);
@@ -81,8 +86,8 @@ async function getData() {
         takeName.push(name);
         takePrice.push(price);
         takeImg.push(sumnail);
-        localStorage.setItem("name", JSON.stringify(takeName));
         localStorage.setItem("price", JSON.stringify(takePrice));
+        localStorage.setItem("name", JSON.stringify(takeName));
         localStorage.setItem("img", JSON.stringify(takeImg));
       } else {
         localStorage.setItem("name", JSON.stringify([name]));
@@ -94,6 +99,106 @@ async function getData() {
 }
 
 getData();
-//  로그인 상태변경에 따른 나비바 표현
 
-// if 문으로 로그인 여부에 따라 메뉴 li - 로그아웃 , 마이페이지 , 관리자 로그인 hidden 클래스 제거 , 로그인 은 hidden 클래스 부여
+// -----------------디자인 범위
+
+let text1 = document.querySelector(".content-box > div");
+let img1 = document.querySelector(".img-box img");
+let observer = new IntersectionObserver((e) => {
+  console.log(e);
+
+  e.forEach((박스) => {
+    if (박스.isIntersecting) {
+      박스.target.style.opacity = 1;
+    } else {
+      박스.target.style.opacity = 0;
+    }
+  });
+});
+
+observer.observe(text1);
+observer.observe(img1);
+
+// ------------두번쨰 setion 7
+let text2 = document.querySelector(".content-box1 .text2");
+let img2 = document.querySelector(".img-box1 img");
+let observer1 = new IntersectionObserver((e) => {
+  console.log(e);
+
+  e.forEach((박스) => {
+    if (박스.isIntersecting) {
+      박스.target.style.opacity = 1;
+    } else {
+      박스.target.style.opacity = 0;
+    }
+  });
+});
+
+observer1.observe(text2);
+observer1.observe(img2);
+
+// --------3번쨰 setion 7
+let text3 = document.querySelector(".content-box2 .text3");
+let text4 = document.querySelector(".content-box2 .text4");
+let img3 = document.querySelector(".img-box2 ");
+let observer2 = new IntersectionObserver((e) => {
+  console.log(e);
+
+  e.forEach((박스) => {
+    if (박스.isIntersecting) {
+      박스.target.style.opacity = 1;
+    } else {
+      박스.target.style.opacity = 0;
+    }
+  });
+});
+
+observer2.observe(text3);
+observer2.observe(text4);
+observer2.observe(img3);
+
+// -----------section 3 타이머
+const title = document.querySelector(".d-day");
+
+const getDDay = () => {
+  // D-Day 날짜 지정
+  const setDate = new Date("2022-11-25T00:00:00+0900");
+  // D-day 날짜의 연,월,일 구하기
+  const setDateYear = setDate.getFullYear();
+  // getMonth 메서드는 0부터 세기 때문에 +1 해준다.
+  const setDateMonth = setDate.getMonth() + 1;
+  const setDateDay = setDate.getDate();
+
+  // 현재 날짜를 new 연산자를 사용해서 Date 객체를 생성
+  const now = new Date();
+
+  // D-Day 날짜에서 현재 날짜의 차이를 getTime 메서드를 사용해서 밀리초의 값으로 가져온다.
+  const distance = setDate.getTime() - now.getTime();
+
+  // Math.floor 함수를 이용해서 근접한 정수값을 가져온다.
+  // 밀리초 값이기 때문에 1000을 곱한다.
+  // 1000*60 => 60초(1분)*60 => 60분(1시간)*24 = 24시간(하루)
+  // 나머지 연산자(%)를 이용해서 시/분/초를 구한다.
+  const day = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // D-Day 날짜를 가져오고,
+  // ${setDateYear}년 ${setDateMonth} ${setDateDay}일까지
+  // 삼항 연산자를 사용해서 값이 10보다 작을 경우에 대해 조건부 렌더링을 해준다.
+  title.innerText = `${day}D ${hours < 10 ? `0${hours}` : hours}H ${
+    minutes < 10 ? `0${minutes}` : minutes
+  }M ${seconds < 10 ? `0${seconds}` : seconds}S`;
+};
+
+const init = () => {
+  // init 함수 생성해서 getDDay함수 호출하고,
+  getDDay();
+  // setInterval 메서드에서 getDDay함수를 1초(1000밀리초)마다 호출한다.
+  setInterval(getDDay, 1000);
+};
+
+init();

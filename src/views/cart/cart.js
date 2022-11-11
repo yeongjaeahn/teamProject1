@@ -107,7 +107,7 @@ Number.prototype.formatNumber = function () {
 // html = "";
 
 for (let i = 0; i < localStorage.length; i++) {
-  let rowWrap = document.querySelector(".row-wrap");
+  let rowWrap = document.querySelector("#basket");
   let name = JSON.parse(localStorage.getItem("name"));
   let price = JSON.parse(localStorage.getItem("price"));
   let image = JSON.parse(localStorage.getItem("img"));
@@ -115,16 +115,16 @@ for (let i = 0; i < localStorage.length; i++) {
   rowWrap.insertAdjacentHTML(
     "beforeend",
     `<div class="row data">
-  <div class="subdiv">
-    <div class="check">
-      <input
+        <div class="subdiv">
+            <div class="check">
+              <input
         type="checkbox"
         name="buy"
         value="260"
         checked=""
         onclick="javascript:basket.checkItem();"
       />&nbsp;
-    </div>
+          </div>
     <div class="img"><img src="${image[i]}" width="60px"  /></div>
     <div class="pname">
       <span>${name[i]}</span>
