@@ -218,3 +218,7 @@ img {
   background-color: white;
   color: black;
 }
+
+.card-item-info {
+  padding: 10px;
+}

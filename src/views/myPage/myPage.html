@@ -7,25 +7,55 @@
     <link rel="stylesheet" href="myPage.css" />
     <script src="myPage.js" type="module"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <title>MYPAGE</title>
+    <title>Platform 19</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <header class="header">
-      <div class="name">
-        <h1>가명 : 19조와 4분의 3</h1>
+    <div class="all">
+      <div class="header-container">
+        <header>
+          <div>
+            <div class="header-wrap">
+              <a href="/">
+              <div class="logo">
+                <p>Platform</p>
+                <img src="../logo1.PNG" alt="logo">
+              </div>
+              </a>
+              <div class="menu">
+                <ul>
+                  <li><a href="/">HOME</a></li>
+                  <li><a href="/shop">SHOP</a></li>
+                  <li><a href="/login">Log in</a></li>
+                  <li><a href="/cart">Cart</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <section class="shop-section1">
+          <h2>MY PAGE</h2>
+        </section>
+        </header>
       </div>
-    </header>
     <section class="order-body-wrap">
       <div class="order-box">
-        <p class="card-title">주문 내역</p>
-        <div class="card-body">
-          <div class="card-item">
-            <img src="934.jpg" alt="item1" />
-            <div class="card-item-info">
-              <p>정말 멋진 상품</p>
-              <p>1개</p>
-              <p>상품 가격</p>
+        <div class="order-log">
+          <p class="card-title">주문 내역</p>
+          <div class="card-body">
+            <div class="card-item">
+              <img id="productImage" src="934.jpg" alt="item1" />
             </div>
+            <div class="card-item-info">
+              <p class="order-log-item">정말 멋진 상품</p>
+              <p class="order-log-quantity">1개</p>
+              <p class="order-log-price">상품 가격</p>
+            </div>
+            <div class="order-status">상품 준비중</div>
           </div>
         </div>
       </div>

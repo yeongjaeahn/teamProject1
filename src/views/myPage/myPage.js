@@ -126,3 +126,30 @@ async function quit(e) {
     alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
   }
 }
+
+// 데이터 받아와서 넣기
+
+const cardItemInfo = document.querySelector(".card-item-info");
+const cardItem = document.querySelector(".card-item"); // 이미지 넣는 div
+
+insertProductElement()
+
+async function insertProductElement() {
+  const res = await fetch(``)
+  const data = await res.json()
+  
+  const title = data.title
+  const price = data.price
+  const image = data.image
+  const quantity = data.quantity
+
+  cardItem.insertAdjacentHTML('beforeend', `
+  <img id="productImage" src="${image}" alt="clothes-image" />
+  `)
+  
+  cardItemInfo.insertAdjacentHTML('beforeend',`
+    <p class="order-log-item">${title}</p>
+    <p class="order-log-quantity">${quantity}</p>
+    <p class="order-log-price">${price}</p>
+  `)
+}

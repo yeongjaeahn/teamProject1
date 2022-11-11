@@ -131,3 +131,37 @@ header .menu ul li {
 .shop-section2 .more-btn a {
   line-height: 25px;
 }
+
+.product-info-p {
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.wish {
+  margin-top: 5px;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+
+  color: #ddd;
+  background-color: #140f0d;
+  border-radius: 5px;
+  border: solid 1px;
+
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.wish:hover {
+  background-color: white;
+  color: black;
+}
+
+nav ul li {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+nav ul li:hover {
+  transform: scale(1.2);
+}
