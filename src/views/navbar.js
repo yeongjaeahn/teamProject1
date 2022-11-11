@@ -6,10 +6,22 @@ export const createNavbar = () => {
 
   switch (pathname) {
     case "/":
-      addNavElements("admin register login account logout");
+      addNavElements("admin register shop login account cart logout");
       break;
     case "/login/":
       addNavElements("register");
+      break;
+    case "/register/":
+      addNavElements("login");
+      break;
+    case "/shop/":
+      addNavElements("account login register logout");
+      break;
+    case "/mypage/":
+      addNavElements("admin shop cart logout");
+      break;
+    case "/item/":
+      addNavElements("account login register logout");
       break;
 
     default:
@@ -25,19 +37,23 @@ const addNavElements = (keyString) => {
   const isAdmin = sessionStorage.getItem("admin") ? true : false;
 
   const itemsBeforeLogin = {
-    register: '<li><a href = "/register">회원가입</a></li>',
-    login: '<li><a href = "/login">로그인</a></li>',
+    register: '<li><a href = "/register">Sign Up</a></li>',
+    login: '<li><a href = "/login">Sign In</a></li>',
+    shop: '<li><a href = "/shop">Shop</a></li>',
+    cart: '<li><a href = "/cart">Cart</a></li>',
   };
 
   const itemsAfterLogin = {
-    account: '<li><a href="/myPage">계정관리</a></li>',
-    logout: '<li><a href="#" id="logout">로그아웃</a></li>',
-    productAdd: '<li><a href="/admin/item">제품 추가</a></li>',
-    categoryAdd: '<li><a href="/admin/category">카테고리 추가</a></li>',
+    account: '<li><a href="/myPage">Account</a></li>',
+    logout: '<li><a href="#" id="logout">Log Out</a></li>',
+    productAdd: '<li><a href="/admin/item">Add Items</a></li>',
+    categoryAdd: '<li><a href="/admin/category">Add Category</a></li>',
+    shop: '<li><a href = "/shop">Shop</a></li>',
+    cart: '<li><a href = "/cart">Cart</a></li>',
   };
 
   const itemsForAdmin = {
-    admin: '<li><a href = "/admin">관리 페이지</a></li>',
+    admin: '<li><a href = "/admin">Admin</a></li>',
   };
 
   const logoutScript = document.createElement("script");

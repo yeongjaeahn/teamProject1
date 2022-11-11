@@ -1,3 +1,4 @@
+import { createNavbar } from "../navbar.js";
 import * as Api from "/api.js";
 
 const emailInput = document.querySelector("#input-text-email");
@@ -10,6 +11,7 @@ const saveButton = document.querySelector("#save");
 const quitButton = document.querySelector("#quit");
 const addressFinder = document.querySelector(".adress-btn");
 
+createNavbar();
 addAllElements();
 addAllEvents();
 
@@ -132,24 +134,30 @@ async function quit(e) {
 const cardItemInfo = document.querySelector(".card-item-info");
 const cardItem = document.querySelector(".card-item"); // 이미지 넣는 div
 
-insertProductElement()
+insertProductElement();
 
 async function insertProductElement() {
-  const res = await fetch(``)
-  const data = await res.json()
-  
-  const title = data.title
-  const price = data.price
-  const image = data.image
-  const quantity = data.quantity
+  const res = await fetch(``);
+  const data = await res.json();
 
-  cardItem.insertAdjacentHTML('beforeend', `
+  const title = data.title;
+  const price = data.price;
+  const image = data.image;
+  const quantity = data.quantity;
+
+  cardItem.insertAdjacentHTML(
+    "beforeend",
+    `
   <img id="productImage" src="${image}" alt="clothes-image" />
-  `)
-  
-  cardItemInfo.insertAdjacentHTML('beforeend',`
+  `
+  );
+
+  cardItemInfo.insertAdjacentHTML(
+    "beforeend",
+    `
     <p class="order-log-item">${title}</p>
     <p class="order-log-quantity">${quantity}</p>
     <p class="order-log-price">${price}</p>
-  `)
+  `
+  );
 }
