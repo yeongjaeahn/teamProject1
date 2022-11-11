@@ -19,9 +19,9 @@ async function getData() {
           <a href="/item/${item[i]._id}">
             <img src="${item[i].image}" alt="" />
           </a>
-          <p class="name"><div class="product-info-p">${item[i].name}</div></p>
-          <p class="price"><div class="product-info-p">${item[i].price}</div></p>
-          <div class="product-info-p"><button class="wish">찜하기</button></div>
+          <p class="name">${item[i].name}</p>
+          <p class="price">${item[i].price}</p>
+        <button class="wish">찜하기</button>
       </div>
     </div>
     `;
