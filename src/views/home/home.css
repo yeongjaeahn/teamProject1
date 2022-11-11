@@ -46,8 +46,10 @@ header a {
   color: aliceblue;
 }
 header .logo {
-  width: 5%;
+  font-size: 30px;
+  letter-spacing: 5px;
 }
+
 .down {
   background-color: rgb(0, 0, 0, 0.6);
   transition: all 1.5s;
@@ -59,11 +61,12 @@ header .logo {
 
 .header-wrap {
   width: 1100px;
-  padding: 30px 0;
+  padding: 20px 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   margin: 0 auto;
+  align-items: center;
 }
 
 header .menu ul {
@@ -138,13 +141,16 @@ header .menu ul li {
 
 .section2 .product img {
   transition: all 1s;
+  display: block;
 }
 .section2 .product .product-wrap {
   display: inline-block;
 
   overflow: hidden;
 }
-
+.section2 .product .product-info button:last-child {
+  display: none;
+}
 .section2 .product .product-wrap:hover img {
   transform: scale(1.1, 1.1);
 }
@@ -361,6 +367,7 @@ header .menu ul li {
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  margin-top: 100px;
 }
 
 .tech-slideshow > div {
@@ -395,6 +402,27 @@ header .menu ul li {
 }
 /* ------footer---- */
 footer {
-  background-color: aquamarine;
-  height: 200px;
+  background-color: rgb(14, 14, 14);
+  padding: 50px 20px;
+  margin-top: 100px;
+}
+footer .contents-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+footer .contents-wrap .contents1 {
+  width: 70%;
+  color: white;
+  line-height: 30px;
+}
+footer .contents-wrap .contents1 span {
+  margin-right: 20px;
+}
+footer .contents-wrap .contents2 {
+  width: 30%;
+}
+footer .contents-wrap .contents2 i {
+  margin-right: 15px;
+  color: white;
 }
