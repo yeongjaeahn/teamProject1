@@ -6,22 +6,28 @@ export const createNavbar = () => {
 
   switch (pathname) {
     case "/":
-      addNavElements("admin register shop login account cart logout");
+      addNavElements("admin account shop cart register login logout");
       break;
     case "/login/":
-      addNavElements("register");
+      addNavElements("register shop");
       break;
     case "/register/":
-      addNavElements("login");
+      addNavElements("shop login");
       break;
     case "/shop/":
-      addNavElements("account login register logout");
+      addNavElements("account  register cart login logout");
       break;
-    case "/mypage/":
+    case "/myPage/":
       addNavElements("admin shop cart logout");
       break;
     case "/item/":
       addNavElements("account login register logout");
+      break;
+    case "/cart/":
+      addNavElements("admin shop cart login logout");
+      break;
+    case "order":
+      addNavElements("shop cart logout");
       break;
 
     default:
@@ -38,7 +44,7 @@ const addNavElements = (keyString) => {
 
   const itemsBeforeLogin = {
     register: '<li><a href = "/register">Sign Up</a></li>',
-    login: '<li><a href = "/login">Sign In</a></li>',
+    login: '<li><a href = "/login">Log In</a></li>',
     shop: '<li><a href = "/shop">Shop</a></li>',
     cart: '<li><a href = "/cart">Cart</a></li>',
   };
@@ -53,7 +59,7 @@ const addNavElements = (keyString) => {
   };
 
   const itemsForAdmin = {
-    admin: '<li><a href = "/admin">Admin</a></li>',
+    admin: '<li><a href = "/admin/items">Admin</a></li>',
   };
 
   const logoutScript = document.createElement("script");
