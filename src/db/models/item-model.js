@@ -13,6 +13,11 @@ export class ItemModal {
     const items = await Item.find({});
     return items;
   }
+
+  async findById(_id) {
+    const item = await Item.findById(_id);
+    return item;
+  }
 }
 
 const itemModel = new ItemModal();

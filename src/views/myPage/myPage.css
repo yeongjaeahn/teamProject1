@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Belleza", "Noto Sans KR", sans-serif;
+}
+
+a:link,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+/* -----------header------------------------------- */
+header {
+  width: 100%;
+  padding: none;
+  position: fixed;
+  z-index: 100;
+  transition: all 2s;
+  margin-bottom: 150px;
+}
+
+header a {
+  color: #000;
+}
+header .logo {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.header-wrap {
+  width: auto;
+  max-width: 1000px;
+  padding: 30px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+header .menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+header .menu ul li {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.shop-section1 {
+  width: 100%;
+  background-color: rgb(238, 237, 237);
+  padding: 10px 0;
+  margin-top: 100px;
+  position: fixed;
+}
+
+.shop-section1 h2 {
+  width: 1000px;
+  margin: 0 auto;
+}
+/* ------------------ */
+
+section {
+  width: 100%;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.order-body-wrap {
+  position: fixed;
+  margin-top: 170px;
+}
+/* 테두리 css 입힌 곳 */
+.order-box {
+  /* border-bottom: solid 16px #e5e5e5; */
+  width: 100%;
+  margin: 3rem 0;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-item {
+  display: flex;
+  line-height: 33px;
+}
+
+img {
+  width: 100px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-text {
+  width: 485px;
+  line-height: 23px;
+  height: 45px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+
+.input-text-adress {
+  width: 350px;
+  line-height: 23px;
+  height: 45px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+
+.adress-btn {
+  width: 26%;
+  height: 45px;
+  padding: 0px 20px 0px 20px;
+
+  cursor: pointer;
+}
+
+.adress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  width: 100%;
+  height: 54px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: solid 1px;
+
+  margin-bottom: 15px;
+
+  color: white;
+  background-color: black;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#save:hover {
+  background-color: white;
+  color: black;
+}
+
+#quit {
+  color: black;
+  background-color: white;
+}
+
+#quit:hover {
+  color: white;
+  background-color: black;
+}
+
+.card-body {
+  display: grid;
+  grid-template-columns: 100px 300px 80px;
+}

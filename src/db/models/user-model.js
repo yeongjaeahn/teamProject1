@@ -31,6 +31,24 @@ export class UserModel {
     const updatedUser = await User.findOneAndUpdate(filter, update, option);
     return updatedUser;
   }
+
+  async updateByEmail({ userEmail, update }) {
+    const filter = { email: userEmail };
+    const option = { returnOriginal: false };
+
+    const updatedUser = await User.findOneAndUpdate(filter, update, option);
+    return updatedUser;
+  }
+
+  async deleteById({ userId }) {
+    const result = await User.deleteOne({ _id: userId });
+    return result;
+  }
+
+  async deleteByEmail({ email }) {
+    const deletedUser = await User.findOneAndDelete({ email });
+    return deletedUser;
+  }
 }
 
 const userModel = new UserModel();

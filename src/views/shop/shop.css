@@ -1,0 +1,215 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Belleza", "Noto Sans KR", sans-serif;
+}
+
+/* -----------header------------------------------- */
+header {
+  width: 100%;
+  padding: none;
+  position: sticky;
+  z-index: 100;
+  transition: all 2s;
+}
+
+header a {
+  color: black;
+}
+
+header .logo {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.logo p {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+.shop-section1 {
+  width: 100%;
+  background-color: rgb(238, 237, 237);
+  padding: 10px 0;
+}
+.shop-section1 h2 {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.down {
+  background-color: rgb(0, 0, 0, 0.6);
+  transition: all 1.5s;
+}
+.down1 {
+  color: rgb(255, 255, 255);
+  transition: all 0.7s;
+}
+
+.header-wrap {
+  width: 1100px;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+header .menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+header .menu ul li {
+  padding: 0 10px;
+  text-align: center;
+}
+/* -----------section2 ---- */
+.shop-section2 {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.shop-section2 .cate nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  padding: 50px 0;
+}
+.shop-section2 .cate nav ul li {
+  margin-right: 40px;
+}
+.shop-section2 .cate nav ul li a {
+  cursor: pointer;
+}
+.shop-section2 .product-img {
+  border-radius: 10px;
+}
+/* -------------상품 디자인 */
+.item-list .product-info {
+  text-align: center;
+  padding-top: 10px;
+}
+.item-list .product-info p {
+  line-height: 30px;
+  color: black;
+}
+.item-list .product-info .name {
+  margin-top: 10px;
+}
+.product img {
+  transition: all 1s;
+  display: block;
+  border-radius: 10px;
+}
+.product .product-wrap {
+  display: inline-block;
+
+  overflow: hidden;
+}
+
+.product .product-wrap:hover img {
+  transform: scale(1.1, 1.1);
+}
+.wish {
+  width: 25%;
+  background-color: rgba(12, 12, 12, 0.089);
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  transition: all 0.7s;
+  margin-top: 10px;
+}
+.wish:hover {
+  background-color: rgb(175, 175, 175);
+}
+.wish.toggle {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgb(255, 255, 255);
+}
+/* ---------- */
+/* --------아이템 리스트 --- */
+.shop-section2 .item-list {
+  width: auto;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 10px;
+}
+.shop-section2 .more-btn {
+  text-align: center;
+  margin: 20px auto;
+}
+.shop-section2 .moreData {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 10%;
+  cursor: pointer;
+  border-radius: 50px;
+  color: white;
+  transition: all 0.7s;
+  border: none;
+  padding: 10px 0;
+}
+.shop-section2 .moreData:hover {
+  background-color: rgb(216, 216, 216);
+  color: rgb(0, 0, 0);
+  border: none;
+}
+.shop-section2 .more-btn a {
+  line-height: 25px;
+}
+/* ------footer---- */
+footer {
+  background-color: rgb(14, 14, 14);
+  padding: 50px 20px;
+  margin-top: 100px;
+}
+footer .contents-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+footer .contents-wrap .contents1 {
+  width: 70%;
+  color: white;
+  line-height: 30px;
+}
+footer .contents-wrap .contents1 span {
+  margin-right: 20px;
+}
+footer .contents-wrap .contents2 {
+  width: 30%;
+}
+footer .contents-wrap .contents2 i {
+  margin-right: 15px;
+  color: white;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+.contents1 a {
+  color: white;
+}

@@ -19,18 +19,18 @@ itemRouter.post("/register-item", async (req, res, next) => {
     const name = req.body.name;
     const shortName = req.body.shortName;
     const price = req.body.price;
-    const image = req.body.image;
-    const thumbnail = req.body.thumbnail;
     const category = req.body.category;
+    const image = req.body.imageKey;
+    const thumbnail = req.body.thumbnail;
 
-    // 위 데이터를 유저 db에 추가하기
+    // 위 데이터를 아이템 db에 추가하기
     const newItem = await itemService.addItem({
       name,
       shortName,
       price,
+      category,
       image,
       thumbnail,
-      category,
     });
 
     // 추가된 유저의 db 데이터를 프론트에 다시 보내줌
@@ -41,6 +41,7 @@ itemRouter.post("/register-item", async (req, res, next) => {
   }
 });
 
+// 아이템 전체 목록
 itemRouter.get("/itemlist", async function (req, res, next) {
   try {
     // 전체 아이템 목록을 얻음
@@ -52,5 +53,17 @@ itemRouter.get("/itemlist", async function (req, res, next) {
     next(error);
   }
 });
+
+// 아이템 상세페이지
+itemRouter.get("/item/:_id", async function (req, res, next) {
+  try {
+    const item = await itemService.getItem(req.params._id);
+    res.status(200).json(item);
+  } catch (error) {
+    next(error);
+  }
+});
+
+// 카테고리별 아이템 목록
 
 export { itemRouter };

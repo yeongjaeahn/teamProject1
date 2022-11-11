@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platform 19</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="order.css" />
+    <title>ORDER</title>
+    <script src="order.js" type="module" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  </head>
+  <body>
+    <div class="all">
+      <header>
+        <div class="header-wrap">
+          <div class="logo">
+            <a href="/">PLATFORM 9 3/4</a>
+          </div>
+          <div class="menu">
+            <ul id="navbar">
+              <li><a href="/myPage">Account</a></li>
+              <li><a href="/shop">Shop</a></li>
+              <li><a href="/cart">Cart</a></li>
+              <li><a href="/shop">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="shop-section1">
+        <h2>ORDER</h2>
+      </section>
+
+      <section class="order-body-wrap">
+        <div class="order-box">
+          <p class="card-title">주문 상품</p>
+          <div class="card-body">
+            <div class="card-item">
+              <img src="" alt="item1" class="item-image" />
+              <div class="card-item-info">
+                <p id="item-name"></p>
+                <p id="item-quantity"></p>
+                <p id="item-price"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="order-box">
+          <p class="card-title">배송지 정보</p>
+          <div class="row">
+            <label for="input-text-name">이름</label>
+            <input id="input-text-name" class="input-text" type="text" />
+          </div>
+          <div class="row">
+            <label for="input-text-number">연락처</label>
+            <input id="input-text-number" class="input-text" type="text" />
+          </div>
+
+          <div class="row">
+            <label>주소</label>
+            <div class="adress-row">
+              <input
+                type="text"
+                id="sample6_postcode"
+                class="input-text-adress"
+                placeholder="우편번호"
+              />
+              <input type="button" class="adress-btn" value="주소 찾기" /><br />
+            </div>
+          </div>
+          <input
+            type="text"
+            id="sample6_address"
+            class="input-text"
+            placeholder="주소"
+          /><br />
+          <input
+            type="text"
+            id="sample6_detailAddress"
+            class="input-text"
+            placeholder="상세주소"
+          />
+        </div>
+        <div class="order-box">
+          <p class="card-title">결제 정보</p>
+          <div class="info-item">
+            <span class="item-title">상품 합계</span>
+            <span class="item-total-price"></span>
+          </div>
+          <div class="info-item">
+            <span class="item-title">배송비</span>
+            <span class="item-ship-price"></span>
+          </div>
+          <div class="info-total-item">
+            <span class="total-title">결제금액</span>
+            <span class="order-total-price"></span>
+          </div>
+        </div>
+        <div class="order-box">
+          <p class="card-title">결제 방법</p>
+          <div class="payment-box">
+            <div class="payment-option">
+              <input type="radio" name="payment" id="pay1" />
+              <label for="pay1"> 신용 / 체크카드</label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" name="payment" id="pay2" />
+              <label for="pay2">계좌이체</label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" name="payment" id="pay3" />
+              <label for="pay3"> 가상 계좌</label>
+            </div>
+          </div>
+        </div>
+        <a href="../orderComplete/orderComplete.html"
+          ><button type="submit" class="submit-button">결제하기</button></a
+        >
+      </section>
+    </div>
+  </body>
+</html>

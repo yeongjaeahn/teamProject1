@@ -14,19 +14,16 @@ const ItemSchema = new Schema(
       type: Number,
       required: true,
     },
+    category: {
+      type: String,
+      required: true,
+    },
     image: {
       type: String,
-      data: Buffer,
       required: true,
     },
     thumbnail: {
       type: String,
-      data: Buffer,
-      requried: true,
-    },
-    category: {
-      type: String,
-      requried: true,
     },
   },
   {

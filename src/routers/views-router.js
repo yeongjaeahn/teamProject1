@@ -9,12 +9,21 @@ const viewsRouter = express.Router();
 viewsRouter.use("/", serveStatic("home"));
 viewsRouter.use("/register", serveStatic("register"));
 viewsRouter.use("/login", serveStatic("login"));
-viewsRouter.use("/store", serveStatic("store"));
+viewsRouter.use("/cart", serveStatic("cart"));
+viewsRouter.use("/shop", serveStatic("shop"));
+viewsRouter.use("/item/:_id", serveStatic("item"));
+viewsRouter.use("/order", serveStatic("order"));
+viewsRouter.use("/order/complete", serveStatic("orderComplete"));
+viewsRouter.use("/mypage", serveStatic("myPage"));
+
 viewsRouter.use("/admin", serveStatic("admin"));
+viewsRouter.use("/admin/items", serveStatic("admin-item"));
+viewsRouter.use("/admin/orders", serveStatic("admin-order"));
+viewsRouter.use("/admin/users", serveStatic("admin-user"));
+viewsRouter.use("/admin/category", serveStatic("admin-category"));
 
 // views 폴더의 최상단 파일인 rabbit.png, api.js 등을 쓸 수 있게 함
 viewsRouter.use("/", serveStatic(""));
-``;
 // views폴더 내의 ${resource} 폴더 내의 모든 파일을 웹에 띄우며,
 // 이 때 ${resource}.html 을 기본 파일로 설정함.
 function serveStatic(resource) {

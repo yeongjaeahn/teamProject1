@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>아이템 등록 페이지</title>
+
+    <!-- 구글 OAuth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- 카카오 OAuth -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1248.0.min.js"></script>
+    <!-- 커스텀 css, js -->
+    <link rel="stylesheet" href="../admin.css" />
+    <script src="admin-item.js" type="module" defer></script>
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <div id="header">
+      <div class="top">
+        <!-- Logo -->
+        <div id="logo">
+          <!-- <span class="image avatar48"></span> -->
+          <h1 id="title">관리자 페이지</h1>
+          <p>
+            <span>환영합니다.</span>
+            <span id="user-name"></span>
+            <span>님</span>
+          </p>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li
+              style="
+                background: rgba(0, 0, 0, 0.15);
+                color: #fff;
+                font-weight: bold;
+              "
+            >
+              <a href="/admin/items" id="top-link">
+                <span class="icon solid fa-home">제품 관리</span>
+              </a>
+            </li>
+            <!-- <li>
+              <a href="/admin/category" id="portfolio-link">
+                <span class="icon solid fa-th">카테고리 관리</span>
+              </a>
+            </li> -->
+            <li>
+              <a href="/admin/users" id="about-link">
+                <span class="icon solid fa-user">회원 관리</span>
+              </a>
+            </li>
+            <li>
+              <a href="/admin/orders" id="contact-link">
+                <span class="icon solid fa-envelope">주문 관리</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div id="main">
+      <!-- Intro -->
+      <section id="top" class="one dark cover">
+        <div class="container">
+          <div class="register-user-form-container">
+            <form
+              action="/api/register-item"
+              class="box register-user-form-box"
+              id="registerItemForm"
+              enctype="multipart/form-data"
+            >
+              <div class="field">
+                <label class="name-label">이름</label>
+                <input class="input" id="nameInput" type="text" />
+              </div>
+              <div class="field">
+                <label class="label" for="shortNameInput">숏네임</label>
+                <input class="input" id="shortNameInput" type=text"
+                placeholder="등록하실 물품의 숏네임을 적어주세요."
+                autocomplete="on" name="shortName" />
+              </div>
+
+              <div class="field">
+                <label class="label" for="priceInput">가격</label>
+                <div class="control">
+                  <input class="input" id="priceInput" type=text"
+                  placeholder="등록하실 물픔의 가격을 적어주세요."
+                  autocomplete="on" name="price" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" for="categoryInput">카테고리</label>
+                <div class="control">
+                  <input class="input" id="categoryInput" type=text"
+                  placeholder="등록하실 물픔의 카테고리를 적어주세요."
+                  name="category" autocomplete="on" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label" for="imageInput">이미지 등록하기</label>
+                <div class="control">
+                  <input
+                    id="imageInput"
+                    name="image"
+                    type="file"
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+
+              <div class="field mb-5">
+                <label class="label" for="passwordConfirmInput"
+                  >썸네일 등록하기</label
+                >
+                <div class="control">
+                  <input
+                    id="thumbnailInput"
+                    name="thumbnail"
+                    type="file"
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+
+              <button class="button is-primary is-fullwidth" id="submitButton">
+                물품 등록하기
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script>
+    // function uploadImage() {
+    //   const requestData = async (event) => {
+    //     let formData = new FormData();
+    //     formData.append("image", event.target.files[0]);
+    //     formData.append("name", event.target.value);
+    //     formData.append("shortName", event.target.value);
+    //     formData.append("price", event.target.value);
+    //     formData.append("category", event.target.value);
+
+    //     try {
+    //       await Api.post("/api/register-item", formData);
+    //       alert(`정상적으로 물품이 등록되었습니다.`);
+    //     } catch (error) {
+    //       console.log(error.stack);
+    //       alert(
+    //         `문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`
+    //       );
+    //     }
+    //   };
+    // }
+  </script>
+</html>

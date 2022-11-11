@@ -1,107 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>쇼핑-데모</title>
-    <!-- 아이콘 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLATFORM 9 3/4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/elice-rabbit-favicon.png"
-    />
-    <!-- bulma css 관련 -->
-    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
+    <link rel="stylesheet" href="login.css" />
     <!-- 폰트 어썸: 아이콘 -->
     <script
       defer
       src="https://kit.fontawesome.com/9daa42bcef.js"
       crossorigin="anonymous"
     ></script>
-
-    <!-- 커스텀 css, js -->
-    <link rel="stylesheet" href="login.css" />
     <script src="login.js" type="module" defer></script>
+
+    <!-- <script src="js/jquery-3.6.0.js"></script> -->
+    <title>연습</title>
   </head>
   <body>
-    <!-- 헤더 -->
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container mt-3">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="/">
-            <img src="/elice-rabbit.png" width="30" height="30" />
-            <span class="has-text-link">쇼핑-데모</span>
-          </a>
+    <div class="all">
+      <header>
+        <div class="header-wrap">
+          <div class="logo">
+            <a href="/">PLATFORM 9 3/4</a>
+          </div>
 
-          <a
-            role="button"
-            class="navbar-burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="navbarBasicExample"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+          <div class="menu">
+            <nav class="nav">
+              <ul id="navbar">
+                <!-- <il>HOME</il>
+              <il>SHOP</il>
+              <il>Log In</il>
+              <il>Cart</il> -->
+              </ul>
+            </nav>
+          </div>
         </div>
+      </header>
 
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-end breadcrumb my-auto" aria-label="breadcrumbs">
-            <ul id="navbar">
-              <li><a href="/register">회원가입</a></li>
-              <li>
-                <a href="/cart" aria-current="page">
-                  <span class="icon">
-                    <i class="fas fa-cart-shopping"></i>
-                  </span>
-                  <span>카트</span>
-                </a>
-              </li>
-            </ul>
+      <section class="login-wrapper">
+        <div class="login-field">
+          <p class="login-title">로그인</p>
+          <div class="row">
+            <label class="login-label" for="login-input">이메일</label>
+            <input id="login-input" type="email" />
+          </div>
+          <div class="row">
+            <label for="login-user-pw">비밀번호</label>
+            <input id="password-input" type="password" />
+          </div>
+          <p class="password-find">
+            <a href="../passwordFind/passwordFind.html">비밀번호 찾기</a>
+          </p>
+          <div class="btn-wrapper">
+            <button type="submit" class="submit-button" id="login-btn">
+              로그인하기
+            </button>
+            <a href="/register"
+              ><button class="submit-button" id="signup-btn">
+                회원 가입하기
+              </button></a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="contents-wrap">
+          <div class="contents1">
+            <p>
+              상호: PLATFORM 9 3/4 | 대표: 이요섭 | 개인정보관리책임자: 허재 |
+              전화 010-1234-1234
+            </p>
+            <p>
+              팀명: 아즈카반의개발자들 | FE : 안영재 , 허자영 , 김선은 | BE :
+              이요섭 , 허재
+            </p>
+            <p>
+              주소: 해리포터길 아즈카반 감옥 26 1호 | 사업자 등록번호:
+              123-13-23425
+            </p>
+            <a href="/">이용약관</a>
+            <a href="/">개인정보처리방침</a>
+            <a href="/">사업자정보확인</a>
+            <p>Copright © 2022 아즈카반의 개발자들. ALL RIGHTS RESERVED.</p>
+          </div>
+          <div class="contents2">
+            <a href="/"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            <a href="/"><i class="fa-brands fa-github fa-2x"></i></a>
+            <a href="/"><i class="fa-brands fa-discord fa-2x"></i></a>
+            <a href="/"><i class="fa-solid fa-envelope fa-2x"></i></a>
+            <a href="/"><i class="fa-brands fa-youtube fa-2x"></i></a>
           </div>
         </div>
       </div>
-    </nav>
-
-    <!-- 로그인 폼(Form) -->
-    <div class="login-form-container">
-      <form class="box login-form-box" id="loginForm">
-        <p class="title is-5 has-text-info">어서오세요!</p>
-        <div class="field">
-          <label class="label" for="emailInput">이메일</label>
-          <div class="control">
-            <input
-              class="input"
-              id="emailInput"
-              type="email"
-              placeholder="abc@example.com"
-              autocomplete="on"
-            />
-          </div>
-        </div>
-
-        <div class="field mb-5">
-          <label class="label" for="passwordInput">비밀번호</label>
-          <div class="control">
-            <input
-              class="input"
-              id="passwordInput"
-              type="password"
-              placeholder="********"
-              autocomplete="on"
-            />
-          </div>
-        </div>
-
-        <button class="button is-info is-fullwidth" id="submitButton">
-          로그인하기
-        </button>
-      </form>
-    </div>
+    </footer>
   </body>
 </html>

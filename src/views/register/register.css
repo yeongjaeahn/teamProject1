@@ -1,23 +1,200 @@
-.register-user-form-container {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Belleza", "Noto Sans KR", sans-serif;
+}
+
+a {
+  color: black;
+}
+
+.field-wrapper {
+  padding-top: 200px;
+}
+
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+/* -----------header------------------------------- */
+.logo {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.logo p {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+header {
+  width: 100%;
+  padding: none;
+  position: fixed;
+  z-index: 100;
+  transition: all 2s;
+}
+
+header a {
+  color: black;
+}
+header .logo {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.down {
+  background-color: rgb(0, 0, 0, 0.6);
+  transition: all 1.5s;
+}
+
+.down1 {
+  color: rgb(255, 255, 255);
+  transition: all 0.7s;
+}
+
+.header-wrap {
+  width: 1100px;
+  padding: 30px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+header .menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+header .menu ul li {
+  padding: 0 10px;
+  text-align: center;
+}
+/* ----------------------------------------------- */
+
+/* 여기서부터는 회원가입 */
+.register-wrapper {
+  display: block;
+  width: 100%;
+  /* max-width: 960px;
+  min-height: 300px; */
+  height: auto;
+  margin: 0 auto;
+}
+
+.register {
+  width: 400px;
   height: 85vh;
+
+  margin: 0px auto;
+  color: #222;
+  text-align: left;
 }
 
-.register-user-form-box {
-  width: 30rem;
+.row .header .checkbox-wrapper {
+  width: 400px;
 }
 
-.register-user-form-box .title {
+.header {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.row {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+.title {
+  margin: 0 0 12px;
+}
+
+#emailInput,
+#fullNameInput,
+#passwordInput,
+#passwordConfirmInput {
+  border: 1px solid #ddd;
+
+  font-size: 14px;
+  color: #777;
+  line-height: 23px;
+  width: 400px;
+  height: 45px;
+  padding: 10px 15px;
+}
+
+/* .checkbox-wrapper {
+  display: flex;
+margin:10px 0px;
+}
+
+.checkpox {
+width: 14px;
+height: 14px;
+}
+
+.check-word {
+font-size: 14px;
+color: #777;
+padding: 0 0 0 10px;
+} */
+
+/* 버튼아 예뻐져라 */
+.btn-wrapper {
+  width: 400px;
+  margin: 20px 0 0;
   text-align: center;
 }
 
-.register-user-form-box .button {
-  font-weight: bold;
+.btn-register {
+  font-size: 14px;
+  width: 240px;
+  height: 54px;
+  background-color: #222;
+  border-color: #222;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.register-user-form-box .input:focus {
-  border-color: #00d1b2;
-  box-shadow: 0 0 0 0.125em rgba(0, 209, 178, 0.25);
+.btn-register:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #222;
+}
+
+/* ------------footer */
+footer {
+  background-color: rgb(14, 14, 14);
+  padding: 50px 20px;
+}
+footer .contents-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+footer .contents-wrap .contents1 {
+  width: 70%;
+  color: white;
+  line-height: 30px;
+}
+footer .contents-wrap .contents1 span {
+  margin-right: 20px;
+}
+footer .contents-wrap .contents2 {
+  width: 30%;
+}
+footer .contents-wrap .contents2 i {
+  margin-right: 15px;
+  color: white;
 }

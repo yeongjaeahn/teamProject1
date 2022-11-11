@@ -8,7 +8,7 @@ class ItemService {
   // 아이템 추가
   async addItem(itemInfo) {
     // 객체 destructing
-    const { name, shortName, price, image, thumbnail, category } = itemInfo;
+    const { name, shortName, price, category, image, thumbnail } = itemInfo;
 
     // db에 저장
     const createdNewItem = await this.itemModel.create(itemInfo);
@@ -20,6 +20,12 @@ class ItemService {
   async getItems() {
     const items = await this.itemModel.findAll();
     return items;
+  }
+
+  // 아이템 상세페이지 받음.
+  async getItem(_id) {
+    const item = await this.itemModel.findById(_id);
+    return item;
   }
 }
 

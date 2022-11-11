@@ -1,0 +1,258 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Belleza", "Noto Sans KR", sans-serif;
+}
+
+a {
+  color: white;
+}
+
+/* -----------header------------------------------- */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo p {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+}
+
+header a {
+  color: black;
+}
+
+header h2 {
+  margin: 0 auto;
+}
+
+.header-wrap {
+  width: auto;
+  max-width: 1000px;
+  padding: 30px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+header .menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+header .menu ul li {
+  padding: 0 10px;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  padding: none;
+  position: sticky;
+  z-index: 100;
+  transition: all 2s;
+}
+
+header a {
+  color: black;
+}
+
+header .logo {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.header-wrap {
+  width: 1100px;
+  padding: 20px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+
+header .menu ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+header .menu ul li {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.shop-section1 {
+  width: 100%;
+  background-color: rgb(238, 237, 237);
+  padding: 10px 0;
+}
+
+.shop-section1 h2 {
+  width: 1000px;
+  margin: 0 auto;
+}
+/* ------------------ */
+
+a:link,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+.all {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+section {
+  width: 550px;
+  /* display: flex;
+  flex-direction: column; */
+  padding: 24px 16px;
+  margin-bottom: 16px;
+}
+
+/* 테두리 css 입힌 곳 */
+.order-box {
+  /* border-bottom: solid 16px #e5e5e5; */
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.adress-btn {
+  width: 20%;
+  height: 45px;
+  padding: 0px 20px 0px 20px;
+
+  cursor: pointer;
+}
+
+.card-item {
+  display: flex;
+  line-height: 33px;
+}
+
+img {
+  width: 100px;
+}
+
+.input-text {
+  width: 500px;
+  line-height: 23px;
+  height: 45px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+
+.input-text-adress {
+  width: 400px;
+  line-height: 23px;
+  height: 45px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+
+.adress-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.info-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.info-total-item {
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border-top: solid 2px #ddd;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: small;
+  align-items: center;
+}
+
+.payment-option {
+  width: 90%;
+  height: 40px;
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+
+  display: flex;
+  align-items: center;
+
+  border: solid 1px #ddd;
+  border-radius: 0.3rem;
+}
+
+.submit-button {
+  width: 100%;
+  height: 54px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  border: solid 1px;
+
+  margin-bottom: 15px;
+
+  color: white;
+  background-color: black;
+
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  transition: all 0.2s;
+  background-color: white;
+  color: black;
+}
+
+.card-item-info {
+  padding: 10px;
+}
