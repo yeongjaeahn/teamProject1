@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Platform 19</title>
-
+    <title>PLATFORM 9 3/4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="login.css" />
- <!-- 폰트 어썸: 아이콘 -->
- <script
- defer
- src="https://kit.fontawesome.com/9daa42bcef.js"
- crossorigin="anonymous"
-></script>
+    <!-- 폰트 어썸: 아이콘 -->
+    <script
+      defer
+      src="https://kit.fontawesome.com/9daa42bcef.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="login.js" type="module" defer></script>
+
     <!-- <script src="js/jquery-3.6.0.js"></script> -->
     <title>연습</title>
   </head>
@@ -21,32 +27,23 @@
     <div class="all">
       <header>
         <div class="header-wrap">
-          <a href="/">
           <div class="logo">
-            <p>Platform</p>
-            <img src="../logo1.PNG" alt="logo">
+            <a href="/">PLATFORM 9 3/4</a>
           </div>
-        </a>
+
           <div class="menu">
-            <ul>
-              <li><a href="/">HOME</a></li>
-              <li><a href="/shop">SHOP</a></li>
-              <li><a href="/login">Log in</a></li>
-              <li><a href="/cart">Cart</a></li>
-            </ul>
+            <nav class="nav">
+              <ul id="navbar">
+                <!-- <il>HOME</il>
+              <il>SHOP</il>
+              <il>Log In</il>
+              <il>Cart</il> -->
+              </ul>
+            </nav>
           </div>
         </div>
-        <nav class="nav">
-          <ul id="navbar">
-            <!-- <il>HOME</il>
-            <il>SHOP</il>
-            <il>Log In</il>
-            <il>Cart</il> -->
-          </ul>
-        </div>
-      </div>
-    </header>
-    <div class="all">
+      </header>
+
       <section class="login-wrapper">
         <div class="login-field">
           <p class="login-title">로그인</p>
@@ -58,12 +55,18 @@
             <label for="login-user-pw">비밀번호</label>
             <input id="password-input" type="password" />
           </div>
-          <p class="password-find"><a href="../passwordFind/passwordFind.html">비밀번호 찾기</a></p>
+          <p class="password-find">
+            <a href="../passwordFind/passwordFind.html">비밀번호 찾기</a>
+          </p>
           <div class="btn-wrapper">
             <button type="submit" class="submit-button" id="login-btn">
               로그인하기
             </button>
-            <a href="/register"><button class="submit-button" id="signup-btn">회원 가입하기</button></a>
+            <a href="/register"
+              ><button class="submit-button" id="signup-btn">
+                회원 가입하기
+              </button></a
+            >
           </div>
         </div>
       </section>
