@@ -21,10 +21,12 @@ async function getData() {
     <div class="product" data-type="${item[i].category}">
       <div class="product-info">
           <a href="/item/${item[i]._id}">
-            <img src="${item[i].image}" alt="아이템 이미지" class="product-img"/>
+            <img src="${
+              item[i].image
+            }" alt="아이템 이미지" class="product-img"/>
           </a>
           <p class="name">${item[i].name}</p>
-          <p class="price">${item[i].price}</p>
+          <p class="price">${item[i].price.toLocaleString("kr")}</p>
         <button class="wish">찜하기</button>
       </div>
     </div>
