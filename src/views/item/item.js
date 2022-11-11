@@ -1,4 +1,11 @@
 import { addToDB, putToDB } from "/indexed-db.js";
+import { createNavbar } from "/navbar.js";
+
+addAllElements();
+
+async function addAllElements() {
+  createNavbar();
+}
 const itemDetailName = document.querySelector(".name");
 const itemDetailPrice = document.querySelector(".price");
 const itemDetailImage = document.querySelector(".image");
@@ -25,7 +32,7 @@ async function getDetailData() {
     console.log(item);
 
     itemDetailName.innerHTML = name;
-    itemDetailPrice.innerHTML = price;
+    itemDetailPrice.innerHTML = price.toLocaleString("en");
     itemDetailImage.src = image;
 
     baketBtn.addEventListener("click", async () => {

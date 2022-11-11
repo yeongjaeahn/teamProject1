@@ -4,7 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>장바구니</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="cart.css" />
     <!-- 폰트 어썸: 아이콘 -->
     <script
@@ -17,19 +22,15 @@
   <body>
     <header>
       <div class="header-wrap">
-        <div class="logo"><a href="#">logo</a></div>
+        <div class="logo">
+          <a href="/">PLATFORM 9 3/4</a>
+        </div>
         <div class="menu">
-          <ul>
-            <li><a href="/">HOME</a></li>
-            <li><a href="../shop/shop.html" role="button">SHOP</a></li>
-            <li>
-              <a href="../login/login.html" role="button">Log in</a>
-            </li>
-
-            <li><a href="../cart/cart.html">Cart</a></li>
-            <li><a href="#" hidden class="logOut">로그아웃</a></li>
-            <li><a href="#" hidden class="myPage">마이페이지</a></li>
-            <li><a href="#" hidden class="adminLogin">관리자 로그인</a></li>
+          <ul id="navbar">
+            <li><a href="/myPage">Account</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/cart">Cart</a></li>
+            <li><a href="/shop">Log Out</a></li>
           </ul>
         </div>
       </div>
