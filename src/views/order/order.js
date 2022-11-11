@@ -124,12 +124,12 @@ async function insertUserData() {
   try {
     const userData = await Api.get(`/api/user`);
     console.log(userData);
-    receiverNameInput.value = userData.fullName;
-    receiverPhoneInput.value = userData.phoneNumber;
+    receiverNameInput.value = userData.fullName || "";
+    receiverPhoneInput.value = userData.phoneNumber || "";
     if (userData.address) {
-      postalCodeInput.value = userData.address.postalCode;
-      address1Input.value = userData.address.address1;
-      address2Input.value = userData.address.address2;
+      postalCodeInput.value = userData.address.postalCode || "";
+      address1Input.value = userData.address.address1 || "";
+      address2Input.value = userData.address.address2 || "";
     }
   } catch (err) {
     console.log(err);
