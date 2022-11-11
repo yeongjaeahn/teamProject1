@@ -59,7 +59,7 @@ const addNavElements = (keyString) => {
   };
 
   const itemsForAdmin = {
-    admin: '<li><a href = "/admin">Admin</a></li>',
+    admin: '<li><a href = "/admin/items">Admin</a></li>',
   };
 
   const logoutScript = document.createElement("script");

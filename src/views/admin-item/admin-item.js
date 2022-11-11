@@ -8,6 +8,7 @@ const categoryInput = document.querySelector("#categoryInput");
 const imageEl = document.querySelector("#imageInput");
 const thumbnailEl = document.querySelector("#thumbnailInput");
 const submitButton = document.querySelector("#submitButton");
+const userName = document.querySelector("#user-name");
 // const registerItemForm = document.querySelector("#registerItemForm");
 
 addAllElements();
@@ -19,6 +20,18 @@ async function addAllElements() {}
 function addAllEvents() {
   submitButton.addEventListener("click", handleSubmit);
 }
+
+const getUserData = async () => {
+  try {
+    const result = await Api.get(`/api/user`);
+    console.log(result);
+    const getUserName = result.fullName;
+    userName.innerHTML = getUserName;
+  } catch (err) {
+    console.log(err);
+  }
+};
+getUserData();
 
 async function handleSubmit(e) {
   e.preventDefault();

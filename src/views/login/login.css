@@ -24,6 +24,12 @@ header {
   z-index: 100;
   transition: all 2s;
 }
+
+header .logo {
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
 header a {
   color: black;
 }
