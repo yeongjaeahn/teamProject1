@@ -142,6 +142,7 @@ header .menu ul li {
 .section2 .product img {
   transition: all 1s;
   display: block;
+  border-radius: 10px;
 }
 .section2 .product .product-wrap {
   display: inline-block;

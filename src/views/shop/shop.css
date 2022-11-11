@@ -1,10 +1,19 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Belleza", "Noto Sans KR", sans-serif;
+}
+body {
+  background-image: url(../home/img/html-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* -----------header------------------------------- */
@@ -110,6 +119,56 @@ header .menu ul li {
 .shop-section2 .cate nav ul li {
   margin-right: 40px;
 }
+.shop-section2 .cate nav ul li a {
+  color: white;
+  cursor: pointer;
+}
+.shop-section2 .product-img {
+  border-radius: 10px;
+}
+/* -------------상품 디자인 */
+.item-list .product-info {
+  text-align: center;
+  padding-top: 10px;
+}
+.item-list .product-info p {
+  line-height: 30px;
+  color: white;
+}
+.item-list .product-info .name {
+  margin-top: 10px;
+}
+.product img {
+  transition: all 1s;
+  display: block;
+  border-radius: 10px;
+}
+.product .product-wrap {
+  display: inline-block;
+
+  overflow: hidden;
+}
+
+.product .product-wrap:hover img {
+  transform: scale(1.1, 1.1);
+}
+.wish {
+  width: 25%;
+  background-color: rgba(240, 248, 255, 0.247);
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  transition: all 0.7s;
+  margin-top: 10px;
+}
+.wish:hover {
+  background-color: rgb(218, 218, 218);
+}
+.wish.toggle {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(0, 0, 0);
+}
+/* ---------- */
 /* --------아이템 리스트 --- */
 .shop-section2 .item-list {
   width: auto;
@@ -120,13 +179,18 @@ header .menu ul li {
   column-gap: 10px;
 }
 .shop-section2 .more-btn {
-  background-color: antiquewhite;
-  width: 100px;
-  height: 50px;
-  border-radius: 50px;
   text-align: center;
-  margin: 0 auto;
+  margin: 20px auto;
+}
+.shop-section2 .moreData {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 10%;
   cursor: pointer;
+  border-radius: 50px;
+}
+.shop-section2 .moreData:hover {
+  background-color: rgba(255, 255, 255, 0.164);
+  color: white;
 }
 .shop-section2 .more-btn a {
   line-height: 25px;
