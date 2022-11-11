@@ -11,10 +11,9 @@
 header {
   width: 100%;
   padding: none;
-  position: fixed;
+  position: sticky;
   z-index: 100;
   transition: all 2s;
-  margin-bottom: 100px;
 }
 
 header a {

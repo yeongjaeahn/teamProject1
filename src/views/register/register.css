@@ -36,15 +36,18 @@ a {
 
 header {
   width: 100%;
-  padding: 0 100px;
+  padding: none;
   position: fixed;
   z-index: 100;
   transition: all 2s;
-  font-weight: bold;
 }
 
 header a {
   color: black;
+}
+header .logo {
+  font-size: 30px;
+  letter-spacing: 5px;
 }
 
 .down {
@@ -58,14 +61,13 @@ header a {
 }
 
 .header-wrap {
-  width: auto;
-  max-width: 1200px;
+  width: 1100px;
   padding: 30px 0;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center;
   margin: 0 auto;
+  align-items: center;
 }
 
 header .menu ul {
