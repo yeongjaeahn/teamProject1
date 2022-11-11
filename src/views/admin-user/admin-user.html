@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shopping Mall</title>
 
-    <!-- bulma css -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
+    /> -->
 
     <!-- 커스텀 css, js -->
-    <link rel="stylesheet" href="admin-user.css" />
+    <link rel="stylesheet" href="../admin.css" />
     <script src="admin-user.js" type="module" defer></script>
   </head>
   <body class="is-preload">
@@ -34,11 +33,11 @@
                 <span class="icon solid fa-home">제품 관리</span>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/admin/category" id="portfolio-link">
                 <span class="icon solid fa-th">카테고리 관리</span>
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="/admin/users" id="about-link">
                 <span class="icon solid fa-user">회원 관리</span>
@@ -57,27 +56,40 @@
     <!-- Main -->
     <div id="main">
       <!-- Intro -->
-      <section id="top" class="one dark cover">
-        <div class="container">
+      <section id="top" class="one dark cover" style="height: auto">
+        <div class="container" style="margin-top: 60px; text-align: center">
           <!-- 회원관리 -->
           <section class="section">
             <div class="container">
               <!-- 제목 -->
               <div class="block account-header">
-                <h1 class="subtitle is-4">회원관리</h1>
+                <h1
+                  class="subtitle is-4"
+                  style="
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 34px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  회원관리
+                </h1>
               </div>
 
               <!-- 총 요약 -->
-              <nav class="level">
+              <nav
+                class="level"
+                style="display: flex; justify-content: space-around"
+              >
                 <div class="level-item has-text-centered">
                   <div>
-                    <p class="heading">총회원수</p>
+                    <p class="heading">총 회원 수</p>
                     <p class="title" id="usersCount">-</p>
                   </div>
                 </div>
                 <div class="level-item has-text-centered">
                   <div>
-                    <p class="heading">관리자수</p>
+                    <p class="heading">관리자 수</p>
                     <p class="title" id="adminCount">-</p>
                   </div>
                 </div>
@@ -87,6 +99,11 @@
               <div class="container orders-container" id="usersContainer">
                 <div
                   class="columns notification is-info is-light is-mobile orders-top"
+                  style="
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                  "
                 >
                   <div class="column is-2">가입날짜</div>
                   <div class="column is-2">이메일</div>
