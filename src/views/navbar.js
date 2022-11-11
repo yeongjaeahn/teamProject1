@@ -12,7 +12,7 @@ export const createNavbar = () => {
       addNavElements("register shop");
       break;
     case "/register/":
-      addNavElements("login");
+      addNavElements("shop login");
       break;
     case "/shop/":
       addNavElements("account  register cart login logout");
