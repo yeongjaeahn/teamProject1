@@ -37,7 +37,7 @@ async function getData() {
         e.target.previousElementSibling.previousElementSibling.innerText;
       let sumnail =
         e.target.previousElementSibling.previousElementSibling
-          .previousElementSibling.src;
+          .previousElementSibling.firstElementChild.src;
       if (localStorage.getItem("name") != null) {
         let takeName = JSON.parse(localStorage.name);
         let takePrice = JSON.parse(localStorage.price);

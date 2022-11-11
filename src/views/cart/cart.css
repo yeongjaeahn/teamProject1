@@ -111,6 +111,7 @@ header .menu ul li {
 .basketdiv .row.head .subdiv {
   background-color: #f4f4f4;
 }
+
 .basketdiv .row > .subdiv {
   display: block;
   float: left;
@@ -153,7 +154,7 @@ header .menu ul li {
   transform: scale(1.5);
 }
 .basketdiv .img {
-  width: 20%;
+  width: 70px;
 }
 .basketdiv .pname {
   width: 70%;
@@ -196,7 +197,7 @@ header .menu ul li {
   width: 100%;
 }
 .basketdiv .data .pname {
-  text-align: left !important;
+  text-align: center !important;
   line-height: 1.2 !important;
 }
 .basketdiv .data .price,
@@ -334,5 +335,11 @@ input[type="button"] {
 .subdiv{
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+/* ---------- */
+.data {
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
