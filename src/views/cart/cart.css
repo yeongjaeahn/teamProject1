@@ -303,3 +303,6 @@ footer .contents-wrap .contents2 i {
   width: 1000px;
   margin: 0 auto;
 }
+.contents1 a {
+  color: white;
+}

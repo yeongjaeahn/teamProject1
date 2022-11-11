@@ -25,7 +25,7 @@ async function getDetailData() {
     console.log(item);
 
     itemDetailName.innerHTML = name;
-    itemDetailPrice.innerHTML = price;
+    itemDetailPrice.innerHTML = price.toLocaleString("en");
     itemDetailImage.src = image;
 
     baketBtn.addEventListener("click", async () => {

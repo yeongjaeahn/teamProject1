@@ -76,13 +76,7 @@ a:visited {
 
 .pdt-wrap {
   margin: 0 auto;
-  width: 70%;
-}
-.pdt-wrap .pdt-main-container {
-  width: 100%;
-  display: flex;
-  /* justify-content: center; */
-  flex: row wrap;
+  width: 500px;
 }
 
 /* .pdt-wrap .pdt-main-container .pdt-info {
@@ -103,15 +97,28 @@ a:visited {
   margin-top: 60px;
   padding: 50px;
   display: flex;
-  justify-content: center;
-
+  /* justify-content: center; */
+  flex-flow: column wrap;
   background-color: #fff;
   border-radius: 0.75rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+.sumnail-wrap {
+  text-align: right;
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.sumnail-wrap:hover img {
+  transform: scale(1.1, 1.1);
+  border-radius: 20px;
+}
 .sumnail-wrap img {
-  border-radius: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  transition: all 1s;
+  transform: scale(1, 1);
 }
 
 .card-body {
@@ -127,19 +134,18 @@ a:visited {
 .pdt-name {
   font-weight: bold;
   font-size: 25px;
-  margin-top: 60px;
-  padding: 10px;
+  text-align: right;
+  padding: 0 20px;
 }
-
-.pdt-price {
-  display: flex;
+.pdt-name .price {
+  margin-top: 10px;
   font-weight: bold;
-  font-size: 18px;
-  padding: 10px;
 }
-
 .pdt-info {
-  height: 300px;
+  align-items: center;
+  margin-top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 15px;
 }
 
 .item-button {
@@ -157,22 +163,74 @@ a:visited {
 }
 
 #baket {
-  margin-right: 20px;
-  color: white;
-  background-color: black;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: none;
+  transition: all 1s;
 }
 
 #baket:hover {
   color: black;
-  background-color: #fff;
+
+  background-color: rgba(216, 216, 216, 0.5);
+  border: none;
 }
 
 #purchaseButton {
-  color: black;
-  background-color: #fff;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: none;
+  transition: all 1s;
 }
 
 #purchaseButton:hover {
+  color: black;
+  background-color: rgba(216, 216, 216, 0.5);
+  border: none;
+}
+
+/*  ------oreder baket wrap */
+.order-baket-wrap {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.order-baket-wrap button {
+  width: 40%;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+/* ---FOOTER */
+/* ------footer---- */
+footer {
+  background-color: rgb(14, 14, 14);
+  padding: 50px 20px;
+  margin-top: 100px;
+}
+footer .contents-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+footer .contents-wrap .contents1 {
+  width: 70%;
   color: white;
-  background-color: black;
+  line-height: 30px;
+}
+footer .contents-wrap .contents1 span {
+  margin-right: 20px;
+}
+footer .contents-wrap .contents2 {
+  width: 30%;
+}
+footer .contents-wrap .contents2 i {
+  margin-right: 15px;
+  color: white;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+}
+.contents1 a {
+  color: white;
 }
