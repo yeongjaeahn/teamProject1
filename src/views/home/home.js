@@ -52,7 +52,7 @@ async function getData() {
                 </a>
               </div>
               <p class="name">${item[i].name}</p>
-              <p class="price">${item[i].price}</p> 
+              <p class="price">${item[i].price.toLocaleString("en")}</p> 
               <button class="wish">찜<button>
             </div>
           </div>
