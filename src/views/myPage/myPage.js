@@ -1,3 +1,28 @@
+import * as Api from "/api.js";
+
+const emailInput = document.querySelector("#input-text-email");
+const nameInput = document.querySelector("#input-text-name");
+const phoneNumberInput = document.querySelector("#input-text-number");
+const postcodeInput = document.querySelector("#sample6_postcode");
+const address1Input = document.querySelector("#sample6_address");
+const address2Input = document.querySelector("#sample6_detailAddress");
+const saveButton = document.querySelector("#save");
+const quitButton = document.querySelector("#quit");
+const addressFinder = document.querySelector(".adress-btn");
+
+addAllElements();
+addAllEvents();
+
+// html에 요소를 추가하는 함수들을 묶어주어서 코드를 깔끔하게 하는 역할임.
+async function addAllElements() {}
+
+// 여러 개의 addEventListener들을 묶어주어서 코드를 깔끔하게 하는 역할임.
+function addAllEvents() {
+  addressFinder.addEventListener("click", sample6_execDaumPostcode);
+  saveButton.addEventListener("click", save);
+  quitButton.addEventListener("click", quit);
+}
+
 function sample6_execDaumPostcode() {
   new daum.Postcode({
     oncomplete: function (data) {
@@ -42,4 +67,89 @@ function sample6_execDaumPostcode() {
       document.getElementById("sample6_detailAddress").focus();
     },
   }).open();
+}
+
+let _Id;
+async function getUserData() {
+  try {
+    const result = await Api.get(`/api/user`);
+    console.log(result);
+    _Id = result.email;
+    console.log(_Id);
+    emailInput.value = _Id;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+getUserData();
+
+//회원정보 수정하기
+
+async function save(e) {
+  e.preventDefault();
+
+  const email = emailInput.value;
+  const name = nameInput.value;
+  const phoneNumber = phoneNumberInput.value;
+  const postalCode = postcodeInput.value;
+  const address1 = address1Input.value;
+  const address2 = address2Input.value;
+
+  try {
+    const address = { postalCode, address1, address2 };
+    const data = { email, name, phoneNumber, address };
+    const result = await Api.patch2(`/api/users/${_Id}`, data);
+    console.log(result);
+    alert("정상적으로 수정되었습니다.");
+  } catch (err) {
+    console.error(err.stack);
+    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+  }
+}
+
+//회원탈퇴하기
+async function quit(e) {
+  e.preventDefault();
+  const email = emailInput.value;
+
+  try {
+    const data = { email };
+    console.log(data);
+    const result = await Api.delete2(`/api/users/${_Id}`, data);
+    console.log(result);
+    sessionStorage.removeItem("token");
+    alert("탈퇴하였습니다.");
+    window.location.href = "/";
+  } catch (err) {
+    console.error(err.stack);
+    alert(`문제가 발생하였습니다. 확인 후 다시 시도해 주세요: ${err.message}`);
+  }
+}
+
+// 데이터 받아와서 넣기
+
+const cardItemInfo = document.querySelector(".card-item-info");
+const cardItem = document.querySelector(".card-item"); // 이미지 넣는 div
+
+insertProductElement()
+
+async function insertProductElement() {
+  const res = await fetch(``)
+  const data = await res.json()
+  
+  const title = data.title
+  const price = data.price
+  const image = data.image
+  const quantity = data.quantity
+
+  cardItem.insertAdjacentHTML('beforeend', `
+  <img id="productImage" src="${image}" alt="clothes-image" />
+  `)
+  
+  cardItemInfo.insertAdjacentHTML('beforeend',`
+    <p class="order-log-item">${title}</p>
+    <p class="order-log-quantity">${quantity}</p>
+    <p class="order-log-price">${price}</p>
+  `)
 }

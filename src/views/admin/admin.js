@@ -1,3 +1,7 @@
+import { checkAdmin } from "/useful-functions.js";
+
+checkAdmin();
+
 (function ($) {
   var $window = $(window),
     $body = $("body"),

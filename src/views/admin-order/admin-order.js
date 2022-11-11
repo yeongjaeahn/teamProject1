@@ -1,4 +1,4 @@
-import { addCommas } from "../../useful-functions.js";
+import { addCommas, checkAdmin } from "../../useful-functions.js";
 import * as Api from "../../api.js";
 
 // 요소(element), input 혹은 상수
@@ -13,7 +13,7 @@ const modalCloseButton = document.querySelector("#modalCloseButton");
 const deleteCompleteButton = document.querySelector("#deleteCompleteButton");
 const deleteCancelButton = document.querySelector("#deleteCancelButton");
 
-// checkAdmin();
+checkAdmin();
 addAllElements();
 addAllEvents();
 
@@ -36,6 +36,7 @@ function addAllEvents() {
 let orderIdToDelete;
 async function insertOrders() {
   const orders = await Api.get("/api/orderlist/all");
+  console.log(orders);
 
   const summary = {
     ordersCount: 0,
