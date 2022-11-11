@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!— font-family: 'Belleza', sans-serif; —>
+    <!-- <!— font-family: 'Belleza', sans-serif; —> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <!— font-family: 'Noto Sans KR', sans-serif; —>
+    <!-- <!—- font-family: 'Noto Sans KR', sans-serif; -—> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,12 +23,17 @@
     <script src="myPage.js" type="module"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <title>Platform 19</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="all">
@@ -37,98 +42,94 @@
           <div>
             <div class="header-wrap">
               <a href="/">
-              <div class="logo">
-                <p>Platform</p>
-                <img src="../logo1.PNG" alt="logo">
-              </div>
+                <div class="logo">
+                  <p>Platform</p>
+                  <img src="../logo1.PNG" alt="logo" />
+                </div>
               </a>
               <div class="menu">
-                <ul>
-                  <li><a href="/">HOME</a></li>
-                  <li><a href="/shop">SHOP</a></li>
-                  <li><a href="/login">Log in</a></li>
-                  <li><a href="/cart">Cart</a></li>
-                </ul>
+                <ul id="navbar"></ul>
               </div>
             </div>
           </div>
-        <section class="shop-section1">
-          <h2>MY PAGE</h2>
-        </section>
+          <section class="shop-section1">
+            <h2>MY PAGE</h2>
+          </section>
         </header>
       </div>
-    <section class="order-body-wrap">
-      <div class="order-box">
-        <div class="order-log">
-          <p class="card-title">주문 내역</p>
-          <div class="card-body">
-            <div class="card-item">
-              <img id="productImage" src="934.jpg" alt="item1" />
+      <section class="order-body-wrap">
+        <div class="order-box">
+          <div class="order-log">
+            <p class="card-title">주문 내역</p>
+            <div class="card-body">
+              <div class="card-item">
+                <img id="productImage" src="934.jpg" alt="item1" />
+              </div>
+              <div class="card-item-info">
+                <p class="order-log-item">정말 멋진 상품</p>
+                <p class="order-log-quantity">1개</p>
+                <p class="order-log-price">상품 가격</p>
+              </div>
+              <div class="order-status">상품 준비중</div>
             </div>
-            <div class="card-item-info">
-              <p class="order-log-item">정말 멋진 상품</p>
-              <p class="order-log-quantity">1개</p>
-              <p class="order-log-price">상품 가격</p>
-            </div>
-            <div class="order-status">상품 준비중</div>
           </div>
         </div>
-      </div>
 
-      <form>
-        <div class="order-box">
-          <p class="card-title">회원 정보</p>
-          <div class="row">
-            <label for="input-text-email">이메일</label>
-            <input
-              disabled
-              id="input-text-email"
-              class="input-text"
-              type="email"
-            />
-          </div>
-          <div class="row">
-            <label for="input-text-name">이름</label>
-            <input id="input-text-name" class="input-text" type="text" />
-          </div>
-          <div class="row">
-            <label for="input-text-number">연락처</label>
-            <input id="input-text-number" class="input-text" type="text" />
-          </div>
-          <div class="row">
-            <label>주소</label>
-            <div class="adress-row">
+        <form>
+          <div class="order-box">
+            <p class="card-title">회원 정보</p>
+            <div class="row">
+              <label for="input-text-email">이메일</label>
               <input
                 disabled
-                type="text"
-                id="sample6_postcode"
-                class="input-text-adress"
-                placeholder="우편번호"
+                id="input-text-email"
+                class="input-text"
+                type="email"
               />
-              <input type="button" class="adress-btn" value="주소 찾기" />
             </div>
+            <div class="row">
+              <label for="input-text-name">이름</label>
+              <input id="input-text-name" class="input-text" type="text" />
+            </div>
+            <div class="row">
+              <label for="input-text-number">연락처</label>
+              <input id="input-text-number" class="input-text" type="text" />
+            </div>
+            <div class="row">
+              <label>주소</label>
+              <div class="adress-row">
+                <input
+                  disabled
+                  type="text"
+                  id="sample6_postcode"
+                  class="input-text-adress"
+                  placeholder="우편번호"
+                />
+                <input type="button" class="adress-btn" value="주소 찾기" />
+              </div>
+            </div>
+            <input
+              disabled
+              type="text"
+              id="sample6_address"
+              class="input-text"
+              placeholder="주소"
+            /><br />
+            <input
+              type="text"
+              id="sample6_detailAddress"
+              class="input-text"
+              placeholder="상세주소"
+            />
+            <button type="submit" class="submit-button" id="save">
+              변경 사항 저장하기
+            </button>
+            <button type="submit" class="submit-button" id="quit">
+              탈퇴하기
+            </button>
           </div>
-          <input
-            disabled
-            type="text"
-            id="sample6_address"
-            class="input-text"
-            placeholder="주소"
-          /><br />
-          <input
-            type="text"
-            id="sample6_detailAddress"
-            class="input-text"
-            placeholder="상세주소"
-          />
-          <button type="submit" class="submit-button" id="save">
-            변경 사항 저장하기
-          </button>
-          <button type="submit" class="submit-button" id="quit">
-            탈퇴하기
-          </button>
-        </div>
-      </form>
-    </section>
+        </form>
+      </section>
+    </div>
   </body>
 </html>
