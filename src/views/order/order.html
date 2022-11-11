@@ -5,8 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Platform 19</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="order.css" />
     <title>ORDER</title>
@@ -15,31 +24,25 @@
   </head>
   <body>
     <div class="all">
-      <div class="header-container">
-        <header>
-          <div>
-            <div class="header-wrap">
-              <a href="/">
-              <div class="logo">
-                <p>Platform</p>
-                <img src="../logo1.PNG" alt="logo">
-              </div>
-              </a>
-              <div class="menu">
-                <ul>
-                  <li><a href="/">HOME</a></li>
-                  <li><a href="/shop">SHOP</a></li>
-                  <li><a href="/login">Log in</a></li>
-                  <li><a href="/cart">Cart</a></li>
-                </ul>
-              </div>
-            </div>
+      <header>
+        <div class="header-wrap">
+          <div class="logo">
+            <a href="/">PLATFORM 9 3/4</a>
           </div>
-        <section class="shop-section1">
-          <h2>ORDER</h2>
-        </section>
-        </header>
-      </div>
+          <div class="menu">
+            <ul id="navbar">
+              <li><a href="/myPage">Account</a></li>
+              <li><a href="/shop">Shop</a></li>
+              <li><a href="/cart">Cart</a></li>
+              <li><a href="/shop">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <section class="shop-section1">
+        <h2>ORDER</h2>
+      </section>
+
       <section class="order-body-wrap">
         <div class="order-box">
           <p class="card-title">주문 상품</p>
@@ -122,7 +125,9 @@
             </div>
           </div>
         </div>
-        <a href="../orderComplete/orderComplete.html"><button type="submit" class="submit-button">결제하기</button></a>
+        <a href="../orderComplete/orderComplete.html"
+          ><button type="submit" class="submit-button">결제하기</button></a
+        >
       </section>
     </div>
   </body>

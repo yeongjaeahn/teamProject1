@@ -23,7 +23,7 @@ $window.resize(function () {
 });
 $window.on("scroll", function () {
   //스크롤시
-  var scrolled = $window.scrollTop() >= pageOffsetTop - 1200; //스크롤된 상태; true or false
+  var scrolled = $window.scrollTop() >= pageOffsetTop - 2000; //스크롤된 상태; true or false
   $header.toggleClass("down", scrolled); //클래스 토글
   $header1.toggleClass("down1", scrolled);
 });
