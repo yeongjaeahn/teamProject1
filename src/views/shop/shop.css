@@ -101,12 +101,26 @@ header .menu ul li {
 .shop-section2 .cate nav ul li {
   margin-right: 40px;
 }
+
 .shop-section2 .cate nav ul li a {
   cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 12px;
+  font-size: 18px;
 }
+
+.shop-section2 .cate nav ul li a:hover {
+  background-color: black;
+  color: #fff;
+  border-radius: 12px;
+  padding: 4px 6px;
+  transition: 0.2s ease-in-out;
+}
+
 .shop-section2 .product-img {
   border-radius: 10px;
 }
+
 /* -------------상품 디자인 */
 .item-list .product-info {
   text-align: center;
@@ -119,20 +133,25 @@ header .menu ul li {
 .item-list .product-info .name {
   margin-top: 10px;
 }
-.product img {
+
+.product .product-img {
   transition: all 1s;
   display: block;
+  width: 100%;
+  /* transform: scale(1, 1); */
   border-radius: 10px;
 }
-.product .product-wrap {
+.product .product-info {
   display: inline-block;
 
   overflow: hidden;
+  border-radius: 10px;
 }
 
-.product .product-wrap:hover img {
-  transform: scale(1.1, 1.1);
-}
+/* .product .product-info:hover .product-img {
+  transform: scale(1.05, 1.05);
+  border-radius: 10px;
+} */
 .wish {
   width: 25%;
   background-color: rgba(12, 12, 12, 0.089);
