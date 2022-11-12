@@ -38,14 +38,34 @@
             <p class="card-title">주문 내역</p>
             <div class="card-body">
               <div class="card-item">
-                <img id="productImage" src="934.jpg" alt="item1" />
+                <img
+                  id="productImage"
+                  src="https://azkaban-19.s3.ap-northeast-2.amazonaws.com/%E1%84%80%E1%85%A1%E1%84%82%E1%85%A6%E1%86%BA+3000%E1%84%8B%E1%85%AF%E1%86%AB.jpg"
+                  alt="item1"
+                />
               </div>
-              <div class="card-item-info">
-                <p class="order-log-item">정말 멋진 상품</p>
-                <p class="order-log-quantity">1개</p>
-                <p class="order-log-price">상품 가격</p>
+              <div class="card-item-info" style="margin-left: 12px">
+                <p class="order-log-item">상품명: 가넷</p>
+                <p class="order-log-quantity">수량: 1개</p>
+                <p class="order-log-price">상품 가격: 3,000원</p>
               </div>
-              <div class="order-status">상품 준비중</div>
+              <div class="order-status">
+                상품 준비중
+                <button
+                  class="order-cancel"
+                  style="
+                    outline: none;
+                    padding: 4px 8px;
+                    margin-top: 48px;
+                    background-color: black;
+                    color: white;
+                    border-radius: 12px;
+                    border: none;
+                  "
+                >
+                  주문 취소
+                </button>
+              </div>
             </div>
           </div>
         </div>

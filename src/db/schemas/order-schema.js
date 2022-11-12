@@ -22,7 +22,7 @@ const OrderSchema = new Schema(
           address1: String,
           address2: String,
           receiverName: String,
-          receiverPhoneNumber: String,
+          receiverPhone: String,
         },
         {
           _id: false,
@@ -32,7 +32,6 @@ const OrderSchema = new Schema(
     },
     request: {
       type: String,
-      required: true,
     },
     status: {
       type: String,

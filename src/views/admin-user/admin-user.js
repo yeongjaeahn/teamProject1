@@ -54,7 +54,7 @@ async function insertUsers() {
     usersContainer.insertAdjacentHTML(
       "beforeend",
       `
-        <div class="columns orders-item" id="user-${_id}">
+        <div class="columns orders-item" id="user-${_id}" style="margin-bottom : 12px;">
           <div class="column is-2">${date}</div>
           <div class="column is-2">${email}</div>
           <div class="column is-2">${fullName}</div>

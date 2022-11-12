@@ -138,7 +138,7 @@ header .menu ul li {
   transition: all 1s;
   display: block;
   width: 100%;
-  transform: scale(1, 1);
+  /* transform: scale(1, 1); */
   border-radius: 10px;
 }
 .product .product-info {
@@ -148,10 +148,10 @@ header .menu ul li {
   border-radius: 10px;
 }
 
-.product .product-info:hover .product-img {
+/* .product .product-info:hover .product-img {
   transform: scale(1.05, 1.05);
   border-radius: 10px;
-}
+} */
 .wish {
   width: 25%;
   background-color: rgba(12, 12, 12, 0.089);

@@ -10,6 +10,8 @@ const address2Input = document.querySelector("#sample6_detailAddress");
 const saveButton = document.querySelector("#save");
 const quitButton = document.querySelector("#quit");
 const addressFinder = document.querySelector(".adress-btn");
+const cancelButton = document.querySelector(".order-cancel");
+const cardBody = document.querySelector(".card-body");
 
 createNavbar();
 addAllElements();
@@ -23,6 +25,11 @@ function addAllEvents() {
   addressFinder.addEventListener("click", sample6_execDaumPostcode);
   saveButton.addEventListener("click", save);
   quitButton.addEventListener("click", quit);
+  cancelButton.addEventListener("click", orderCancelHandler);
+}
+
+function orderCancelHandler() {
+  cardBody.style.display = "none";
 }
 
 function sample6_execDaumPostcode() {
