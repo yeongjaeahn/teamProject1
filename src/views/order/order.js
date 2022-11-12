@@ -1,4 +1,4 @@
-import { addCommas, convertToNumber } from "/useful-functions.js";
+import { addCommas } from "/useful-functions.js";
 import { getFromDB, deleteFromDB, putToDB } from "/indexed-db.js";
 import * as Api from "/api.js";
 
@@ -103,7 +103,7 @@ async function insertOrderSummary() {
       productsName += "\n";
     }
     itemImage.src = `${image}`;
-    productsName += `${name} / ${quantity}개`;
+    productsName += `${name} ${quantity}개`;
   }
 
   itemName.innerHTML = productsName;
@@ -143,7 +143,7 @@ async function doCheckout() {
   const address1 = address1Input.value;
   const address2 = address2Input.value;
   const summaryTitle = itemName.innerHTML;
-  const totalPrice = convertToNumber(orderTotalPrice.innerHTML);
+  const totalPrice = orderTotalPrice.innerHTML;
   const { selectedIds } = await getFromDB("order", "summary");
 
   if (!receiverName || !receiverPhone || !postalCode || !address2) {
@@ -159,44 +159,41 @@ async function doCheckout() {
   };
 
   try {
-    const orderData = await Api.post("/api/order", {
-      summaryTitle,
-      totalPrice,
-      address,
-    });
+    // const data1 = { summaryTitle, totalPrice, address };
+    // const orderData = await Api.post("/api/order", data1);
 
-    const orderId = orderData._id;
+    // const orderId = orderData._id;
 
-    for (const productId of selectedIds) {
-      const { quantity, price } = await getFromDB("cart", productId);
-      const totalPrice = quantity * price;
+    // for (const productId of selectedIds) {
+    //   const { quantity, price } = await getFromDB("cart", productId);
+    //   const totalPrice = quantity * price;
 
-      await Api.post("/api/orderitem", {
-        orderId,
-        productId,
-        quantity,
-        totalPrice,
-      });
+    //   await Api.post("/api/orderitem", {
+    //     orderId,
+    //     productId,
+    //     quantity,
+    //     totalPrice,
+    //   });
 
-      await deleteFromDB("cart", productId);
-      await putToDB("order", "summary", (data) => {
-        data.ids = data.ids.filter((id) => id !== productId);
-        data.selectedIds = data.selectedIds.filter((id) => id !== productId);
-        data.productsCount -= 1;
-        data.productsTotal -= totalPrice;
-      });
-    }
+    //   await deleteFromDB("cart", productId);
+    //   await putToDB("order", "summary", (data) => {
+    //     data.ids = data.ids.filter((id) => id !== productId);
+    //     data.selectedIds = data.selectedIds.filter((id) => id !== productId);
+    //     data.productsCount -= 1;
+    //     data.productsTotal -= totalPrice;
+    //   });
+    // }
 
-    const data = {
-      phone: receiverPhone,
-      address: {
-        postalCode,
-        address1,
-        address2,
-      },
-    };
+    // const data = {
+    //   phone: receiverPhone,
+    //   address: {
+    //     postalCode,
+    //     address1,
+    //     address2,
+    //   },
+    // };
 
-    await Api.post("/api/user/deliveryInfo", data);
+    // await Api.post("/api/user/deliveryInfo", data);
 
     alert("결제 및 주문이 정상적으로 완료되었습니다.");
     window.location.href = "/order/complete";

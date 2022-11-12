@@ -17,17 +17,15 @@ orderRouter.post("/order", loginRequired, async (req, res, next) => {
     const summaryTitle = req.body.summaryTitle;
     const totalPrice = req.body.totalPrice;
     const address = req.body.address;
-    const request = req.body.request;
 
     const newOrder = await orderService.addOrder({
       userId,
       summaryTitle,
       totalPrice,
       address,
-      request,
     });
 
-    res.status(200).json(newOrder);
+    res.status(201).json(newOrder);
   } catch (error) {
     next(error);
   }
@@ -75,14 +73,14 @@ orderRouter.patch(
       // req (request) 에서 데이터 가져오기
       const orderId = req.params.orderId;
       const address = req.body.address;
-      const request = req.body.request;
+      // const request = req.body.request;
       const status = req.body.status;
 
       // 위 데이터가 undefined가 아니라면, 즉, 프론트에서 업데이트를 위해
       // 보내주었다면, 업데이트용 객체에 삽입함.
       const toUpdate = {
         ...(address && { address }),
-        ...(request && { request }),
+        // ...(request && { request }),
         ...(status && { status }),
       };
 
